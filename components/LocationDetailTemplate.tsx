@@ -12,9 +12,6 @@ import {
   CheckCircle2, 
   ArrowRight, 
   Phone, 
-  ShieldCheck, 
-  Star, 
-  Clock, 
   Calculator,
   Home,
   Layers,
@@ -42,35 +39,35 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
         ]}
       />
       <Navbar />
-      <main className="flex-1 bg-slate-950 text-white">
+      <main className="flex-1 bg-white text-slate-900">
         {/* Location Hero */}
-        <section className="relative py-16 lg:py-24 bg-gradient-to-b from-slate-900 via-slate-900/90 to-slate-950 border-b border-slate-800 overflow-hidden">
+        <section className="relative py-16 lg:py-20 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-b border-slate-200 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               {/* Left Column */}
               <div className="lg:col-span-7 space-y-6">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-xs font-bold text-red-400 uppercase tracking-wider">
-                  <MapPin className="w-4 h-4 text-red-500" />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-bold text-red-600 uppercase tracking-wider shadow-sm">
+                  <MapPin className="w-4 h-4 text-red-600" />
                   <span>Lokalita: {location.city} a okolí ({location.region})</span>
                 </div>
 
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-tight">
-                  Rekonstrukce bytu <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-amber-400">{location.city}</span>
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-slate-950 leading-tight">
+                  Rekonstrukce bytu <span className="text-red-600">{location.city}</span>
                 </h1>
 
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+                <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
                   {location.leadParagraph}
                 </p>
 
                 {/* Specifics for this city */}
-                <div className="space-y-2 pt-2 border-t border-slate-800">
-                  <div className="text-xs font-bold uppercase tracking-wider text-red-400 mb-2">
+                <div className="space-y-2 pt-2 border-t border-slate-200">
+                  <div className="text-xs font-bold uppercase tracking-wider text-slate-800 mb-2">
                     Naše působení v lokalitě {location.city}:
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     {location.specifics.map((spec, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-200">
-                        <CheckCircle2 className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                      <div key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-700 font-medium">
+                        <CheckCircle2 className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
                         <span>{spec}</span>
                       </div>
                     ))}
@@ -81,7 +78,7 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
                 <div className="pt-4 flex flex-col sm:flex-row items-center gap-4">
                   <Link
                     href="#kontakt"
-                    className="w-full sm:w-auto px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-black text-sm uppercase tracking-wider rounded-2xl shadow-xl shadow-red-600/30 transition-all flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-black text-sm uppercase tracking-wider rounded-2xl shadow-lg shadow-red-600/25 hover:shadow-xl hover:shadow-red-600/35 transition-all flex items-center justify-center gap-2"
                   >
                     <Calculator className="w-4 h-4" />
                     <span>Nezávazná nabídka v {location.city}</span>
@@ -89,9 +86,9 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
 
                   <a
                     href={`tel:${siteConfig.phoneCZRaw}`}
-                    className="w-full sm:w-auto px-6 py-4 bg-slate-900 hover:bg-slate-800 border border-slate-700 rounded-2xl text-white font-bold text-sm transition-all flex items-center justify-center gap-2"
+                    className="w-full sm:w-auto px-6 py-4 bg-white hover:bg-slate-50 border border-slate-300 rounded-2xl text-slate-900 font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-sm"
                   >
-                    <Phone className="w-4 h-4 text-red-500" />
+                    <Phone className="w-4 h-4 text-red-600" />
                     <span>Zavolat: {siteConfig.phoneCZ}</span>
                   </a>
                 </div>
@@ -99,7 +96,7 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
 
               {/* Right Hero Image */}
               <div className="lg:col-span-5">
-                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900">
+                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white shadow-xl bg-slate-100">
                   <Image
                     src={location.heroImage}
                     alt={`Rekonstrukce bytu ${location.city}`}
@@ -108,14 +105,14 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
                     sizes="(max-width: 1024px) 100vw, 500px"
                     className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80" />
-                  <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-slate-950/90 backdrop-blur-md border border-slate-800 text-left">
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 text-left shadow-md">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4 text-red-500" />
-                        <span className="text-xs font-bold text-white uppercase">{location.city}</span>
+                        <MapPin className="w-4 h-4 text-red-600" />
+                        <span className="text-xs font-bold text-slate-900 uppercase">{location.city}</span>
                       </div>
-                      <span className="text-[11px] font-semibold text-green-400">Bezplatné zaměření</span>
+                      <span className="text-[11px] font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded border border-green-200">Bezplatné zaměření</span>
                     </div>
                   </div>
                 </div>
@@ -127,13 +124,13 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
         {/* Services overview for this location with prolinks */}
         <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <span className="text-xs font-black uppercase tracking-widest text-red-500 block">
+            <span className="text-xs font-black uppercase tracking-widest text-red-600 block">
               Co pro vás v lokalitě {location.city} zajistíme
             </span>
-            <h2 className="text-2xl sm:text-4xl font-black uppercase text-white">
+            <h2 className="text-2xl sm:text-4xl font-black uppercase text-slate-950">
               Stavební služby pro byty a koupelny v {location.city}
             </h2>
-            <p className="text-sm text-slate-400">
+            <p className="text-sm text-slate-600">
               Všechny práce provádíme na klíč pod jednou smlouvou o dílo. Klikněte pro detail jednotlivých služeb:
             </p>
           </div>
@@ -144,23 +141,23 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
               return (
                 <div
                   key={srv.slug}
-                  className="p-6 rounded-3xl bg-slate-900/90 border border-slate-800 hover:border-red-500/50 transition-all flex flex-col justify-between space-y-4 group"
+                  className="p-6 rounded-3xl bg-slate-50 border border-slate-200 hover:border-red-500/50 hover:shadow-md transition-all flex flex-col justify-between space-y-4 group"
                 >
                   <div className="space-y-3">
-                    <div className="w-10 h-10 rounded-xl bg-red-600/15 text-red-500 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-red-400 transition-colors">
+                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-red-600 transition-colors">
                       <Link href={`/${srv.slug}`}>{srv.title}</Link>
                     </h3>
-                    <p className="text-xs text-slate-400 leading-relaxed">
+                    <p className="text-xs text-slate-600 leading-relaxed font-normal">
                       {srv.shortDesc}
                     </p>
                   </div>
 
                   <Link
                     href={`/${srv.slug}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-red-400 hover:text-red-300 pt-2 border-t border-slate-800"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-red-600 hover:text-red-700 pt-2 border-t border-slate-200"
                   >
                     <span>Zjistit více</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -173,20 +170,20 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
 
         {/* Realizace v lokalitě */}
         {location.realizaceImages && location.realizaceImages.length > 0 && (
-          <section className="py-16 bg-slate-900 border-y border-slate-800">
+          <section className="py-16 bg-slate-50 border-y border-slate-200">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                 <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-red-500 block">
+                  <span className="text-xs font-bold uppercase tracking-wider text-red-600 block">
                     Fotogalerie prací
                   </span>
-                  <h2 className="text-2xl sm:text-3xl font-black uppercase text-white">
+                  <h2 className="text-2xl sm:text-3xl font-black uppercase text-slate-950">
                     Ukázky rekonstrukcí v {location.city} a okolí
                   </h2>
                 </div>
                 <Link
                   href="/realizace"
-                  className="text-xs font-bold text-red-400 hover:text-red-300 flex items-center gap-1"
+                  className="text-xs font-bold text-red-600 hover:text-red-700 flex items-center gap-1"
                 >
                   <span>Všechny realizace</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -197,9 +194,9 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
                 {location.realizaceImages.map((img, idx) => (
                   <div
                     key={idx}
-                    className="group rounded-3xl overflow-hidden bg-slate-950 border border-slate-800 space-y-3 p-3"
+                    className="group rounded-3xl overflow-hidden bg-white border border-slate-200 space-y-3 p-3 shadow-sm hover:shadow-md transition-all"
                   >
-                    <div className="relative aspect-[16/11] rounded-2xl overflow-hidden bg-slate-900">
+                    <div className="relative aspect-[16/11] rounded-2xl overflow-hidden bg-slate-100">
                       <Image
                         src={img.src}
                         alt={img.title}
@@ -209,8 +206,8 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
                       />
                     </div>
                     <div className="px-2 pb-2">
-                      <div className="text-sm font-bold text-white">{img.title}</div>
-                      <div className="text-xs text-slate-400">{img.desc}</div>
+                      <div className="text-sm font-bold text-slate-900">{img.title}</div>
+                      <div className="text-xs text-slate-500">{img.desc}</div>
                     </div>
                   </div>
                 ))}
@@ -223,13 +220,13 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
         <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 space-y-4">
-              <span className="text-xs font-bold uppercase tracking-widest text-red-500">
+              <span className="text-xs font-bold uppercase tracking-widest text-red-600">
                 Spolehlivý partner pro {location.city}
               </span>
-              <h2 className="text-2xl sm:text-4xl font-black uppercase text-white">
+              <h2 className="text-2xl sm:text-4xl font-black uppercase text-slate-950">
                 Proč si vybrat HANSBAU v lokalitě {location.city}?
               </h2>
-              <p className="text-sm text-slate-300 leading-relaxed">
+              <p className="text-sm text-slate-600 leading-relaxed font-normal">
                 Rekonstrukce bytu je významná investice. S námi máte jistotu, že stavební práce proběhnou bez zbytečných prodlev, s ohledem na sousedy a za předem garantovanou pevnou cenu.
               </p>
             </div>
@@ -238,10 +235,10 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
               {location.whyHere.map((wh, idx) => (
                 <div
                   key={idx}
-                  className="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-2"
+                  className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 shadow-sm"
                 >
-                  <h3 className="text-base font-bold text-white">{wh.title}</h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">{wh.desc}</p>
+                  <h3 className="text-base font-bold text-slate-900">{wh.title}</h3>
+                  <p className="text-xs text-slate-600 leading-relaxed font-normal">{wh.desc}</p>
                 </div>
               ))}
             </div>
@@ -258,10 +255,10 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
         )}
 
         {/* Neighboring locations internal links */}
-        <section className="py-12 bg-slate-900 border-t border-slate-800">
+        <section className="py-12 bg-slate-50 border-t border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="text-xs sm:text-sm font-bold text-slate-300">
+              <div className="text-xs sm:text-sm font-bold text-slate-700">
                 Rekonstrukce provádíme i v sousedních městech:
               </div>
               <div className="flex flex-wrap gap-2">
@@ -269,9 +266,9 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
                   <Link
                     key={nei.slug}
                     href={`/${nei.slug}`}
-                    className="px-3 py-1.5 rounded-xl bg-slate-950 hover:bg-red-600 border border-slate-800 hover:border-red-600 text-xs font-semibold text-slate-300 hover:text-white transition-all flex items-center gap-1.5"
+                    className="px-3 py-1.5 rounded-xl bg-white hover:bg-red-600 border border-slate-200 hover:border-red-600 text-xs font-semibold text-slate-700 hover:text-white transition-all flex items-center gap-1.5 shadow-sm"
                   >
-                    <MapPin className="w-3 h-3 text-red-500" />
+                    <MapPin className="w-3 h-3 text-red-600" />
                     <span>Rekonstrukce bytu {nei.name}</span>
                   </Link>
                 ))}

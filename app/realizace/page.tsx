@@ -28,17 +28,17 @@ export default function RealizacePage() {
         ]}
       />
       <Navbar />
-      <main className="flex-1 bg-slate-950 text-white">
+      <main className="flex-1 bg-white text-slate-900">
         {/* Page Hero */}
-        <section className="relative py-16 lg:py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-b border-slate-800">
+        <section className="relative py-16 lg:py-20 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-b border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-            <span className="text-xs sm:text-sm font-black uppercase tracking-widest text-red-500 block">
+            <span className="text-xs sm:text-sm font-black uppercase tracking-widest text-red-600 block">
               Portfolio stavebních prací • Karlovarský kraj
             </span>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-slate-950">
               Fotogalerie našich realizací
             </h1>
-            <p className="text-sm sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
               Podívejte se na reálné výsledky naší práce. Od panelákových koupelen a jader až po kompletní proměny celých bytů.
             </p>
           </div>

@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { MobileFloatingBar } from "@/components/MobileFloatingBar";
@@ -8,16 +7,8 @@ import { ContactForm } from "@/components/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/lib/data";
 import { 
-  ShieldCheck, 
   CheckCircle2, 
-  Award, 
-  Users, 
-  Clock, 
-  BadgeCheck, 
-  Phone, 
-  Calculator,
-  ArrowRight,
-  Sparkles
+  Phone
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -41,17 +32,17 @@ export default function ONasPage() {
         ]}
       />
       <Navbar />
-      <main className="flex-1 bg-slate-950 text-white">
+      <main className="flex-1 bg-white text-slate-900">
         {/* Hero Section */}
-        <section className="relative py-16 lg:py-24 bg-gradient-to-b from-slate-900 to-slate-950 border-b border-slate-800">
+        <section className="relative py-16 lg:py-20 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-b border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-            <span className="text-xs sm:text-sm font-black uppercase tracking-widest text-red-500 block">
+            <span className="text-xs sm:text-sm font-black uppercase tracking-widest text-red-600 block">
               Stavební firma HANSBAU • Karlovarský kraj
             </span>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-slate-950">
               Kdo jsme a co děláme
             </h1>
-            <p className="text-sm sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
               Poctivé stavební řemeslo s tradicí rodinných zkušeností sahajících až do roku 1984. Specializujeme se na rekonstrukce bytů v celém Karlovarském kraji.
             </p>
           </div>
@@ -62,17 +53,17 @@ export default function ONasPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
               <div className="space-y-2">
-                <span className="text-xs font-bold uppercase tracking-widest text-red-500">
+                <span className="text-xs font-bold uppercase tracking-widest text-red-600">
                   Naše hodnoty & filozofie
                 </span>
-                <h2 className="text-2xl sm:text-4xl font-black uppercase text-white leading-tight">
+                <h2 className="text-2xl sm:text-4xl font-black uppercase text-slate-950 leading-tight">
                   Stavíme na důvěře, pevných cenách a čistotě
                 </h2>
               </div>
 
-              <div className="space-y-4 text-sm sm:text-base text-slate-300 leading-relaxed">
+              <div className="space-y-4 text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
                 <p>
-                  <strong className="text-white">HANSBAU s.r.o.</strong> je stavební firma se sídlem v Potočišti u Chebu, založená v roce 2016 s návazností na rodinnou řemeslnou tradici od roku 1984. Naší hlavní specializací jsou kompletní i částečné rekonstrukce bytů a koupelen.
+                  <strong className="text-slate-950 font-bold">HANSBAU s.r.o.</strong> je stavební firma se sídlem v Potočišti u Chebu, založená v roce 2016 s návazností na rodinnou řemeslnou tradici od roku 1984. Naší hlavní specializací jsou kompletní i částečné rekonstrukce bytů a koupelen.
                 </p>
                 <p>
                   Řešíme úpravy dispozic, bourací a přípravné práce, zednické práce, sádrokartony, omítky, velkoformátové obklady, dlažby, podlahy a dokončovací práce. V rámci každé rekonstrukce zajistíme také navazující profese, jako jsou instalatérské a elektrikářské práce včetně potřebných revizních zpráv přes naše stálé partnery.
@@ -84,20 +75,20 @@ export default function ONasPage() {
 
               {/* 4 Pillars Box */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
-                  <CheckCircle2 className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800 font-medium">
+                  <CheckCircle2 className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
                   <span>Položkový rozpočet bez skrytých víceprací</span>
                 </div>
-                <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
-                  <CheckCircle2 className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800 font-medium">
+                  <CheckCircle2 className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
                   <span>Pevná smlouva o dílo a záruka</span>
                 </div>
-                <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
-                  <CheckCircle2 className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800 font-medium">
+                  <CheckCircle2 className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
                   <span>Pojištění odpovědnosti pro vaši jistotu</span>
                 </div>
-                <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
-                  <CheckCircle2 className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800 font-medium">
+                  <CheckCircle2 className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
                   <span>Každodenní úklid a ohled na sousedy</span>
                 </div>
               </div>
@@ -105,8 +96,8 @@ export default function ONasPage() {
 
             {/* Founder Card with real photo */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="p-8 rounded-3xl bg-slate-900 border border-slate-800 space-y-6 shadow-2xl text-center">
-                <div className="relative w-40 h-40 mx-auto rounded-3xl overflow-hidden border-2 border-red-500 shadow-xl bg-slate-800">
+              <div className="p-8 rounded-3xl bg-slate-50 border border-slate-200 space-y-6 shadow-md text-center">
+                <div className="relative w-40 h-40 mx-auto rounded-3xl overflow-hidden border-2 border-red-500 shadow-lg bg-slate-200">
                   <Image
                     src={siteConfig.founderPhoto}
                     alt="Jan Červeňak - jednatel HANSBAU"
@@ -117,22 +108,22 @@ export default function ONasPage() {
                 </div>
 
                 <div className="space-y-1">
-                  <h3 className="text-xl font-bold text-white">{siteConfig.contactPerson}</h3>
-                  <div className="text-xs text-red-400 font-semibold uppercase tracking-wider">
+                  <h3 className="text-xl font-bold text-slate-900">{siteConfig.contactPerson}</h3>
+                  <div className="text-xs text-red-600 font-semibold uppercase tracking-wider">
                     {siteConfig.contactRole}
                   </div>
                 </div>
 
-                <p className="text-xs sm:text-sm text-slate-300 italic leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 italic leading-relaxed font-normal">
                   „Každou stavbu realizujeme tak, jako bychom stavěli pro sebe. Naší největší vizitkou je spokojený zákazník, který nás s čistým svědomím doporučí svým známým.“
                 </p>
 
-                <div className="pt-4 border-t border-slate-800 flex items-center justify-center gap-4 text-xs font-bold text-slate-300">
+                <div className="pt-4 border-t border-slate-200 flex items-center justify-center gap-4 text-xs font-bold text-slate-800">
                   <a
                     href={`tel:${siteConfig.phoneCZRaw}`}
-                    className="px-4 py-2 rounded-xl bg-slate-950 hover:bg-red-600 border border-slate-800 hover:border-red-600 text-white transition-all flex items-center gap-1.5"
+                    className="px-4 py-2 rounded-xl bg-white hover:bg-red-600 hover:text-white border border-slate-300 text-slate-900 transition-all flex items-center gap-1.5 shadow-sm"
                   >
-                    <Phone className="w-3.5 h-3.5 text-red-500" />
+                    <Phone className="w-3.5 h-3.5 text-red-600" />
                     <span>{siteConfig.phoneCZ}</span>
                   </a>
                 </div>
@@ -140,13 +131,13 @@ export default function ONasPage() {
 
               {/* Numbers */}
               <div className="grid grid-cols-2 gap-3">
-                <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 text-center space-y-1">
-                  <div className="text-2xl sm:text-3xl font-black text-red-500">40+</div>
-                  <div className="text-[11px] text-slate-300 font-semibold">Let tradice řemesla</div>
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1 shadow-sm">
+                  <div className="text-2xl sm:text-3xl font-black text-red-600">40+</div>
+                  <div className="text-[11px] text-slate-600 font-semibold">Let tradice řemesla</div>
                 </div>
-                <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 text-center space-y-1">
-                  <div className="text-2xl sm:text-3xl font-black text-amber-400">5.0 ★</div>
-                  <div className="text-[11px] text-slate-300 font-semibold">Google Recenze</div>
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1 shadow-sm">
+                  <div className="text-2xl sm:text-3xl font-black text-amber-500">5.0 ★</div>
+                  <div className="text-[11px] text-slate-600 font-semibold">Google Recenze</div>
                 </div>
               </div>
             </div>

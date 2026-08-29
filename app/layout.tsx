@@ -99,7 +99,7 @@ export default function RootLayout({
         <link rel="icon" href="/images/cropped-arrow-500-x-500-px-1.png" sizes="any" />
         <link rel="author" href="/llms.txt" />
       </head>
-      <body className="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col">
+      <body className="bg-white text-slate-900 font-sans antialiased min-h-screen flex flex-col">
         {children}
       </body>
     </html>

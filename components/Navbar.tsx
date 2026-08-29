@@ -33,26 +33,26 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-slate-950/95 backdrop-blur-md border-b border-slate-800/80 transition-all duration-300">
+    <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-300 shadow-sm">
       {/* Top micro-bar */}
-      <div className="bg-slate-900 text-slate-300 text-xs py-1.5 px-4 border-b border-slate-800 hidden md:block">
+      <div className="bg-slate-100 text-slate-600 text-xs py-1.5 px-4 border-b border-slate-200/80 hidden md:block">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5 text-amber-400 font-medium">
-              <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-              <span>Google Hodnocení 5.0 ★ (Cheb, Karlovy Vary, Sokolov, Aš)</span>
+            <span className="flex items-center gap-1.5 text-slate-800 font-semibold">
+              <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
+              <span>Google Hodnocení 5.0 ★ (Karlovarský kraj)</span>
             </span>
-            <span className="text-slate-400 hidden lg:inline">
-              Působnost: Celý Karlovarský kraj • Bezplatná prohlídka a kalkulace
+            <span className="text-slate-500 hidden lg:inline">
+              Působnost: Cheb, Karlovy Vary, Sokolov, Aš a okolí • Prohlídka a rozpočet ZDARMA
             </span>
           </div>
 
           <div className="flex items-center gap-4">
-            <span className="text-slate-400">Po–So: 7:00 – 19:00</span>
-            <div className="h-3 w-[1px] bg-slate-700"></div>
+            <span className="text-slate-500">Po–So: 7:00 – 19:00</span>
+            <div className="h-3 w-[1px] bg-slate-300"></div>
             <a
               href={`tel:${siteConfig.phoneCZRaw}`}
-              className="text-red-400 hover:text-red-300 font-bold flex items-center gap-1"
+              className="text-red-600 hover:text-red-700 font-bold flex items-center gap-1.5 transition-colors"
             >
               <Phone className="w-3 h-3" />
               <span>{siteConfig.phoneCZ}</span>
@@ -81,7 +81,7 @@ export function Navbar() {
         <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
           <Link
             href="/"
-            className="px-3 py-2 text-sm font-semibold text-slate-200 hover:text-white hover:bg-slate-900 rounded-lg transition-colors"
+            className="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-red-600 hover:bg-slate-50 rounded-xl transition-colors"
           >
             Domů
           </Link>
@@ -94,46 +94,46 @@ export function Navbar() {
           >
             <Link
               href="/sluzby"
-              className="px-3 py-2 text-sm font-semibold text-slate-200 hover:text-white hover:bg-slate-900 rounded-lg transition-colors flex items-center gap-1"
+              className="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-red-600 hover:bg-slate-50 rounded-xl transition-colors flex items-center gap-1"
             >
               <span>Služby</span>
-              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180 text-red-500' : 'text-slate-400'}`} />
+              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180 text-red-600' : 'text-slate-400'}`} />
             </Link>
 
             {/* Dropdown Menu */}
             {servicesDropdownOpen && (
-              <div className="absolute top-full left-0 w-[460px] bg-slate-900/98 backdrop-blur-xl border border-slate-800 rounded-2xl shadow-2xl p-3 grid grid-cols-1 gap-1.5 animate-in fade-in slide-in-from-top-2 duration-200">
+              <div className="absolute top-full left-0 w-[440px] bg-white border border-slate-200 rounded-2xl shadow-xl p-3 grid grid-cols-1 gap-1.5 animate-in fade-in slide-in-from-top-2 duration-200">
                 {services.map((srv) => {
                   const Icon = iconMap[srv.iconName] || Home;
                   return (
                     <Link
                       key={srv.slug}
                       href={`/${srv.slug}`}
-                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-800/90 transition-colors group"
+                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group"
                       onClick={() => setServicesDropdownOpen(false)}
                     >
-                      <div className="w-8 h-8 rounded-lg bg-red-600/15 border border-red-500/30 flex items-center justify-center text-red-500 group-hover:bg-red-600 group-hover:text-white transition-colors shrink-0 mt-0.5">
+                      <div className="w-8 h-8 rounded-lg bg-red-50 border border-red-100 flex items-center justify-center text-red-600 group-hover:bg-red-600 group-hover:text-white transition-colors shrink-0 mt-0.5">
                         <Icon className="w-4 h-4" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="text-xs font-bold text-white group-hover:text-red-400 transition-colors flex items-center justify-between">
+                        <div className="text-xs font-bold text-slate-900 group-hover:text-red-600 transition-colors flex items-center justify-between">
                           <span>{srv.title}</span>
                           {srv.priority === "hlavní" && (
-                            <span className="text-[10px] bg-red-600/20 text-red-400 px-1.5 py-0.5 rounded font-semibold">Hlavní</span>
+                            <span className="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-semibold">Hlavní</span>
                           )}
                         </div>
-                        <div className="text-[11px] text-slate-400 line-clamp-1 mt-0.5">
+                        <div className="text-[11px] text-slate-500 line-clamp-1 mt-0.5">
                           {srv.shortDesc}
                         </div>
                       </div>
                     </Link>
                   );
                 })}
-                <div className="pt-2 border-t border-slate-800/80 flex items-center justify-between px-2 text-xs">
-                  <span className="text-slate-400">Kompletní práce na klíč</span>
+                <div className="pt-2 border-t border-slate-100 flex items-center justify-between px-2 text-xs">
+                  <span className="text-slate-500">Práce na klíč s pevnou cenou</span>
                   <Link 
                     href="/sluzby" 
-                    className="text-red-400 hover:text-red-300 font-semibold flex items-center gap-1"
+                    className="text-red-600 hover:text-red-700 font-bold flex items-center gap-1"
                     onClick={() => setServicesDropdownOpen(false)}
                   >
                     <span>Všechny služby</span>
@@ -151,15 +151,15 @@ export function Navbar() {
             onMouseLeave={() => setLocationsDropdownOpen(false)}
           >
             <button
-              className="px-3 py-2 text-sm font-semibold text-slate-200 hover:text-white hover:bg-slate-900 rounded-lg transition-colors flex items-center gap-1"
+              className="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-red-600 hover:bg-slate-50 rounded-xl transition-colors flex items-center gap-1"
             >
               <span>Lokality</span>
-              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${locationsDropdownOpen ? 'rotate-180 text-red-500' : 'text-slate-400'}`} />
+              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${locationsDropdownOpen ? 'rotate-180 text-red-600' : 'text-slate-400'}`} />
             </button>
 
             {/* Dropdown Menu */}
             {locationsDropdownOpen && (
-              <div className="absolute top-full left-0 w-72 bg-slate-900/98 backdrop-blur-xl border border-slate-800 rounded-2xl shadow-2xl p-3 grid grid-cols-1 gap-1 animate-in fade-in slide-in-from-top-2 duration-200">
+              <div className="absolute top-full left-0 w-72 bg-white border border-slate-200 rounded-2xl shadow-xl p-3 grid grid-cols-1 gap-1 animate-in fade-in slide-in-from-top-2 duration-200">
                 <div className="text-[11px] font-bold text-slate-400 px-2.5 py-1 uppercase tracking-wider">
                   Města v Karlovarském kraji
                 </div>
@@ -167,14 +167,14 @@ export function Navbar() {
                   <Link
                     key={loc.slug}
                     href={`/${loc.slug}`}
-                    className="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-slate-200 hover:text-white hover:bg-slate-800/90 transition-colors group"
+                    className="flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-slate-700 hover:text-red-600 hover:bg-red-50/60 transition-colors group"
                     onClick={() => setLocationsDropdownOpen(false)}
                   >
                     <div className="flex items-center gap-2">
-                      <MapPin className="w-3.5 h-3.5 text-red-500 group-hover:scale-110 transition-transform" />
+                      <MapPin className="w-3.5 h-3.5 text-red-600 group-hover:scale-110 transition-transform" />
                       <span>{loc.city}</span>
                     </div>
-                    <span className="text-[10px] text-slate-500 group-hover:text-red-400">Rekonstrukce bytu</span>
+                    <span className="text-[10px] text-slate-400 group-hover:text-red-600">Rekonstrukce bytu</span>
                   </Link>
                 ))}
               </div>
@@ -182,29 +182,29 @@ export function Navbar() {
           </div>
 
           <Link
+            href="/#kalkulacka"
+            className="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-red-600 hover:bg-slate-50 rounded-xl transition-colors"
+          >
+            Kalkulačka
+          </Link>
+
+          <Link
             href="/o-nas"
-            className="px-3 py-2 text-sm font-semibold text-slate-200 hover:text-white hover:bg-slate-900 rounded-lg transition-colors"
+            className="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-red-600 hover:bg-slate-50 rounded-xl transition-colors"
           >
             O nás
           </Link>
 
           <Link
             href="/realizace"
-            className="px-3 py-2 text-sm font-semibold text-slate-200 hover:text-white hover:bg-slate-900 rounded-lg transition-colors"
+            className="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-red-600 hover:bg-slate-50 rounded-xl transition-colors"
           >
             Realizace
           </Link>
 
           <Link
-            href="/#reference"
-            className="px-3 py-2 text-sm font-semibold text-slate-200 hover:text-white hover:bg-slate-900 rounded-lg transition-colors"
-          >
-            Reference
-          </Link>
-
-          <Link
             href="/kontakt"
-            className="px-3 py-2 text-sm font-semibold text-slate-200 hover:text-white hover:bg-slate-900 rounded-lg transition-colors"
+            className="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-red-600 hover:bg-slate-50 rounded-xl transition-colors"
           >
             Kontakt
           </Link>
@@ -215,16 +215,16 @@ export function Navbar() {
           {/* Quick Call */}
           <a
             href={`tel:${siteConfig.phoneCZRaw}`}
-            className="flex items-center gap-2.5 px-3.5 py-2 bg-slate-900 hover:bg-slate-800 border border-slate-700/60 rounded-xl text-slate-200 hover:text-white transition-all group"
+            className="flex items-center gap-2.5 px-3.5 py-2 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl text-slate-800 transition-all group"
           >
-            <div className="w-8 h-8 rounded-lg bg-red-600/20 text-red-500 group-hover:bg-red-600 group-hover:text-white flex items-center justify-center transition-colors">
+            <div className="w-8 h-8 rounded-lg bg-red-600/10 text-red-600 group-hover:bg-red-600 group-hover:text-white flex items-center justify-center transition-colors">
               <Phone className="w-4 h-4" />
             </div>
             <div className="text-left">
-              <div className="text-[10px] text-slate-400 font-medium tracking-wider uppercase">
-                Máte dotaz? Volejte
+              <div className="text-[10px] text-slate-500 font-medium tracking-wider uppercase">
+                Zavolejte nám
               </div>
-              <div className="text-xs font-bold text-white tracking-wide">
+              <div className="text-xs font-bold text-slate-900 tracking-wide">
                 {siteConfig.phoneCZ}
               </div>
             </div>
@@ -233,7 +233,7 @@ export function Navbar() {
           {/* Primary CTA button */}
           <Link
             href="/#kontakt"
-            className="px-4 py-2.5 bg-red-600 hover:bg-red-700 text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-xl shadow-lg shadow-red-600/25 hover:shadow-red-600/40 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+            className="px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-xl shadow-md shadow-red-600/20 hover:shadow-lg hover:shadow-red-600/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
           >
             Nezávazná nabídka
           </Link>
@@ -243,7 +243,7 @@ export function Navbar() {
         <div className="flex items-center gap-2 lg:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white hover:bg-slate-800 transition-colors"
+            className="p-2.5 rounded-xl bg-slate-100 border border-slate-200 text-slate-700 hover:text-slate-900 hover:bg-slate-200 transition-colors"
             aria-label="Přepnout navigaci"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -253,11 +253,11 @@ export function Navbar() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-slate-950/98 border-b border-slate-800 px-4 pt-3 pb-6 space-y-3 animate-in slide-in-from-top duration-200 max-h-[85vh] overflow-y-auto">
+        <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 animate-in slide-in-from-top duration-200 max-h-[85vh] overflow-y-auto shadow-xl">
           <div className="grid grid-cols-1 gap-1">
             <Link
               href="/"
-              className="px-4 py-2.5 text-base font-semibold text-white hover:bg-slate-900 rounded-xl"
+              className="px-4 py-2.5 text-base font-semibold text-slate-900 hover:bg-slate-50 rounded-xl"
               onClick={() => setMobileMenuOpen(false)}
             >
               Domů
@@ -271,7 +271,7 @@ export function Navbar() {
               <Link
                 key={srv.slug}
                 href={`/${srv.slug}`}
-                className="flex items-center gap-3 px-4 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-900 rounded-xl"
+                className="flex items-center gap-3 px-4 py-2 text-sm text-slate-700 hover:text-red-600 hover:bg-slate-50 rounded-xl font-medium"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <div className="w-2 h-2 rounded-full bg-red-600"></div>
@@ -288,18 +288,26 @@ export function Navbar() {
                 <Link
                   key={loc.slug}
                   href={`/${loc.slug}`}
-                  className="px-3 py-1.5 text-xs text-slate-300 hover:text-white hover:bg-slate-900 rounded-lg flex items-center gap-1.5"
+                  className="px-3 py-1.5 text-xs text-slate-700 hover:text-red-600 hover:bg-slate-50 rounded-lg flex items-center gap-1.5 font-medium"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  <MapPin className="w-3 h-3 text-red-500" />
+                  <MapPin className="w-3 h-3 text-red-600" />
                   <span>{loc.city}</span>
                 </Link>
               ))}
             </div>
 
             <Link
+              href="/#kalkulacka"
+              className="px-4 py-2.5 text-base font-semibold text-slate-900 hover:bg-slate-50 rounded-xl mt-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Kalkulačka rozpočtu
+            </Link>
+
+            <Link
               href="/o-nas"
-              className="px-4 py-2.5 text-base font-semibold text-white hover:bg-slate-900 rounded-xl mt-2"
+              className="px-4 py-2.5 text-base font-semibold text-slate-900 hover:bg-slate-50 rounded-xl"
               onClick={() => setMobileMenuOpen(false)}
             >
               O nás
@@ -307,23 +315,15 @@ export function Navbar() {
 
             <Link
               href="/realizace"
-              className="px-4 py-2.5 text-base font-semibold text-white hover:bg-slate-900 rounded-xl"
+              className="px-4 py-2.5 text-base font-semibold text-slate-900 hover:bg-slate-50 rounded-xl"
               onClick={() => setMobileMenuOpen(false)}
             >
               Realizace
             </Link>
 
             <Link
-              href="/#reference"
-              className="px-4 py-2.5 text-base font-semibold text-white hover:bg-slate-900 rounded-xl"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Reference & Recenze
-            </Link>
-
-            <Link
               href="/kontakt"
-              className="px-4 py-2.5 text-base font-semibold text-white hover:bg-slate-900 rounded-xl"
+              className="px-4 py-2.5 text-base font-semibold text-slate-900 hover:bg-slate-50 rounded-xl"
               onClick={() => setMobileMenuOpen(false)}
             >
               Kontakt
@@ -331,18 +331,18 @@ export function Navbar() {
           </div>
 
           {/* Mobile Call CTA */}
-          <div className="pt-2 border-t border-slate-800 space-y-2">
+          <div className="pt-2 border-t border-slate-200 space-y-2">
             <a
               href={`tel:${siteConfig.phoneCZRaw}`}
-              className="w-full flex items-center justify-center gap-2 py-3 bg-slate-900 border border-slate-700 rounded-xl text-white font-bold text-sm"
+              className="w-full flex items-center justify-center gap-2 py-3 bg-slate-100 border border-slate-200 rounded-xl text-slate-900 font-bold text-sm"
             >
-              <Phone className="w-4 h-4 text-red-500" />
+              <Phone className="w-4 h-4 text-red-600" />
               <span>Zavolat: {siteConfig.phoneCZ}</span>
             </a>
 
             <Link
               href="/#kontakt"
-              className="w-full flex items-center justify-center py-3 bg-red-600 text-white font-bold text-sm uppercase tracking-wider rounded-xl shadow-lg shadow-red-600/30"
+              className="w-full flex items-center justify-center py-3 bg-red-600 text-white font-bold text-sm uppercase tracking-wider rounded-xl shadow-md shadow-red-600/20"
               onClick={() => setMobileMenuOpen(false)}
             >
               Nezávazná nabídka zdarma
