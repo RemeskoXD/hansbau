@@ -16,9 +16,9 @@ export function ServiceAreaMap() {
   };
 
   return (
-    <section className="py-20 bg-white text-slate-900 relative overflow-hidden border-b border-slate-200" id="pusobnost">
+    <section className="py-20 bg-white text-slate-900 relative overflow-hidden border-b border-slate-200/80" id="pusobnost">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 sm:p-12 rounded-3xl bg-slate-50 border border-slate-200 shadow-md relative overflow-hidden">
+        <div className="p-8 sm:p-12 rounded-3xl bg-slate-50/80 border border-slate-200 shadow-md relative overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Text details */}
             <div className="lg:col-span-6 space-y-6">
@@ -32,7 +32,7 @@ export function ServiceAreaMap() {
               </div>
 
               <p className="text-sm text-slate-600 leading-relaxed font-normal">
-                Naše centrála v Potočišti u Chebu nám umožňuje bleskový dojezd po celém Karlovarském kraji. Osobní prohlídku a zaměření provádíme bezplatně.
+                Naše centrála v Potočišti u Chebu nám umožňuje rychlý dojezd po celém Karlovarském kraji. Osobní prohlídku a zaměření prostoru provádíme bezplatně.
               </p>
 
               {/* City Badges with Clickable Prolinks */}
@@ -41,7 +41,7 @@ export function ServiceAreaMap() {
                   <Link
                     key={loc.id}
                     href={`/${loc.slug}`}
-                    className="p-3 rounded-2xl bg-white border border-slate-200 hover:border-red-500 transition-all flex items-center justify-between group shadow-sm hover:shadow-md"
+                    className="p-3 rounded-2xl bg-white border border-slate-200 hover:border-red-500 transition-all flex items-center justify-between group shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
                   >
                     <div className="flex items-center gap-2.5">
                       <div className="w-7 h-7 rounded-lg bg-red-50 text-red-600 flex items-center justify-center shrink-0 group-hover:bg-red-600 group-hover:text-white transition-colors">
@@ -51,7 +51,7 @@ export function ServiceAreaMap() {
                         <div className="text-xs font-bold text-slate-900 group-hover:text-red-600 transition-colors">
                           {loc.city}
                         </div>
-                        <div className="text-[10px] text-slate-500">
+                        <div className="text-[10px] text-slate-500 font-medium">
                           {driveTimes[loc.id] || "Karlovarský kraj"}
                         </div>
                       </div>
@@ -64,13 +64,13 @@ export function ServiceAreaMap() {
 
             {/* Visual Interactive Map / Location embed */}
             <div className="lg:col-span-6">
-              <div className="relative aspect-[16/11] rounded-2xl overflow-hidden border border-slate-300 shadow-md bg-white">
+              <div className="relative aspect-[16/11] rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-white">
                 <iframe
                   title="HANSBAU Působnost v Karlovarském kraji"
                   src="https://maps.google.com/maps?q=Poto%C4%8Di%C5%A1t%C4%9B+21,+Odrava,+350+02+Cheb&t=&z=10&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="100%"
-                  className="border-0 opacity-90 hover:opacity-100 transition-opacity"
+                  className="border-0 opacity-95 hover:opacity-100 transition-opacity"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>

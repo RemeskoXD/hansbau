@@ -23,7 +23,7 @@ export function FAQSection({
   };
 
   return (
-    <section className="py-20 bg-slate-50 text-slate-900 relative overflow-hidden border-b border-slate-200" id="faq">
+    <section className="py-20 bg-slate-50/70 text-slate-900 relative overflow-hidden border-b border-slate-200/80" id="faq">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 space-y-3">
@@ -43,7 +43,7 @@ export function FAQSection({
             return (
               <div
                 key={idx}
-                className="rounded-2xl bg-white border border-slate-200 overflow-hidden transition-all shadow-sm"
+                className="rounded-2xl bg-white border border-slate-200/90 overflow-hidden transition-all shadow-sm"
               >
                 <button
                   onClick={() => toggle(idx)}

@@ -3,7 +3,7 @@ import { reviews } from "@/lib/data";
 
 export function GoogleReviewsSection() {
   return (
-    <section className="py-20 bg-slate-50 text-slate-900 relative overflow-hidden border-b border-slate-200" id="reference">
+    <section className="py-20 bg-slate-50/70 text-slate-900 relative overflow-hidden border-b border-slate-200/80" id="reference">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
@@ -24,7 +24,7 @@ export function GoogleReviewsSection() {
             <div>
               <div className="flex items-center gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-amber-500 text-amber-500" />
+                  <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
               <div className="text-xs font-bold text-slate-900 mt-1">
@@ -48,13 +48,13 @@ export function GoogleReviewsSection() {
           {reviews.map((rev) => (
             <div
               key={rev.id}
-              className="p-6 rounded-3xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all flex flex-col justify-between space-y-4 shadow-sm"
+              className="p-6 rounded-3xl bg-white border border-slate-200/90 hover:border-slate-300 hover:shadow-md transition-all flex flex-col justify-between space-y-4 shadow-sm transform hover:-translate-y-0.5"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1">
                     {[...Array(rev.rating)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
+                      <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
                   <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-green-50 text-green-700 border border-green-200 flex items-center gap-1">

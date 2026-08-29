@@ -33,17 +33,17 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-200 transition-all duration-300 shadow-sm">
+    <header className="sticky top-0 z-50 w-full glass-header border-b border-slate-200/90 transition-all duration-300 shadow-[0_1px_6px_0_rgba(0,0,0,0.03)]">
       {/* Top micro-bar */}
-      <div className="bg-slate-100 text-slate-600 text-xs py-1.5 px-4 border-b border-slate-200/80 hidden md:block">
+      <div className="bg-slate-50 text-slate-600 text-xs py-1.5 px-4 border-b border-slate-200/70 hidden md:block">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5 text-slate-800 font-semibold">
-              <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
+              <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
               <span>Google Hodnocení 5.0 ★ (Karlovarský kraj)</span>
             </span>
             <span className="text-slate-500 hidden lg:inline">
-              Působnost: Cheb, Karlovy Vary, Sokolov, Aš a okolí • Prohlídka a rozpočet ZDARMA
+              Cheb, Karlovy Vary, Sokolov, Aš • Osobní prohlídka a rozpočet ZDARMA
             </span>
           </div>
 
@@ -65,7 +65,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative h-12 w-48 transition-transform group-hover:scale-[1.02]">
+          <div className="relative h-12 w-48 transition-transform duration-300 group-hover:scale-[1.02]">
             <Image
               src="/images/Logo-17.webp"
               alt="HANSBAU - Rekonstrukce bytů a koupelen"
@@ -78,7 +78,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+        <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5">
           <Link
             href="/"
             className="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-red-600 hover:bg-slate-50 rounded-xl transition-colors"
@@ -119,7 +119,7 @@ export function Navbar() {
                         <div className="text-xs font-bold text-slate-900 group-hover:text-red-600 transition-colors flex items-center justify-between">
                           <span>{srv.title}</span>
                           {srv.priority === "hlavní" && (
-                            <span className="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.5 rounded font-semibold">Hlavní</span>
+                            <span className="text-[10px] bg-red-50 text-red-700 border border-red-200 px-1.5 py-0.5 rounded font-semibold">Hlavní</span>
                           )}
                         </div>
                         <div className="text-[11px] text-slate-500 line-clamp-1 mt-0.5">
@@ -130,7 +130,7 @@ export function Navbar() {
                   );
                 })}
                 <div className="pt-2 border-t border-slate-100 flex items-center justify-between px-2 text-xs">
-                  <span className="text-slate-500">Práce na klíč s pevnou cenou</span>
+                  <span className="text-slate-500 font-medium">Práce na klíč s pevnou cenou</span>
                   <Link 
                     href="/sluzby" 
                     className="text-red-600 hover:text-red-700 font-bold flex items-center gap-1"
@@ -215,9 +215,9 @@ export function Navbar() {
           {/* Quick Call */}
           <a
             href={`tel:${siteConfig.phoneCZRaw}`}
-            className="flex items-center gap-2.5 px-3.5 py-2 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl text-slate-800 transition-all group"
+            className="flex items-center gap-2.5 px-3.5 py-2 bg-slate-50 hover:bg-slate-100/80 border border-slate-200 rounded-xl text-slate-800 transition-all group"
           >
-            <div className="w-8 h-8 rounded-lg bg-red-600/10 text-red-600 group-hover:bg-red-600 group-hover:text-white flex items-center justify-center transition-colors">
+            <div className="w-8 h-8 rounded-lg bg-red-50 text-red-600 group-hover:bg-red-600 group-hover:text-white flex items-center justify-center transition-colors">
               <Phone className="w-4 h-4" />
             </div>
             <div className="text-left">

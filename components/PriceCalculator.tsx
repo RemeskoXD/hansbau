@@ -5,7 +5,13 @@ import {
   CheckCircle2, 
   ArrowRight, 
   ShieldCheck, 
-  Clock
+  Clock,
+  Sparkles,
+  Layers,
+  Wrench,
+  Zap,
+  Droplets,
+  Paintbrush
 } from "lucide-react";
 import { locations } from "@/lib/data";
 
@@ -96,7 +102,7 @@ export function PriceCalculator() {
   };
 
   return (
-    <section className="py-20 bg-white text-slate-900 relative overflow-hidden border-b border-slate-200" id="kalkulacka">
+    <section className="py-20 bg-white text-slate-900 relative overflow-hidden border-b border-slate-200/80" id="kalkulacka">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
@@ -113,8 +119,8 @@ export function PriceCalculator() {
 
         {/* Calculator Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Controls Column (8 cols) */}
-          <div className="lg:col-span-7 space-y-8 bg-slate-50 border border-slate-200 p-6 sm:p-8 rounded-3xl shadow-sm">
+          {/* Controls Column (7 cols) */}
+          <div className="lg:col-span-7 space-y-7 bg-slate-50/90 border border-slate-200 p-6 sm:p-8 rounded-3xl shadow-sm">
             {/* Step 1: Typ nemovitosti */}
             <div className="space-y-3">
               <label className="text-xs font-bold uppercase tracking-wider text-slate-700 block">
@@ -124,7 +130,7 @@ export function PriceCalculator() {
                 <button
                   type="button"
                   onClick={() => setPropertyType("panel")}
-                  className={`p-3 rounded-2xl border text-center transition-all ${
+                  className={`p-3.5 rounded-2xl border text-center transition-all ${
                     propertyType === "panel"
                       ? "bg-red-600 text-white border-red-600 shadow-md shadow-red-600/20"
                       : "bg-white text-slate-800 border-slate-200 hover:border-slate-300 shadow-sm"
@@ -137,7 +143,7 @@ export function PriceCalculator() {
                 <button
                   type="button"
                   onClick={() => setPropertyType("brick")}
-                  className={`p-3 rounded-2xl border text-center transition-all ${
+                  className={`p-3.5 rounded-2xl border text-center transition-all ${
                     propertyType === "brick"
                       ? "bg-red-600 text-white border-red-600 shadow-md shadow-red-600/20"
                       : "bg-white text-slate-800 border-slate-200 hover:border-slate-300 shadow-sm"
@@ -150,14 +156,14 @@ export function PriceCalculator() {
                 <button
                   type="button"
                   onClick={() => setPropertyType("core")}
-                  className={`p-3 rounded-2xl border text-center transition-all ${
+                  className={`p-3.5 rounded-2xl border text-center transition-all ${
                     propertyType === "core"
                       ? "bg-red-600 text-white border-red-600 shadow-md shadow-red-600/20"
                       : "bg-white text-slate-800 border-slate-200 hover:border-slate-300 shadow-sm"
                   }`}
                 >
                   <div className="text-xs sm:text-sm font-bold">Jádro / Koupelna</div>
-                  <div className={`text-[10px] mt-0.5 ${propertyType === "core" ? "text-red-100" : "text-slate-500"}`}>Jen sanita a WC</div>
+                  <div className={`text-[10px] mt-0.5 ${propertyType === "core" ? "text-red-100" : "text-slate-500"}`}>Sanita a koupelna</div>
                 </button>
               </div>
             </div>
@@ -255,7 +261,7 @@ export function PriceCalculator() {
             </div>
 
             {/* Step 4: Standard & Město */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
               <div>
                 <label className="text-xs font-bold uppercase tracking-wider text-slate-700 block mb-2">
                   4. Standard vybavení
@@ -326,7 +332,7 @@ export function PriceCalculator() {
                 <div className="text-xs font-bold uppercase tracking-wider text-slate-800">
                   Co vše je v tomto odhadu zahrnuto:
                 </div>
-                <div className="space-y-1.5 text-xs text-slate-700 font-medium">
+                <div className="space-y-2 text-xs text-slate-700 font-medium">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-3.5 h-3.5 text-green-600 shrink-0" />
                     <span>Bourací práce & odvoz suti kontejnerem</span>
@@ -362,7 +368,7 @@ export function PriceCalculator() {
               <button
                 type="button"
                 onClick={handlePreFill}
-                className="w-full py-4 px-6 bg-red-600 hover:bg-red-700 text-white font-black text-xs sm:text-sm uppercase tracking-wider rounded-2xl shadow-lg shadow-red-600/25 hover:shadow-xl hover:shadow-red-600/35 transition-all flex items-center justify-center gap-2"
+                className="w-full py-4 px-6 bg-red-600 hover:bg-red-700 text-white font-black text-xs sm:text-sm uppercase tracking-wider rounded-2xl shadow-md shadow-red-600/25 hover:shadow-lg hover:shadow-red-600/35 transition-all flex items-center justify-center gap-2 transform hover:-translate-y-0.5 active:translate-y-0"
               >
                 <span>Objednat bezplatné zaměření na místě</span>
                 <ArrowRight className="w-4 h-4" />

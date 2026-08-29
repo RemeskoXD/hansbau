@@ -5,7 +5,8 @@ import {
   Sparkles, 
   ShieldAlert, 
   MapPin,
-  Award
+  Award,
+  CheckCircle2
 } from "lucide-react";
 import { whyUsPoints } from "@/lib/data";
 
@@ -20,9 +21,9 @@ const iconMap: Record<string, typeof BadgeCheck> = {
 
 export function WhyUsSection() {
   return (
-    <section className="py-20 bg-slate-50 text-slate-900 relative overflow-hidden border-b border-slate-200" id="proc-hansbau">
+    <section className="py-20 bg-slate-50/70 text-slate-900 relative overflow-hidden border-b border-slate-200/80" id="proc-hansbau">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           {/* Left Column: Heading & Guarantee Box */}
           <div className="lg:col-span-5 space-y-6">
             <div className="space-y-2">
@@ -39,9 +40,9 @@ export function WhyUsSection() {
             </p>
 
             {/* Guarantee Highlight Card */}
-            <div className="p-6 rounded-3xl bg-white border border-slate-200 space-y-3 shadow-md">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-red-600 flex items-center justify-center text-white font-black shadow-md">
+            <div className="p-6 rounded-3xl bg-white border border-slate-200/90 space-y-3 shadow-md">
+              <div className="flex items-center gap-3.5">
+                <div className="w-12 h-12 rounded-2xl bg-red-600 flex items-center justify-center text-white font-black shadow-md shrink-0">
                   <Award className="w-6 h-6" />
                 </div>
                 <div>
@@ -53,7 +54,7 @@ export function WhyUsSection() {
                   </div>
                 </div>
               </div>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <p className="text-xs text-slate-600 leading-relaxed font-normal">
                 Cena sjednaná ve smlouvě o dílo je konečná. Jakékoliv případné úpravy jsou vždy předem schváleny písemným dodatkem.
               </p>
             </div>
@@ -66,7 +67,7 @@ export function WhyUsSection() {
               return (
                 <div
                   key={idx}
-                  className="p-5 rounded-2xl bg-white border border-slate-200 hover:border-slate-300 hover:shadow-md transition-all space-y-2.5 shadow-sm"
+                  className="p-5 rounded-2xl bg-white border border-slate-200/90 hover:border-slate-300 hover:shadow-md transition-all space-y-2.5 shadow-sm transform hover:-translate-y-0.5"
                 >
                   <div className="w-10 h-10 rounded-xl bg-red-50 border border-red-100 text-red-600 flex items-center justify-center">
                     <Icon className="w-5 h-5" />
@@ -74,7 +75,7 @@ export function WhyUsSection() {
                   <h3 className="text-sm sm:text-base font-bold text-slate-900">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <p className="text-xs text-slate-600 leading-relaxed font-normal">
                     {item.desc}
                   </p>
                 </div>

@@ -5,7 +5,7 @@ import { siteConfig, services, locations } from "@/lib/data";
 
 export function Footer() {
   return (
-    <footer className="bg-slate-950 text-slate-400 border-t border-slate-800/80 pt-16 pb-24 lg:pb-12">
+    <footer className="bg-slate-950 text-slate-400 border-t border-slate-800 pt-16 pb-24 lg:pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 pb-12 border-b border-slate-800">
           {/* Column 1: Company Profile & Rating */}
@@ -16,10 +16,10 @@ export function Footer() {
                 alt="HANSBAU - Rekonstrukce bytů a koupelen"
                 fill
                 sizes="180px"
-                className="object-contain object-left"
+                className="object-contain object-left brightness-110"
               />
             </div>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
               Profesionální stavební firma se specializací na kompletní i částečné rekonstrukce bytů, koupelen a bytových jader v Karlovarském kraji.
             </p>
 
@@ -29,7 +29,7 @@ export function Footer() {
                 5.0
               </div>
               <div>
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-0.5">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                   ))}

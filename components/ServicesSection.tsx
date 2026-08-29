@@ -47,10 +47,10 @@ export function ServicesSection() {
             return (
               <div
                 key={srv.id}
-                className={`group relative bg-white border rounded-3xl overflow-hidden transition-all duration-300 flex flex-col justify-between hover:shadow-xl ${
+                className={`group relative bg-white rounded-3xl overflow-hidden transition-all duration-300 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 ${
                   isMain 
-                    ? "border-red-500 shadow-md shadow-red-500/10 md:col-span-2 lg:col-span-1 ring-2 ring-red-500/20" 
-                    : "border-slate-200 hover:border-slate-300 shadow-sm"
+                    ? "border-2 border-red-500 shadow-md shadow-red-500/10 md:col-span-2 lg:col-span-1" 
+                    : "border border-slate-200 hover:border-slate-300 shadow-sm"
                 }`}
               >
                 <div>
@@ -66,8 +66,8 @@ export function ServicesSection() {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
                     
                     {/* Category Icon */}
-                    <div className="absolute top-4 left-4 w-12 h-12 rounded-2xl bg-red-600 text-white flex items-center justify-center shadow-md">
-                      <Icon className="w-6 h-6" />
+                    <div className="absolute top-4 left-4 w-11 h-11 rounded-2xl bg-red-600 text-white flex items-center justify-center shadow-md">
+                      <Icon className="w-5 h-5" />
                     </div>
 
                     {isMain && (
@@ -91,7 +91,7 @@ export function ServicesSection() {
                     </p>
 
                     {/* Features checklist */}
-                    <div className="space-y-1.5 pt-2 border-t border-slate-100">
+                    <div className="space-y-2 pt-2 border-t border-slate-100">
                       {srv.features.slice(0, 3).map((feat, idx) => (
                         <div key={idx} className="flex items-start gap-2 text-xs text-slate-700 font-medium">
                           <CheckCircle2 className="w-3.5 h-3.5 text-red-600 shrink-0 mt-0.5" />
