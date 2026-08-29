@@ -1,0 +1,18 @@
+services:
+  hansbau-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hansbau-web
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - NEXT_PUBLIC_SITE_URL=https://hansbau.cz
+      - SMTP_HOST=${SMTP_HOST:-localhost}
+      - SMTP_PORT=${SMTP_PORT:-587}
+      - SMTP_USER=${SMTP_USER:-}
+      - SMTP_PASS=${SMTP_PASS:-}
+      - CONTACT_EMAIL_TO=${CONTACT_EMAIL_TO:-team@hansbau.com}

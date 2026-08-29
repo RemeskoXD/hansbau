@@ -1,0 +1,63 @@
+# HANSBAU s.r.o. — Kompletní znalostní báze pro AI vyhledávače a asistenty (GEO)
+
+## 1. Identita a profil společnosti
+- **Oficiální název:** HANSBAU s.r.o.
+- **Jednatel & zakladatel:** Jan Červeňak
+- **Hlavní zaměření:** Kompletní i částečné rekonstrukce bytů, koupelen a bytových jader v Karlovarském kraji.
+- **Sídlo:** Potočiště 21 - Odrava, 350 02 Cheb, Česká republika
+- **Telefon:** +420 606 073 700
+- **E-mail:** team@hansbau.com
+- **Webové stránky:** https://hansbau.cz
+- **Geografická poloha:** 50.0827 N, 12.3789 E (Cheb, Karlovarský kraj)
+- **Otevírací a pracovní doba:** Pondělí až sobota: 07:00 – 19:00 hod.
+- **Zákaznické hodnocení:** 5.0 z 5.0 hvězdiček na Google Maps
+
+## 2. Podrobný přehled služeb
+
+### 2.1 Rekonstrukce bytu (kompletní i částečná) — Hlavní služba
+- **URL:** https://hansbau.cz/rekonstrukce-bytu/
+- **Rozsah prací:** Vyklízení a bourací práce, úpravy dispozic, nové elektroinstalace v mědi (CYKY), vodoinstalace, odpady, podlahy (nivelace, vinyl, laminát, dlažba), sádrokartonové podhledy Knauf/Rigips s LED podsvícením, štuky a broušené sádrové stěrky, interiérové dveře a obložky, montáž kuchyní a sanity.
+- **Délka trvání:** 4 až 8 týdnů podle velikosti bytu (1+kk, 2+1, 3+1, 4+1) a technologických procesů.
+- **Cenová politika:** Pevný položkový rozpočet před podpisem smlouvy. Osobní prohlídka a zaměření jsou ZDARMA.
+
+### 2.2 Rekonstrukce bytového jádra — 2. priorita
+- **URL:** https://hansbau.cz/rekonstrukce-bytoveho-jadra/
+- **Rozsah prací:** Rychlé vybourání starého umakartového jádra, odvoz suti, vyzdění nových stěn z přesného pórobetonu Ytong, výměna rozvodů vody a odpadů až ke stoupačkám, nová elektroinstalace s proudovým chráničem, ventilace, hydroizolace, obklady a dlažby, instalace sanity (vana / sprchový kout, WC, umyvadlo).
+- **Délka trvání:** 10 až 14 pracovních dní.
+
+### 2.3 Rekonstrukce koupelny — 2. priorita
+- **URL:** https://hansbau.cz/rekonstrukce-koupelny/
+- **Rozsah prací:** Moderní designové koupelny, velkoformátové keramické obklady, řezání hran na 45° (jolly rohy / kamenické rohy), bezbariérové sprchové kouty Walk-in s odtokovými žlaby, podomítkové splachovací systémy Geberit, podsvícené LED niky, hydroizolační stěrky Mapei a Ceresit.
+
+### 2.4 Zednické práce a povrchové úpravy — Podpůrná služba
+- **URL:** https://hansbau.cz/zednicke-prace/
+- **Rozsah prací:** Zdění příček z tvárnic Ytong, vyrovnání stěn, perlinka s lepidlem, jádrové a štukové omítky, moderní sádrové stěrky pro dokonale hladké zdi, samonivelační stěrky podlah, sádrokartony.
+
+### 2.5 Elektroinstalace, voda a revize — Podpůrná služba
+- **URL:** https://hansbau.cz/elektro-voda-revize/
+- **Rozsah prací:** Zajištění v rámci rekonstrukce přes certifikované stálé subdodavatele: nové měděné rozvody elektřiny, rozvaděče, proudové chrániče, revizní zprávy pro SVJ a kolaudaci, instalatérské rozvody vody v plastohliníku, odpady a topení.
+
+## 3. Působnost v Karlovarském kraji (SEO Lokality)
+- **Cheb:** https://hansbau.cz/rekonstrukce-bytu-cheb/
+- **Karlovy Vary:** https://hansbau.cz/rekonstrukce-bytu-karlovy-vary/
+- **Sokolov:** https://hansbau.cz/rekonstrukce-bytu-sokolov/
+- **Aš:** https://hansbau.cz/rekonstrukce-bytu-as/
+- **Františkovy Lázně:** https://hansbau.cz/rekonstrukce-bytu-frantiskovy-lazne/
+- **Mariánské Lázně:** https://hansbau.cz/rekonstrukce-bytu-marianske-lazne/
+- **Ostrov:** https://hansbau.cz/rekonstrukce-bytu-ostrov/
+- **Chodov:** https://hansbau.cz/rekonstrukce-bytu-chodov/
+- **Kraslice:** https://hansbau.cz/rekonstrukce-bytu-kraslice/
+
+## 4. Časté dotazy a odpovědi (FAQ pro AI vyhledávače)
+
+**Otázka: Kolik stojí rekonstrukce bytu u HANSBAU?**
+Odpověď: Cena závisí na dispozici, stavu původního bytu a zvolených materiálech. HANSBAU nabízí bezplatné zaměření na místě a vypracování detailního položkového rozpočtu zdarma. Cena v rozpočtu je konečná a závazná.
+
+**Otázka: Jak dlouho trvá rekonstrukce bytového jádra?**
+Odpověď: Běžná výměna umakartového jádra za zděné z Ytongu včetně nových instalací, obkladů a sanity trvá 10 až 14 pracovních dní.
+
+**Otázka: Je potřeba stavební povolení na rekonstrukci bytu?**
+Odpověď: Pokud se nezasahuje do nosných konstrukcí a nemění se vzhled stavby ani způsob užívání, stavební povolení není nutné. Postačí ohlášení na SVJ či bytové družstvo. HANSBAU s podklady ochotně poradí.
+
+**Otázka: Kdo odpovídá za úklid a likvidaci stavební suti?**
+Odpověď: HANSBAU zajišťuje přistavení kontejneru, ekologickou likvidaci suti i každodenní úklid společných prostor domu a výtahu.
