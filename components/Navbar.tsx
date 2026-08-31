@@ -18,10 +18,7 @@ import {
   Star,
   MapPin,
   Calculator,
-  Building,
-  Sparkles,
-  Users,
-  Image as ImageIcon
+  Users
 } from "lucide-react";
 import { siteConfig, services, locations } from "@/lib/data";
 
@@ -77,7 +74,7 @@ export function Navbar() {
       {/* Main Navbar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-3 group shrink-0">
           <div className="relative h-12 w-48 transition-transform duration-300 group-hover:scale-[1.02]">
             <Image
               src="/images/Logo-17.webp"
@@ -90,13 +87,13 @@ export function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5">
+        {/* Desktop Nav - Generously spaced and airy */}
+        <nav className="hidden lg:flex items-center gap-2 xl:gap-3">
           <Link
             href="/"
-            className={`px-3.5 py-2 text-sm font-semibold rounded-xl transition-colors ${
+            className={`px-4 py-2.5 text-sm font-semibold rounded-xl transition-all ${
               isActive("/") 
-                ? "text-red-600 bg-red-50/80 font-bold" 
+                ? "text-red-600 bg-red-50 font-bold shadow-xs" 
                 : "text-slate-700 hover:text-red-600 hover:bg-slate-50"
             }`}
           >
@@ -111,9 +108,9 @@ export function Navbar() {
           >
             <Link
               href="/sluzby"
-              className={`px-3.5 py-2 text-sm font-semibold rounded-xl transition-colors flex items-center gap-1 ${
+              className={`px-4 py-2.5 text-sm font-semibold rounded-xl transition-all flex items-center gap-1.5 ${
                 isActive("/sluzby") || services.some(s => pathname === `/${s.slug}`)
-                  ? "text-red-600 bg-red-50/80 font-bold" 
+                  ? "text-red-600 bg-red-50 font-bold shadow-xs" 
                   : "text-slate-700 hover:text-red-600 hover:bg-slate-50"
               }`}
             >
@@ -135,7 +132,7 @@ export function Navbar() {
                       key={srv.slug}
                       href={`/${srv.slug}`}
                       className={`flex items-start gap-3 p-2.5 rounded-xl transition-colors group ${
-                        isCurrent ? "bg-red-50/90 text-red-700" : "hover:bg-slate-50"
+                        isCurrent ? "bg-red-50 text-red-700" : "hover:bg-slate-50"
                       }`}
                       onClick={() => setServicesDropdownOpen(false)}
                     >
@@ -181,9 +178,9 @@ export function Navbar() {
           >
             <Link
               href="/lokality"
-              className={`px-3.5 py-2 text-sm font-semibold rounded-xl transition-colors flex items-center gap-1 ${
+              className={`px-4 py-2.5 text-sm font-semibold rounded-xl transition-all flex items-center gap-1.5 ${
                 isActive("/lokality") || locations.some(l => pathname === `/${l.slug}`)
-                  ? "text-red-600 bg-red-50/80 font-bold" 
+                  ? "text-red-600 bg-red-50 font-bold shadow-xs" 
                   : "text-slate-700 hover:text-red-600 hover:bg-slate-50"
               }`}
             >
@@ -204,7 +201,7 @@ export function Navbar() {
                       key={loc.slug}
                       href={`/${loc.slug}`}
                       className={`flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-colors group ${
-                        isCurrent ? "bg-red-50/90 text-red-700 font-bold" : "text-slate-700 hover:text-red-600 hover:bg-red-50/60"
+                        isCurrent ? "bg-red-50 text-red-700 font-bold" : "text-slate-700 hover:text-red-600 hover:bg-red-50/60"
                       }`}
                       onClick={() => setLocationsDropdownOpen(false)}
                     >
@@ -233,20 +230,21 @@ export function Navbar() {
 
           <Link
             href="/kalkulacka"
-            className={`px-3.5 py-2 text-sm font-semibold rounded-xl transition-colors ${
+            className={`px-4 py-2.5 text-sm font-semibold rounded-xl transition-all ${
               isActive("/kalkulacka") 
-                ? "text-red-600 bg-red-50/80 font-bold" 
+                ? "text-red-600 bg-red-50 font-bold shadow-xs" 
                 : "text-slate-700 hover:text-red-600 hover:bg-slate-50"
             }`}
           >
             Kalkulačka
           </Link>
 
+          {/* O nás - Prominent with generous breathing room */}
           <Link
             href="/o-nas"
-            className={`px-3.5 py-2 text-sm font-semibold rounded-xl transition-colors ${
+            className={`px-4 py-2.5 text-sm font-semibold rounded-xl transition-all ${
               isActive("/o-nas") 
-                ? "text-red-600 bg-red-50/80 font-bold" 
+                ? "text-red-600 bg-red-50 font-bold shadow-xs" 
                 : "text-slate-700 hover:text-red-600 hover:bg-slate-50"
             }`}
           >
@@ -255,9 +253,9 @@ export function Navbar() {
 
           <Link
             href="/realizace"
-            className={`px-3.5 py-2 text-sm font-semibold rounded-xl transition-colors ${
+            className={`px-4 py-2.5 text-sm font-semibold rounded-xl transition-all ${
               isActive("/realizace") 
-                ? "text-red-600 bg-red-50/80 font-bold" 
+                ? "text-red-600 bg-red-50 font-bold shadow-xs" 
                 : "text-slate-700 hover:text-red-600 hover:bg-slate-50"
             }`}
           >
@@ -266,9 +264,9 @@ export function Navbar() {
 
           <Link
             href="/kontakt"
-            className={`px-3.5 py-2 text-sm font-semibold rounded-xl transition-colors ${
+            className={`px-4 py-2.5 text-sm font-semibold rounded-xl transition-all ${
               isActive("/kontakt") 
-                ? "text-red-600 bg-red-50/80 font-bold" 
+                ? "text-red-600 bg-red-50 font-bold shadow-xs" 
                 : "text-slate-700 hover:text-red-600 hover:bg-slate-50"
             }`}
           >
@@ -276,33 +274,24 @@ export function Navbar() {
           </Link>
         </nav>
 
-        {/* Right CTA Area */}
-        <div className="hidden sm:flex items-center gap-3">
-          {/* Quick Call */}
+        {/* Right Phone Contact Callout (No redundant "Nezávazná nabídka" button) */}
+        <div className="hidden sm:flex items-center">
           <a
             href={`tel:${siteConfig.phoneCZRaw}`}
-            className="flex items-center gap-2.5 px-3.5 py-2 bg-slate-50 hover:bg-slate-100/80 border border-slate-200 rounded-xl text-slate-800 transition-all group"
+            className="flex items-center gap-3 px-4 py-2.5 bg-slate-50 hover:bg-white border border-slate-200 hover:border-red-500 rounded-2xl text-slate-800 transition-all shadow-xs group"
           >
-            <div className="w-8 h-8 rounded-lg bg-red-50 text-red-600 group-hover:bg-red-600 group-hover:text-white flex items-center justify-center transition-colors shrink-0">
+            <div className="w-8 h-8 rounded-xl bg-red-50 text-red-600 group-hover:bg-red-600 group-hover:text-white flex items-center justify-center transition-colors shrink-0">
               <Phone className="w-4 h-4" />
             </div>
             <div className="text-left">
               <div className="text-[10px] text-slate-500 font-medium tracking-wider uppercase">
                 Zavolejte nám
               </div>
-              <div className="text-xs font-bold text-slate-900 tracking-wide">
+              <div className="text-xs sm:text-sm font-bold text-slate-950 tracking-wide group-hover:text-red-600 transition-colors">
                 {siteConfig.phoneCZ}
               </div>
             </div>
           </a>
-
-          {/* Primary CTA button linking to /kontakt */}
-          <Link
-            href="/kontakt"
-            className="px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white text-xs sm:text-sm font-bold uppercase tracking-wider rounded-xl shadow-md shadow-red-600/20 hover:shadow-lg hover:shadow-red-600/30 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
-          >
-            Nezávazná nabídka
-          </Link>
         </div>
 
         {/* Mobile menu button */}
@@ -347,7 +336,7 @@ export function Navbar() {
                 key={srv.slug}
                 href={`/${srv.slug}`}
                 className={`flex items-center gap-3 px-4 py-2 text-sm rounded-xl font-medium ${
-                  pathname === `/${srv.slug}` ? "bg-red-50/80 text-red-600 font-bold" : "text-slate-700 hover:text-red-600 hover:bg-slate-50"
+                  pathname === `/${srv.slug}` ? "bg-red-50 text-red-600 font-bold" : "text-slate-700 hover:text-red-600 hover:bg-slate-50"
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -393,6 +382,7 @@ export function Navbar() {
               Kalkulačka rozpočtu
             </Link>
 
+            {/* O nás in mobile menu */}
             <Link
               href="/o-nas"
               className={`px-4 py-2.5 text-base font-semibold rounded-xl ${
@@ -425,22 +415,14 @@ export function Navbar() {
           </div>
 
           {/* Mobile Call CTA */}
-          <div className="pt-2 border-t border-slate-200 space-y-2">
+          <div className="pt-3 border-t border-slate-200">
             <a
               href={`tel:${siteConfig.phoneCZRaw}`}
-              className="w-full flex items-center justify-center gap-2 py-3 bg-slate-100 border border-slate-200 rounded-xl text-slate-900 font-bold text-sm"
+              className="w-full flex items-center justify-center gap-2 py-3.5 bg-slate-900 text-white hover:bg-red-600 rounded-xl font-bold text-sm transition-colors shadow-sm"
             >
-              <Phone className="w-4 h-4 text-red-600" />
+              <Phone className="w-4 h-4 text-red-400" />
               <span>Zavolat: {siteConfig.phoneCZ}</span>
             </a>
-
-            <Link
-              href="/kontakt"
-              className="w-full flex items-center justify-center py-3 bg-red-600 text-white font-bold text-sm uppercase tracking-wider rounded-xl shadow-md shadow-red-600/20"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Nezávazná nabídka zdarma
-            </Link>
           </div>
         </div>
       )}
