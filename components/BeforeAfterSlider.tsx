@@ -47,7 +47,7 @@ export function BeforeAfterSlider() {
   }, [isDragging, handleMouseMove, handleMouseUp, handleTouchMove]);
 
   return (
-    <section className="py-20 bg-slate-50 text-slate-900 relative overflow-hidden border-b border-slate-200" id="promeny">
+    <section className="py-20 bg-slate-50/70 text-slate-900 relative overflow-hidden border-b border-slate-200/80" id="promeny">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
@@ -115,9 +115,44 @@ export function BeforeAfterSlider() {
             </div>
           </div>
 
-          {/* Helper caption below */}
-          <div className="mt-4 flex items-center justify-between text-xs text-slate-500 px-2 font-medium">
-            <span>← Přetažením posuvníku porovnejte proměnu</span>
+          {/* Quick preset buttons and caption */}
+          <div className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 px-2 font-medium">
+            <div className="flex items-center gap-2">
+              <span className="text-slate-400">Rychlý náhled:</span>
+              <button
+                type="button"
+                onClick={() => setSliderPosition(10)}
+                className={`px-2.5 py-1 rounded-lg border transition-all ${
+                  sliderPosition <= 20
+                    ? "bg-red-600 text-white border-red-600 font-bold"
+                    : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50"
+                }`}
+              >
+                Po rekonstrukci
+              </button>
+              <button
+                type="button"
+                onClick={() => setSliderPosition(50)}
+                className={`px-2.5 py-1 rounded-lg border transition-all ${
+                  sliderPosition > 20 && sliderPosition < 80
+                    ? "bg-red-600 text-white border-red-600 font-bold"
+                    : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50"
+                }`}
+              >
+                50 / 50
+              </button>
+              <button
+                type="button"
+                onClick={() => setSliderPosition(90)}
+                className={`px-2.5 py-1 rounded-lg border transition-all ${
+                  sliderPosition >= 80
+                    ? "bg-red-600 text-white border-red-600 font-bold"
+                    : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50"
+                }`}
+              >
+                Před rekonstrukcí
+              </button>
+            </div>
             <span className="text-slate-800 font-semibold">Projekt: Kompletní byt 3+1 (Cheb)</span>
           </div>
         </div>
