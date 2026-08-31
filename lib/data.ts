@@ -19,6 +19,8 @@ export interface LocationItem {
   slug: string;
   city: string;
   region: string;
+  driveTime: string;
+  neighborhoods: string[];
   title: string;
   metaTitle: string;
   metaDesc: string;
@@ -325,6 +327,8 @@ export const locations: LocationItem[] = [
     slug: "rekonstrukce-bytu-cheb",
     city: "Cheb",
     region: "Karlovarský kraj",
+    driveTime: "Dojezd do 15 minut (Centrála firmy)",
+    neighborhoods: ["Sídliště Skalka", "Zlatý vrch", "Spáleniště", "Háje", "Historické centrum", "Hradiště", "Dřenice", "Podhrad"],
     title: "Rekonstrukce bytu Cheb",
     metaTitle: "Rekonstrukce bytu Cheb | Koupelny a jádra na klíč HANSBAU",
     metaDesc: "Kompletní i částečné rekonstrukce bytů a koupelen v Chebu a okolí. Sídlo máme přímo v Potočišti u Chebu. Přesná cena předem, prohlídka zdarma.",
@@ -364,6 +368,8 @@ export const locations: LocationItem[] = [
     slug: "rekonstrukce-bytu-karlovy-vary",
     city: "Karlovy Vary",
     region: "Karlovarský kraj",
+    driveTime: "Dojezd do 35 minut",
+    neighborhoods: ["Rybáře", "Drahovice", "Stará Role", "Tuhnice", "Čankovská", "Lázeňské centrum", "Doubí", "Tašovice", "Bohatice"],
     title: "Rekonstrukce bytu Karlovy Vary",
     metaTitle: "Rekonstrukce bytu Karlovy Vary | Rekonstrukce na klíč HANSBAU",
     metaDesc: "Kompletní rekonstrukce bytů, koupelen a bytových jader v Karlových Varech (Rybáře, Drahovice, Stará Role, Tuhnice). Pevná cena, zaměření zdarma.",
@@ -402,6 +408,8 @@ export const locations: LocationItem[] = [
     slug: "rekonstrukce-bytu-sokolov",
     city: "Sokolov",
     region: "Karlovarský kraj",
+    driveTime: "Dojezd do 20 minut",
+    neighborhoods: ["Sídliště Michal", "Slavíčkova", "Šenvert", "Centrum", "Kraslická", "Královské Poříčí", "Citice", "Svatava"],
     title: "Rekonstrukce bytu Sokolov",
     metaTitle: "Rekonstrukce bytu Sokolov | Jádra a koupelny HANSBAU",
     metaDesc: "Rekonstrukce panelových bytů a bytových jader v Sokolově (sídliště Michal, Slavíčkova, Šenvert). Rychle, precizně, za pevnou cenu.",
@@ -440,6 +448,8 @@ export const locations: LocationItem[] = [
     slug: "rekonstrukce-bytu-as",
     city: "Aš",
     region: "Karlovarský kraj",
+    driveTime: "Dojezd do 25 minut",
+    neighborhoods: ["Mokřiny", "Centrum Aše", "Hranice u Aše", "Krásná", "Hazlov", "Kopaniny", "Vernéřov"],
     title: "Rekonstrukce bytu Aš",
     metaTitle: "Rekonstrukce bytu Aš | Koupelny a zednické práce HANSBAU",
     metaDesc: "Kompletní rekonstrukce bytů a koupelen v Aši a okolí. Vyzdění jader, sádrokartony, obklady a elektřina. Pevná cena, zaměření zdarma.",
@@ -475,6 +485,8 @@ export const locations: LocationItem[] = [
     slug: "rekonstrukce-bytu-frantiskovy-lazne",
     city: "Františkovy Lázně",
     region: "Karlovarský kraj",
+    driveTime: "Dojezd do 10 minut",
+    neighborhoods: ["Lázeňské centrum", "Slatina", "Horní Ves", "Dlouhé Mosty", "Aleje", "Žírovice"],
     title: "Rekonstrukce bytu Františkovy Lázně",
     metaTitle: "Rekonstrukce bytu Františkovy Lázně | HANSBAU",
     metaDesc: "Kvalitní rekonstrukce bytů a koupelen ve Františkových Lázních. Sídlo máme jen 10 minut od vás. Bezplatná prohlídka a pevný rozpočet.",
@@ -509,6 +521,8 @@ export const locations: LocationItem[] = [
     slug: "rekonstrukce-bytu-marianske-lazne",
     city: "Mariánské Lázně",
     region: "Karlovarský kraj",
+    driveTime: "Dojezd do 30 minut",
+    neighborhoods: ["Lázeňská zóna", "Úšovice", "Hamrníky", "Centrum", "Dyleňská", "Velká Hleďsebe"],
     title: "Rekonstrukce bytu Mariánské Lázně",
     metaTitle: "Rekonstrukce bytu Mariánské Lázně | Koupelny HANSBAU",
     metaDesc: "Profesionální rekonstrukce bytů a koupelen v Mariánských Lázních. Stylové rekonstrukce interiérů, pevná cena a záruka.",
@@ -542,6 +556,8 @@ export const locations: LocationItem[] = [
     slug: "rekonstrukce-bytu-ostrov",
     city: "Ostrov",
     region: "Karlovarský kraj",
+    driveTime: "Dojezd do 40 minut",
+    neighborhoods: ["Historická Sorela", "Sídliště Za Nemocnicí", "Staré město", "Lidická", "Jáchymov", "Hroznětín"],
     title: "Rekonstrukce bytu Ostrov",
     metaTitle: "Rekonstrukce bytu Ostrov nad Ohří | HANSBAU",
     metaDesc: "Kompletní i částečné rekonstrukce bytů v Ostrově (sídliště, sorela, novostavby). Pevná cena, zaměření zdarma.",
@@ -572,6 +588,8 @@ export const locations: LocationItem[] = [
     slug: "rekonstrukce-bytu-chodov",
     city: "Chodov",
     region: "Karlovarský kraj",
+    driveTime: "Dojezd do 25 minut",
+    neighborhoods: ["Sídliště U Koupaliště", "Tovární", "Centrum", "Nové Sedlo", "Vintířov", "Chranišov"],
     title: "Rekonstrukce bytu Chodov",
     metaTitle: "Rekonstrukce bytu Chodov | Jádra a koupelny HANSBAU",
     metaDesc: "Rekonstrukce panelových bytů a jader v Chodově u Karlových Varů. Pevná cena, záruka, úklid. HANSBAU.",
@@ -603,6 +621,8 @@ export const locations: LocationItem[] = [
     slug: "rekonstrukce-bytu-kraslice",
     city: "Kraslice",
     region: "Karlovarský kraj",
+    driveTime: "Dojezd do 35 minut",
+    neighborhoods: ["Centrum Kraslic", "Tisová", "Rotava", "Šindelová", "Bublava", "Stříbrná", "Jindřichovice"],
     title: "Rekonstrukce bytu Kraslice",
     metaTitle: "Rekonstrukce bytu Kraslice | Koupelny a zednické práce HANSBAU",
     metaDesc: "Rekonstrukce bytů a domů v Kraslicích a okolí (Rotava, Šindelová, Bublava). Férové ceny, záruka, bezplatná kalkulace.",

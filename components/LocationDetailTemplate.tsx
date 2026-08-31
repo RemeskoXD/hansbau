@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { MobileFloatingBar } from "@/components/MobileFloatingBar";
 import { ContactForm } from "@/components/ContactForm";
 import { FAQSection } from "@/components/FAQSection";
+import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 import { JsonLd } from "@/components/JsonLd";
 import { LocationItem, services, siteConfig } from "@/lib/data";
 import { 
@@ -16,7 +17,13 @@ import {
   Home,
   Layers,
   Bath,
-  Hammer
+  Hammer,
+  ShieldCheck,
+  Clock,
+  Sparkles,
+  Award,
+  Building,
+  Check
 } from "lucide-react";
 
 interface LocationDetailTemplateProps {
@@ -35,6 +42,7 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
         faqs={location.faq}
         breadcrumbs={[
           { name: "Domů", url: siteConfig.url },
+          { name: "Lokality", url: `${siteConfig.url}/lokality/` },
           { name: `Rekonstrukce bytu ${location.city}`, url: `${siteConfig.url}/${location.slug}/` },
         ]}
       />
@@ -46,13 +54,19 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               {/* Left Column */}
               <div className="lg:col-span-7 space-y-6">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-bold text-red-600 uppercase tracking-wider shadow-sm">
-                  <MapPin className="w-4 h-4 text-red-600" />
-                  <span>Lokalita: {location.city} a okolí ({location.region})</span>
+                <div className="flex flex-wrap items-center gap-2">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-xs font-bold text-red-600 uppercase tracking-wider shadow-sm">
+                    <MapPin className="w-4 h-4 text-red-600" />
+                    <span>Lokalita: {location.city} ({location.region})</span>
+                  </div>
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-green-50 border border-green-200 text-[11px] font-bold text-green-700">
+                    <Clock className="w-3.5 h-3.5 text-green-600" />
+                    <span>{location.driveTime}</span>
+                  </div>
                 </div>
 
                 <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-slate-950 leading-tight">
-                  Rekonstrukce bytu <span className="text-red-600">{location.city}</span>
+                  Rekonstrukce bytu <span className="text-red-600">{location.city}</span> na klíč
                 </h1>
 
                 <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
@@ -62,7 +76,7 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
                 {/* Specifics for this city */}
                 <div className="space-y-2 pt-2 border-t border-slate-200">
                   <div className="text-xs font-bold uppercase tracking-wider text-slate-800 mb-2">
-                    Naše působení v lokalitě {location.city}:
+                    Co pro vás v lokalitě {location.city} garantujeme:
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     {location.specifics.map((spec, idx) => (
@@ -125,6 +139,85 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Neighborhoods & Quarters badge section */}
+        {location.neighborhoods && location.neighborhoods.length > 0 && (
+          <section className="py-10 bg-white border-b border-slate-200">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div className="space-y-1">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                    Místní dostupnost
+                  </span>
+                  <div className="text-sm font-bold text-slate-900">
+                    Čtvrti a sídliště, kde v lokalitě {location.city} působíme:
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {location.neighborhoods.map((nei, idx) => (
+                    <span
+                      key={idx}
+                      className="px-3 py-1 bg-slate-50 border border-slate-200 rounded-lg text-xs font-semibold text-slate-700"
+                    >
+                      {nei}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Step-by-step Process in this City */}
+        <section className="py-20 bg-slate-50/70 border-b border-slate-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+            <div className="text-center max-w-3xl mx-auto space-y-3">
+              <span className="text-xs font-black uppercase tracking-widest text-red-600 block">
+                Jak probíhá spolupráce
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-black uppercase text-slate-950">
+                Průběh rekonstrukce bytu v lokalitě {location.city}
+              </h2>
+              <p className="text-sm text-slate-600">
+                Žádný chaos, žádné prodlevy. Celou stavbu řídíme systematicky v 4 jasných krocích:
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  step: "01",
+                  title: `Zaměření v ${location.city}`,
+                  desc: "Přijedeme k vám do bytu, vyslechneme vaše představy, prostor přesně zaměříme a zhodnotíme stav sítí. 100% ZDARMA.",
+                },
+                {
+                  step: "02",
+                  title: "Položkový rozpočet",
+                  desc: "Do 48 hodin vám pošleme detailní položkovou nabídku. Cena uvedená ve smlouvě o dílo je konečná a pevná.",
+                },
+                {
+                  step: "03",
+                  title: "Realizace na klíč",
+                  desc: "Vybourání, odvoz suti, nové rozvody elektřiny a vody, zdění Ytongem, sádrokartony, obklady i podlahy.",
+                },
+                {
+                  step: "04",
+                  title: "Předání se zárukou",
+                  desc: "Závěrečný úklid bytu, předání revizních zpráv a předávacího protokolu se zárukou na celé dílo.",
+                },
+              ].map((st, idx) => (
+                <div
+                  key={idx}
+                  className="p-6 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-3 relative overflow-hidden"
+                >
+                  <div className="text-2xl font-black text-red-600">{st.step}</div>
+                  <h3 className="text-base font-bold text-slate-900">{st.title}</h3>
+                  <p className="text-xs text-slate-600 leading-relaxed font-normal">{st.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -224,6 +317,9 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
           </section>
         )}
 
+        {/* Embedded Before / After Slider */}
+        <BeforeAfterSlider />
+
         {/* Proč HANSBAU v dané lokalitě */}
         <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -237,6 +333,16 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
               <p className="text-sm text-slate-600 leading-relaxed font-normal">
                 Rekonstrukce bytu je významná investice. S námi máte jistotu, že stavební práce proběhnou bez zbytečných prodlev, s ohledem na sousedy a za předem garantovanou pevnou cenu.
               </p>
+
+              <div className="pt-2">
+                <Link
+                  href="/kalkulacka"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-md transition-all"
+                >
+                  <Calculator className="w-4 h-4" />
+                  <span>Kalkulačka pro {location.city}</span>
+                </Link>
+              </div>
             </div>
 
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
