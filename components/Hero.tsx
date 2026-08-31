@@ -75,22 +75,27 @@ export function Hero() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-3">
               <Link
-                href="/#kontakt"
+                href="/kontakt"
                 className="w-full sm:w-auto px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-black text-xs sm:text-sm uppercase tracking-wider rounded-2xl shadow-md shadow-red-600/20 hover:shadow-lg hover:shadow-red-600/30 transition-all flex items-center justify-center gap-2.5 transform hover:-translate-y-0.5 active:translate-y-0"
               >
-                <Calculator className="w-4 h-4" />
                 <span>Nezávazná nabídka zdarma</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
+              <Link
+                href="/kalkulacka"
+                className="w-full sm:w-auto px-6 py-4 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-2xl text-slate-900 font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2.5 shadow-sm hover:border-slate-300 transform hover:-translate-y-0.5 active:translate-y-0"
+              >
+                <Calculator className="w-4 h-4 text-red-600" />
+                <span>Kalkulačka rozpočtu</span>
+              </Link>
+
               <a
                 href={`tel:${siteConfig.phoneCZRaw}`}
-                className="w-full sm:w-auto px-6 py-4 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-2xl text-slate-900 font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-3 shadow-sm hover:border-slate-300 transform hover:-translate-y-0.5 active:translate-y-0"
+                className="w-full sm:w-auto px-5 py-4 bg-white hover:bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2 shadow-sm hover:border-slate-300"
               >
-                <div className="w-7 h-7 rounded-lg bg-red-50 text-red-600 flex items-center justify-center shrink-0">
-                  <Phone className="w-3.5 h-3.5" />
-                </div>
-                <span>Zavolat: {siteConfig.phoneCZ}</span>
+                <Phone className="w-4 h-4 text-red-600" />
+                <span>{siteConfig.phoneCZ}</span>
               </a>
             </div>
           </div>

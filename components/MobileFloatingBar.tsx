@@ -30,7 +30,7 @@ export function MobileFloatingBar() {
 
         {/* Form CTA */}
         <Link
-          href="/#kontakt"
+          href="/kontakt"
           className="flex flex-col items-center justify-center py-2 px-1 bg-red-600 rounded-xl text-white font-bold active:bg-red-700 transition-colors shadow-md shadow-red-600/20"
         >
           <Calculator className="w-4 h-4 mb-0.5" />

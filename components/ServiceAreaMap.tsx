@@ -60,6 +60,16 @@ export function ServiceAreaMap() {
                   </Link>
                 ))}
               </div>
+
+              <div className="pt-2">
+                <Link
+                  href="/lokality"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-red-600 hover:text-red-700 transition-colors"
+                >
+                  <span>Zobrazit podrobný přehled všech měst a lokalit</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
             </div>
 
             {/* Visual Interactive Map / Location embed */}

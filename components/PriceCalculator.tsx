@@ -98,6 +98,8 @@ export function PriceCalculator() {
     const el = document.getElementById("kontakt");
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.location.href = "/kontakt";
     }
   };
 

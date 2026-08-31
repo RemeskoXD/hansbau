@@ -33,6 +33,16 @@
 
 ---
 
+## Klíčové sekce a nástroje webu
+- **Online kalkulačka rozpočtu:** https://hansbau.cz/kalkulacka/ (Okamžitý výpočet orientační ceny rekonstrukce dle typu a dispozice bytu)
+- **Přehled všech služeb:** https://hansbau.cz/sluzby/
+- **Přehled všech lokalit v kraji:** https://hansbau.cz/lokality/
+- **Fotogalerie realizací:** https://hansbau.cz/realizace/
+- **O společnosti:** https://hansbau.cz/o-nas/
+- **Kontakt a sídlo:** https://hansbau.cz/kontakt/
+
+---
+
 ## Působnost v lokalitách (Karlovarský kraj)
 - **Cheb:** https://hansbau.cz/rekonstrukce-bytu-cheb/ (Centrála firmy, dojezd do 15 min)
 - **Karlovy Vary:** https://hansbau.cz/rekonstrukce-bytu-karlovy-vary/ (Rybáře, Drahovice, Stará Role, Tuhnice, centrum)

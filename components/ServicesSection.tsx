@@ -116,6 +116,17 @@ export function ServicesSection() {
             );
           })}
         </div>
+
+        {/* View all services button */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/sluzby"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-slate-900 hover:bg-red-600 text-white font-bold text-xs sm:text-sm uppercase tracking-wider rounded-2xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5"
+          >
+            <span>Zobrazit kompletní nabídku stavebních služeb</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
       </div>
     </section>
   );

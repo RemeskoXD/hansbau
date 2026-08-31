@@ -84,21 +84,29 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
                 </div>
 
                 {/* CTAs */}
-                <div className="pt-4 flex flex-col sm:flex-row items-center gap-4">
+                <div className="pt-4 flex flex-col sm:flex-row items-center gap-3.5">
                   <Link
-                    href="#kontakt"
+                    href="/kontakt"
                     className="w-full sm:w-auto px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-black text-sm uppercase tracking-wider rounded-2xl shadow-lg shadow-red-600/25 hover:shadow-xl hover:shadow-red-600/35 transition-all flex items-center justify-center gap-2"
                   >
-                    <Calculator className="w-4 h-4" />
                     <span>Nezávazná nabídka zdarma</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+
+                  <Link
+                    href="/kalkulacka"
+                    className="w-full sm:w-auto px-6 py-4 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-2xl text-slate-900 font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-sm"
+                  >
+                    <Calculator className="w-4 h-4 text-red-600" />
+                    <span>Spočítat rozpočet</span>
                   </Link>
 
                   <a
                     href={`tel:${siteConfig.phoneCZRaw}`}
-                    className="w-full sm:w-auto px-6 py-4 bg-white hover:bg-slate-50 border border-slate-300 rounded-2xl text-slate-900 font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-sm"
+                    className="w-full sm:w-auto px-5 py-4 bg-white hover:bg-slate-50 border border-slate-300 rounded-2xl text-slate-900 font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-sm"
                   >
                     <Phone className="w-4 h-4 text-red-600" />
-                    <span>Zavolat: {siteConfig.phoneCZ}</span>
+                    <span>{siteConfig.phoneCZ}</span>
                   </a>
                 </div>
               </div>

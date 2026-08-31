@@ -142,7 +142,7 @@ export default function SluzbyPage() {
                     </Link>
 
                     <Link
-                      href="/#kontakt"
+                      href="/kontakt"
                       className="px-5 py-3 bg-white hover:bg-slate-100 border border-slate-300 text-slate-800 font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-sm"
                     >
                       Nezávazná poptávka
