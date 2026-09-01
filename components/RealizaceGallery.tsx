@@ -17,10 +17,11 @@ export function RealizaceGallery({ limit, showViewAll = false }: RealizaceGaller
 
   const categories = [
     { id: "all", label: "Všechny realizace" },
-    { id: "byty", label: "Rekonstrukce bytů" },
     { id: "koupelny", label: "Koupelny" },
     { id: "jadra", label: "Bytová jádra" },
-    { id: "pokoje", label: "Pokoje & Interiéry" }
+    { id: "byty", label: "Rekonstrukce bytů" },
+    { id: "pokoje", label: "Pokoje & Interiéry" },
+    { id: "zednicke", label: "Zednické práce & Podlahy" }
   ];
 
   const filteredItems = activeCategory === "all"

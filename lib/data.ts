@@ -99,12 +99,14 @@ export const services: ServiceItem[] = [
     shortDesc: "Kompletní proměna bytu na klíč od vyklizení a bourání po finální předání. Žádné starosti se sháněním 5 různých řemeslníků. Pevná cena a termín.",
     fullDesc: "Plánujete rekonstrukci panelového nebo cihlového bytu v Karlovarském kraji? HANSBAU se postará o celou proměnu vašeho domova. Zajistíme vyklizení, bourací práce, novou elektroinstalaci, vodoinstalaci, sádrokartony, omítky, obklady, podlahy i montáž sanitární keramiky a dveří.",
     iconName: "Home",
-    image: "/images/nove/rekonstrukce-karlovarsky-kraj-hlavni.webp",
+    image: "/images/nove/rekonstrukce-bytu-karlovy-vary-detail.webp",
     galleryImages: [
-      "/images/nove/obyvak-po-rekonstrukci.webp",
-      "/images/nove/loznice-po-rekonstrukci.webp",
+      "/images/2.webp",
+      "/images/nove/cheb-realizace.webp",
       "/images/nove/chodba-po-rekonstrukci.webp",
-      "/images/nove/pokoj-po-rekonstrukci.webp"
+      "/images/nove/rekonstrukce-karlovarsky-kraj-hlavni.webp",
+      "/images/IMG-20250823-WA0011.webp",
+      "/images/nove/balthasar-byt.webp"
     ],
     features: [
       "Kompletní realizace na klíč od A do Z",
@@ -153,12 +155,14 @@ export const services: ServiceItem[] = [
     shortDesc: "Výměna starého umakartového jádra za moderní zděné z pórobetonu (Ytong). Vybourání, nové rozvody, hydroizolace a obklady hotové za 10–14 dní.",
     fullDesc: "Máte v bytě staré umakartové jádro, kde hučí stoupačky a opadávají obklady? Provedeme kompletní vybourání a vyzdění nového pórobetonového jádra s novými rozvody vody, odpadů a elektřiny.",
     iconName: "Layers",
-    image: "/images/Rekonstrukce-bytoveho-jadra-Cheb-Karlovarsky-kraj.webp",
+    image: "/images/nove/as-koupelna.webp",
     galleryImages: [
       "/images/nove/koupelna-po-rekonstrukci.webp",
-      "/images/nove/as-koupelna.webp",
+      "/images/nove/sokolov-realizace.webp",
       "/images/nove/rekonstrukce-koupelny-cheb-detail.webp",
-      "/images/1-6.webp"
+      "/images/IMG-20250823-WA0014.webp",
+      "/images/IMG-20250823-WA0018.webp",
+      "/images/1-11.webp"
     ],
     features: [
       "Rychlé vybourání a ekologická likvidace starého umakartu",
@@ -201,12 +205,14 @@ export const services: ServiceItem[] = [
     shortDesc: "Designové koupelny na míru v panelácích i rodinných domech. Velkoformátové obklady, walk-in sprchové kouty s lineárními žlaby, podomítková sanita a LED niky.",
     fullDesc: "Koupelna je místem každodenní relaxace. Provádíme rekonstrukce koupelen a WC s důrazem na špičkovou hydroizolaci, dokonale rovné kamenické rohy (jolly hrany 45°) a spolehlivou instalaci sanity značek Geberit, Grohe, Hansgrohe či Ravak.",
     iconName: "Bath",
-    image: "/images/nove/koupelna-po-rekonstrukci.webp",
+    image: "/images/nove/rekonstrukce-koupelny-cheb-detail.webp",
     galleryImages: [
+      "/images/nove/koupelna-po-rekonstrukci.webp",
       "/images/nove/as-koupelna.webp",
-      "/images/nove/koupelna-detail.webp",
-      "/images/nove/rekonstrukce-koupelny-cheb-detail.webp",
-      "/images/1-5.webp"
+      "/images/nove/sokolov-realizace.webp",
+      "/images/nove/karlovy-vary-realizace.webp",
+      "/images/IMG-20250823-WA0014.webp",
+      "/images/1-8.webp"
     ],
     features: [
       "Velkoformátové keramické obklady a dlažba",
@@ -247,12 +253,14 @@ export const services: ServiceItem[] = [
     shortDesc: "Přesné zednické práce, bourání příček, zdění Ytongem, jádrové a štukové omítky, stěrky, nivelace podlah a pokládka dlažeb.",
     fullDesc: "Kvalitní zednické práce jsou základem každé úspěšné rekonstrukce. Provádíme veškeré zednické práce v interiérech od přípravy podkladů přes zdění příček až po finální štuky, sádrové stěrky a pokládku podlah.",
     iconName: "Hammer",
-    image: "/images/nove/balthasar-byt.webp",
+    image: "/images/pokladka-plovouci-podlahy_66.webp",
     galleryImages: [
-      "/images/nove/loznice-2-po-rekonstrukci.webp",
-      "/images/nove/pokoj-2-po-rekonstrukci.webp",
-      "/images/nove/pracovna-po-rekonstrukci.webp",
-      "/images/1-9.webp"
+      "/images/1-3.webp",
+      "/images/1-4.webp",
+      "/images/1-5.webp",
+      "/images/1-9.webp",
+      "/images/1-10.webp",
+      "/images/1-12.webp"
     ],
     features: [
       "Zdění příček a úpravy dispozic z tvárnic Ytong / Porofix",
@@ -287,12 +295,12 @@ export const services: ServiceItem[] = [
     shortDesc: "Kompletní rozvody elektřiny v mědi, nové rozvody vody a odpadů, topenářské práce a oficiální revizní zprávy pro kolaudaci a SVJ.",
     fullDesc: "Žádná rekonstrukce se neobejde bez bezpečných rozvodů. V rámci našich rekonstrukcí bytů a jader zajišťujeme kompletní elektroinstalační a instalatérské práce přes naše ověřené a certifikované subdodavatele, včetně oficiálních revizních zpráv.",
     iconName: "ShieldCheck",
-    image: "/images/nove/chodba-po-rekonstrukci.webp",
+    image: "/images/IMG-20250823-WA0012.webp",
     galleryImages: [
-      "/images/nove/obyvak-po-rekonstrukci.webp",
-      "/images/nove/koupelna-po-rekonstrukci.webp",
-      "/images/1-13.webp",
-      "/images/1-14.webp"
+      "/images/1-11.webp",
+      "/images/IMG-20250823-WA0018.webp",
+      "/images/1-4.webp",
+      "/images/IMG-20250823-WA0019.webp"
     ],
     features: [
       "Nové rozvody elektřiny v mědi (CYKY) se samostatnými okruhy pro kuchyň a spotřebiče",
@@ -342,9 +350,9 @@ export const locations: LocationItem[] = [
     ],
     heroImage: "/images/nove/cheb-realizace.webp",
     realizaceImages: [
-      { src: "/images/nove/cheb-realizace.webp", title: "Rekonstrukce bytu Cheb", desc: "Kompletní přestavba bytu 3+1 na Skalce" },
-      { src: "/images/nove/rekonstrukce-koupelny-cheb-detail.webp", title: "Rekonstrukce koupelny Cheb", desc: "Nové zděné jádro a velkoformátové obklady" },
-      { src: "/images/nove/obyvak-po-rekonstrukci.webp", title: "Obývací pokoj Cheb", desc: "Nové stěrky, podlahy a LED osvětlení" }
+      { src: "/images/nove/cheb-realizace.webp", title: "Vstupní hala a chodba Cheb", desc: "Mramorová velkoformátová dlažba a černé posuvné dveře" },
+      { src: "/images/nove/rekonstrukce-koupelny-cheb-detail.webp", title: "Rekonstrukce koupelny Cheb", desc: "Nové mramorové jádro s vanou a LED zrcadlem" },
+      { src: "/images/nove/rekonstrukce-bytu-cheb-detail.webp", title: "Pokoj po rekonstrukci Cheb", desc: "Dřevěná plovoucí podlaha a sádrové stěrky" }
     ],
     whyHere: [
       { title: "Jsme místní firma z Chebu", desc: "Naše zázemí v Potočišti znamená okamžitou dostupnost, nulové prostoje a osobní dohled jednatele Jana Červeňaka." },
@@ -381,11 +389,11 @@ export const locations: LocationItem[] = [
       "Kompletní výměna rozvodů elektřiny, vody i topení s revizemi",
       "Dodržování nočního klidu a přísných pravidel domovních řádů SVJ"
     ],
-    heroImage: "/images/nove/karlovy-vary-realizace.webp",
+    heroImage: "/images/nove/rekonstrukce-bytu-karlovy-vary-detail.webp",
     realizaceImages: [
-      { src: "/images/nove/karlovy-vary-realizace.webp", title: "Rekonstrukce Karlovy Vary", desc: "Kompletní rekonstrukce interiéru bytu" },
-      { src: "/images/nove/rekonstrukce-bytu-karlovy-vary-detail.webp", title: "Byt Drahovice Karlovy Vary", desc: "Nové podlahy, omítky a moderní koupelna" },
-      { src: "/images/nove/koupelna-po-rekonstrukci.webp", title: "Koupelna Karlovy Vary", desc: "Walk-in sprchový kout a velkoformát" }
+      { src: "/images/nove/rekonstrukce-bytu-karlovy-vary-detail.webp", title: "Obývací pokoj s kuchyní Karlovy Vary", desc: "Kompletní proměna bytu včetně kuchyňské linky a podlah" },
+      { src: "/images/nove/karlovy-vary-realizace.webp", title: "Koupelna Karlovy Vary", desc: "Vzorovaná dlažba, kulaté zrcadlo a walk-in kout" },
+      { src: "/images/nove/loznice-po-rekonstrukci.webp", title: "Ložnice Karlovy Vary", desc: "Pokoj s klenutým oknem a černými dveřmi" }
     ],
     whyHere: [
       { title: "Zkušenosti s náročnými interiéry", desc: "V Karlových Varech máme za sebou desítky úspěšných rekonstrukcí včetně investičních apartmánů." },
@@ -423,9 +431,9 @@ export const locations: LocationItem[] = [
     ],
     heroImage: "/images/nove/sokolov-realizace.webp",
     realizaceImages: [
-      { src: "/images/nove/sokolov-realizace.webp", title: "Rekonstrukce bytu Sokolov", desc: "Kompletní proměna panelového bytu 2+1 na sídlišti Michal" },
-      { src: "/images/nove/loznice-po-rekonstrukci.webp", title: "Ložnice Sokolov", desc: "Hladké stěrky, nivelace a vinylová podlaha" },
-      { src: "/images/nove/koupelna-detail.webp", title: "Koupelna Sokolov", desc: "Nové jádro, Geberit a moderní baterie" }
+      { src: "/images/nove/sokolov-realizace.webp", title: "Bytové jádro Sokolov (Michal)", desc: "Nové vyzděné jádro Ytong, dřevěná lamelová skříňka a LED zrcadlo" },
+      { src: "/images/IMG-20250823-WA0011.webp", title: "Obývací pokoj Sokolov", desc: "Nová plovoucí podlaha, štuky a vstup na lodžii" },
+      { src: "/images/IMG-20250823-WA0014.webp", title: "Obklad vany Sokolov", desc: "Velkoformátové keramické obklady a nová sanita" }
     ],
     whyHere: [
       { title: "Rychlý dojezd do Sokolova", desc: "Z naší centrály v Potočišti jsme v Sokolově za 20 minut po dálnici D6." },
@@ -461,11 +469,11 @@ export const locations: LocationItem[] = [
       "Kompletní servis od A do Z – nemusíte shánět řemeslníky zvlášť",
       "Záruka na provedené dílo stvrzená smlouvou"
     ],
-    heroImage: "/images/nove/rekonstrukce-bytu-as-detail.webp",
+    heroImage: "/images/nove/as-koupelna.webp",
     realizaceImages: [
-      { src: "/images/nove/rekonstrukce-bytu-as-detail.webp", title: "Rekonstrukce bytu Aš", desc: "Celková rekonstrukce bytu 3+1 v Aši" },
-      { src: "/images/nove/as-koupelna.webp", title: "Koupelna Aš", desc: "Rekonstrukce koupelny s velkoformátovým obkladem" },
-      { src: "/images/nove/pokoj-po-rekonstrukci.webp", title: "Interiér Aš", desc: "Sádrokartonové podhledy a vinylové podlahy" }
+      { src: "/images/nove/as-koupelna.webp", title: "Koupelna Aš", desc: "Velkoformátový šedý obklad s integrovanou LED nikou" },
+      { src: "/images/nove/rekonstrukce-bytu-as-detail.webp", title: "Pokoj po rekonstrukci Aš", desc: "Dubová plovoucí podlaha a nová elektroinstalace" },
+      { src: "/images/nove/pokoj-po-rekonstrukci.webp", title: "Interiér bytu Aš", desc: "Sádrové omítky a nová okna" }
     ],
     whyHere: [
       { title: "Dostupnost v Ašském výběžku", desc: "Pravidelně zde realizujeme zakázky a garantujeme spolehlivý nástup." },
@@ -498,10 +506,11 @@ export const locations: LocationItem[] = [
       "Využití moderních velkoformátových materiálů a sádrokartonů",
       "100% dodržení termínů a rozpočtu"
     ],
-    heroImage: "/images/nove/cheb-realizace.webp",
+    heroImage: "/images/nove/chodba-po-rekonstrukci.webp",
     realizaceImages: [
-      { src: "/images/nove/cheb-realizace.webp", title: "Byt Františkovy Lázně", desc: "Kompletní proměna bytu" },
-      { src: "/images/nove/koupelna-po-rekonstrukci.webp", title: "Koupelna Františkovy Lázně", desc: "Designová koupelna s černými prvky" }
+      { src: "/images/nove/chodba-po-rekonstrukci.webp", title: "Chodba bytu Františkovy Lázně", desc: "Dlažba s dekorem dřeva a černé dveřní obložky" },
+      { src: "/images/nove/koupelna-po-rekonstrukci.webp", title: "Koupelna Františkovy Lázně", desc: "Bílé obklady, černý radiátor a zástěna vany" },
+      { src: "/images/nove/pokoj-2-po-rekonstrukci.webp", title: "Pokoj Františkovy Lázně", desc: "Čisté stěny s podlahovými lištami" }
     ],
     whyHere: [
       { title: "Jsme vaši sousedé", desc: "Z Potočiště jsme u vás za pár minut. Okamžitá reakce na jakékoliv potřeby na stavbě." },
@@ -534,10 +543,11 @@ export const locations: LocationItem[] = [
       "Kompletní realizace na klíč včetně možnosti správy na dálku",
       "Oficiální revize a předávací protokoly"
     ],
-    heroImage: "/images/nove/balthasar-byt.webp",
+    heroImage: "/images/2.webp",
     realizaceImages: [
-      { src: "/images/nove/balthasar-byt.webp", title: "Apartmán Mariánské Lázně", desc: "Stylová rekonstrukce apartmánu" },
-      { src: "/images/nove/koupelna-po-rekonstrukci.webp", title: "Koupelna Mariánské Lázně", desc: "Luxusní velkoformátové obklady" }
+      { src: "/images/2.webp", title: "Apartmán Mariánské Lázně", desc: "Mramorová leštěná dlažba a skryté LED osvětlení" },
+      { src: "/images/nove/rekonstrukce-koupelny-cheb-detail.webp", title: "Luxusní koupelna Mariánské Lázně", desc: "Velkoformátový mramor a podomítková sanita" },
+      { src: "/images/nove/pracovna-po-rekonstrukci.webp", title: "Pracovna Mariánské Lázně", desc: "Hladké stěrky a nová podlaha" }
     ],
     whyHere: [
       { title: "Prémiová kvalita zpracování", desc: "Dbáme na každý detail – přesné spáry, kamenické rohy a bezvadné povrchy." }
@@ -568,9 +578,11 @@ export const locations: LocationItem[] = [
       "Nové rozvody elektřiny a vody s revizí",
       "Kompletní servis bez nutnosti shánět další řemeslníky"
     ],
-    heroImage: "/images/nove/karlovy-vary-realizace.webp",
+    heroImage: "/images/nove/rekonstrukce-karlovarsky-kraj-hlavni.webp",
     realizaceImages: [
-      { src: "/images/nove/karlovy-vary-realizace.webp", title: "Byt Ostrov", desc: "Kompletní proměna bytu 3+1" }
+      { src: "/images/nove/rekonstrukce-karlovarsky-kraj-hlavni.webp", title: "Pokoj po rekonstrukci Ostrov", desc: "Bodové LED osvětlení a tmavá podlaha" },
+      { src: "/images/nove/loznice-2-po-rekonstrukci.webp", title: "Ložnice Ostrov (Sorela)", desc: "Nové omítky a vnitřní dveře" },
+      { src: "/images/nove/koupelna-po-rekonstrukci.webp", title: "Koupelna Ostrov", desc: "Nové bytové jádro s vanou a zástěnou" }
     ],
     whyHere: [
       { title: "Spolehlivost a dodržení termínů", desc: "Nastupujeme v dohodnutý den a předáváme hotové dílo včas." }
@@ -600,9 +612,11 @@ export const locations: LocationItem[] = [
       "Rychlá výměna bytových jader za 10–14 dní",
       "Pevná kalkulace předem bez skrytých poplatků"
     ],
-    heroImage: "/images/nove/sokolov-realizace.webp",
+    heroImage: "/images/nove/balthasar-byt.webp",
     realizaceImages: [
-      { src: "/images/nove/sokolov-realizace.webp", title: "Byt Chodov", desc: "Rekonstrukce panelového bytu" }
+      { src: "/images/nove/balthasar-byt.webp", title: "Panelový byt Chodov", desc: "Nivelace podlah a pokládka laminátu" },
+      { src: "/images/nove/sokolov-realizace.webp", title: "Jádro a koupelna Chodov", desc: "Vybourání umakartu a nové zděné jádro" },
+      { src: "/images/IMG-20250823-WA0018.webp", title: "Závěsné WC Chodov", desc: "Podomítkový modul Geberit a keramická dlažba" }
     ],
     whyHere: [
       { title: "Záruka od prověřené české firmy", desc: "Ručíme za kvalitu všech prací a materiálů." }
@@ -633,9 +647,11 @@ export const locations: LocationItem[] = [
       "Zateplení sádrokartonových podkroví a půdních prostor",
       "Kompletní realizace na klíč s revizemi"
     ],
-    heroImage: "/images/nove/balthasar-byt.webp",
+    heroImage: "/images/nove/pokoj-po-rekonstrukci.webp",
     realizaceImages: [
-      { src: "/images/nove/balthasar-byt.webp", title: "Byt Kraslice", desc: "Kompletní rekonstrukce interiéru" }
+      { src: "/images/nove/pokoj-po-rekonstrukci.webp", title: "Podkrovní byt Kraslice", desc: "Zateplení podkroví a sádrokartony" },
+      { src: "/images/nove/as-koupelna.webp", title: "Koupelna Kraslice", desc: "Moderní koupelna s nerezovou sanitou" },
+      { src: "/images/pokladka-plovouci-podlahy_66.webp", title: "Podlahy Kraslice", desc: "Izolace a pokládka plovoucí podlahy" }
     ],
     whyHere: [
       { title: "Kvalitní tepelná a zvuková izolace", desc: "Pro horské podmínky volíme prémiové izolační materiály." }
@@ -652,77 +668,230 @@ export const locations: LocationItem[] = [
 ];
 
 export const portfolioItems: PortfolioItem[] = [
+  // 1. Koupelny (Bathrooms)
   {
-    id: "realizace-1",
-    title: "Kompletní rekonstrukce bytu Cheb",
-    category: "byty",
-    categoryLabel: "Rekonstrukce bytu",
-    location: "Cheb (Skalka)",
-    image: "/images/nove/cheb-realizace.webp",
-    description: "Kompletní proměna panelového bytu 3+1: nové jádro, nivelace podlah, sádrokartony s LED osvětlením a nová elektřina."
+    id: "realizace-koupelna-1",
+    title: "Mramorová koupelna s vanou a LED zrcadlem",
+    category: "koupelny",
+    categoryLabel: "Koupelny",
+    location: "Cheb",
+    image: "/images/nove/rekonstrukce-koupelny-cheb-detail.webp",
+    description: "Luxusní velkoformátový mramorový obklad, zapuštěná vana, závěsná toaleta Geberit a podsvícené zrcadlo."
   },
   {
-    id: "realizace-2",
-    title: "Designová rekonstrukce koupelny",
+    id: "realizace-koupelna-2",
+    title: "Moderní koupelna s vanovou zástěnou a černými bateriemi",
     category: "koupelny",
     categoryLabel: "Koupelny",
     location: "Karlovy Vary",
     image: "/images/nove/koupelna-po-rekonstrukci.webp",
-    description: "Vybourání starého jádra, walk-in sprchový kout s lineárním žlabem, velkoformátový obklad a podomítkový Geberit."
+    description: "Bílý obklad ve stylu subway tiles, černý otopný žebřík, vana se skleněnou zástěnou a designové umyvadlo."
   },
   {
-    id: "realizace-3",
-    title: "Rekonstrukce bytu Sokolov",
-    category: "byty",
-    categoryLabel: "Rekonstrukce bytu",
-    location: "Sokolov (Michal)",
-    image: "/images/nove/sokolov-realizace.webp",
-    description: "Nové omítky, vinylové podlahy, úprava dispozice obývacího pokoje a propojení s kuchyňským koutem."
-  },
-  {
-    id: "realizace-4",
-    title: "Rekonstrukce koupelny a jádra Aš",
-    category: "jadra",
-    categoryLabel: "Bytové jádro",
+    id: "realizace-koupelna-3",
+    title: "Šedá koupelna s podsvícenou LED nikou",
+    category: "koupelny",
+    categoryLabel: "Koupelny",
     location: "Aš",
     image: "/images/nove/as-koupelna.webp",
-    description: "Kompletní vyzdění nového jádra z Ytongu, precizní kamenické rohy (jolly hrany 45°) a nová elektroinstalace."
+    description: "Velkoformátový antracitový obklad, vestavěná osvětlená nika na kosmetiku a černá sprchová baterie."
   },
   {
-    id: "realizace-5",
-    title: "Moderní obývací pokoj po rekonstrukci",
-    category: "pokoje",
-    categoryLabel: "Pokoje & Interiéry",
-    location: "Cheb",
-    image: "/images/nove/obyvak-po-rekonstrukci.webp",
-    description: "Sádrové hladké stěrky, lepený vinyl s vysokou zátěží a snížený podhled s bodovým LED osvětlením."
+    id: "realizace-koupelna-4",
+    title: "Koupelna s lamelovou skříňkou a kruhovým LED zrcadlem",
+    category: "koupelny",
+    categoryLabel: "Koupelny",
+    location: "Sokolov",
+    image: "/images/nove/sokolov-realizace.webp",
+    description: "Šedé obklady v kombinaci s dubovými lamelami, černá baterie a kulaté podsvícené zrcadlo."
   },
   {
-    id: "realizace-6",
-    title: "Ložnice a šatní zóna",
-    category: "pokoje",
-    categoryLabel: "Pokoje & Interiéry",
+    id: "realizace-koupelna-5",
+    title: "Designový walk-in kout s geometrickou dlažbou",
+    category: "koupelny",
+    categoryLabel: "Koupelny",
+    location: "Mariánské Lázně",
+    image: "/images/nove/karlovy-vary-realizace.webp",
+    description: "Protiskluzová vzorovaná dlažba, bezbariérový sprchový kout se skleněnou stěnou a kulatým zrcadlem."
+  },
+  {
+    id: "realizace-koupelna-6",
+    title: "Precizní pokládka velkoformátové dlažby",
+    category: "koupelny",
+    categoryLabel: "Koupelny",
+    location: "Františkovy Lázně",
+    image: "/images/1-8.webp",
+    description: "Laserem nivelovaná pokládka rektifikované velkoformátové dlažby s distančními klínky."
+  },
+
+  // 2. Bytová jádra (Housing cores)
+  {
+    id: "realizace-jadro-1",
+    title: "Kompletní vyzdění jádra z Ytongu",
+    category: "jadra",
+    categoryLabel: "Bytové jádro",
+    location: "Sokolov (Michal)",
+    image: "/images/nove/sokolov-realizace.webp",
+    description: "Vybourání starého umakartového jádra, vyzdění nových stěn, nová elektroinstalace v mědi a nová sanita."
+  },
+  {
+    id: "realizace-jadro-2",
+    title: "Bytové jádro s vanou a obklady",
+    category: "jadra",
+    categoryLabel: "Bytové jádro",
+    location: "Cheb (Skalka)",
+    image: "/images/IMG-20250823-WA0014.webp",
+    description: "Nové pórobetonové stěny, hydroizolační stěrka, velkoformátové obklady a osazení vany s vývody."
+  },
+  {
+    id: "realizace-jadro-3",
+    title: "Závěsné WC a podomítkový modul Geberit",
+    category: "jadra",
+    categoryLabel: "Bytové jádro",
+    location: "Chodov",
+    image: "/images/IMG-20250823-WA0018.webp",
+    description: "Zazděný podomítkový modul Geberit, nová keramická dlažba a kompletní revize rozvodů vody."
+  },
+  {
+    id: "realizace-jadro-4",
+    title: "Sprchový kout v rekonstruovaném jádře",
+    category: "jadra",
+    categoryLabel: "Bytové jádro",
+    location: "Ostrov",
+    image: "/images/IMG-20250823-WA0016.webp",
+    description: "Nové zděné příčky jádra, instalace sprchové vaničky, rozvody vody a obkladačské práce."
+  },
+
+  // 3. Rekonstrukce bytu (Apartment full renovations)
+  {
+    id: "realizace-byt-1",
+    title: "Obývací pokoj s moderní kuchyňskou linkou",
+    category: "byty",
+    categoryLabel: "Rekonstrukce bytu",
     location: "Karlovy Vary",
-    image: "/images/nove/loznice-po-rekonstrukci.webp",
-    description: "Akustická izolace stěn, nová elektroinstalace s přepínači u lůžka a nová plovoucí podlaha."
+    image: "/images/nove/rekonstrukce-bytu-karlovy-vary-detail.webp",
+    description: "Propojení obývacího pokoje s kuchyňským koutem, šedá moderní linka, vestavné spotřebiče a dřevěná podlaha."
   },
   {
-    id: "realizace-7",
-    title: "Chodba a vstupní prostor bytu",
+    id: "realizace-byt-2",
+    title: "Vstupní hala a chodba s mramorovou dlažbou",
+    category: "byty",
+    categoryLabel: "Rekonstrukce bytu",
+    location: "Cheb",
+    image: "/images/nove/cheb-realizace.webp",
+    description: "Kompletní proměna bytu 3+1: leštěná mramorová dlažba, černé posuvné dveře a LED podhledy."
+  },
+  {
+    id: "realizace-byt-3",
+    title: "Reprezentativní obývací prostor s LED podsvícením",
+    category: "byty",
+    categoryLabel: "Rekonstrukce bytu",
+    location: "Mariánské Lázně",
+    image: "/images/2.webp",
+    description: "Luxusní velkoplošná mramorová dlažba, nepřímé světelné rampy a sádrové hladké stěrky."
+  },
+  {
+    id: "realizace-byt-4",
+    title: "Pokoj s designovým osvětlením a tmavou podlahou",
+    category: "byty",
+    categoryLabel: "Rekonstrukce bytu",
+    location: "Ostrov",
+    image: "/images/nove/rekonstrukce-karlovarsky-kraj-hlavni.webp",
+    description: "Kompletní elektroinstalace, vestavná bodová světla, designová nástěnná svítidla a nová podlaha."
+  },
+  {
+    id: "realizace-byt-5",
+    title: "Prosvětlený obývací pokoj se vstupem na lodžii",
+    category: "byty",
+    categoryLabel: "Rekonstrukce bytu",
+    location: "Sokolov",
+    image: "/images/IMG-20250823-WA0011.webp",
+    description: "Nové omítky, dřevěná podlaha, plastové balkonové dveře a příprava elektroinstalace pro osvětlení."
+  },
+
+  // 4. Pokoje & Interiéry (Rooms & Interiors)
+  {
+    id: "realizace-pokoj-1",
+    title: "Centrální chodba s dřevěnou dlažbou a černými dveřmi",
     category: "pokoje",
     categoryLabel: "Pokoje & Interiéry",
     location: "Františkovy Lázně",
     image: "/images/nove/chodba-po-rekonstrukci.webp",
-    description: "Dlažba s vysokým stupněm otěru, vestavěný jističový rozvaděč a zapravené rozvody."
+    description: "Dlažba s dekorem přírodního dřeva, černé obložkové zárubně a moderní bodové i nástěnné osvětlení."
   },
   {
-    id: "realizace-8",
+    id: "realizace-pokoj-2",
+    title: "Ložnice s klenutým oknem a černými dveřmi",
+    category: "pokoje",
+    categoryLabel: "Pokoje & Interiéry",
+    location: "Karlovy Vary",
+    image: "/images/nove/loznice-po-rekonstrukci.webp",
+    description: "Sádrové omítky, nová šedá podlaha s bílými soklovými lištami a černé interiérové dveře."
+  },
+  {
+    id: "realizace-pokoj-3",
+    title: "Pokoj s dubovou podlahou a výhledem",
+    category: "pokoje",
+    categoryLabel: "Pokoje & Interiéry",
+    location: "Aš",
+    image: "/images/nove/rekonstrukce-bytu-as-detail.webp",
+    description: "Plovoucí dubová podlaha, nový radiátor s termohlavicí a hladká sněhově bílá výmalba."
+  },
+  {
+    id: "realizace-pokoj-4",
+    title: "Moderní pokoj po rekonstrukci",
+    category: "pokoje",
+    categoryLabel: "Pokoje & Interiéry",
+    location: "Cheb",
+    image: "/images/nove/rekonstrukce-bytu-cheb-detail.webp",
+    description: "Teplá dřevěná podlaha, bílé interiérové dveře s nerezovými klikami a nová elektroinstalace."
+  },
+  {
+    id: "realizace-pokoj-5",
     title: "Pracovna a pokoj pro hosty",
     category: "pokoje",
     categoryLabel: "Pokoje & Interiéry",
     location: "Mariánské Lázně",
     image: "/images/nove/pracovna-po-rekonstrukci.webp",
-    description: "Sádrokartonové podhledy, nová výmalba a designové osvětlení."
+    description: "Nová elektroinstalace pro pracovní stůl, sádrokartony a stropní stmívatelné LED svítidlo."
+  },
+
+  // 5. Zednické práce, Podlahy & Přípravy (Masonry & Floors)
+  {
+    id: "realizace-zednicke-1",
+    title: "Pokládka plovoucí podlahy s izolační fólií",
+    category: "zednicke",
+    categoryLabel: "Zednické práce",
+    location: "Karlovarský kraj",
+    image: "/images/pokladka-plovouci-podlahy_66.webp",
+    description: "Přesné kladení zámkové podlahy na kročejovou a tepelně izolační podložku."
+  },
+  {
+    id: "realizace-zednicke-2",
+    title: "Lepení keramické dlažby do hřebenového lože",
+    category: "zednicke",
+    categoryLabel: "Zednické práce",
+    location: "Cheb",
+    image: "/images/1-9.webp",
+    description: "Aplikace flexibilního lepidla C2TES1 zubovým hladítkem pro stoprocentní přilnavost dlaždic."
+  },
+  {
+    id: "realizace-zednicke-3",
+    title: "Sádrokartonový rastr na stropě",
+    category: "zednicke",
+    categoryLabel: "Zednické práce",
+    location: "Karlovy Vary",
+    image: "/images/1-4.webp",
+    description: "Montáž křížového ocelového roštu Knauf pro snížení stropu a osazení bodových světel."
+  },
+  {
+    id: "realizace-zednicke-4",
+    title: "Výstavba sádrokartonových příček s izolací",
+    category: "zednicke",
+    categoryLabel: "Zednické práce",
+    location: "Sokolov",
+    image: "/images/1-3.webp",
+    description: "Zhotovení protihlukových a protipožárních příček s minerální vatou a ocelovými CW profily."
   }
 ];
 
