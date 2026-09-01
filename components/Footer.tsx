@@ -24,8 +24,13 @@ export function Footer() {
             </p>
 
             {/* Rating badge */}
-            <div className="p-3.5 bg-white border border-slate-200 rounded-2xl flex items-center gap-3 shadow-sm">
-              <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-500 font-black text-sm">
+            <a
+              href={siteConfig.googleReviewsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3.5 bg-white hover:border-red-400 border border-slate-200 rounded-2xl flex items-center gap-3 shadow-sm transition-all group hover:-translate-y-0.5"
+            >
+              <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-500 font-black text-sm group-hover:scale-105 transition-transform">
                 5.0
               </div>
               <div>
@@ -34,11 +39,11 @@ export function Footer() {
                     <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-                <div className="text-[11px] text-slate-800 font-semibold mt-0.5">
+                <div className="text-[11px] text-slate-800 group-hover:text-red-600 font-semibold mt-0.5 transition-colors">
                   Google Hodnocení 5.0 ★ (100% spokojenost)
                 </div>
               </div>
-            </div>
+            </a>
           </div>
 
           {/* Column 2: Services Links */}

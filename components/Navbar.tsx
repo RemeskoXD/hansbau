@@ -48,10 +48,15 @@ export function Navbar() {
       <div className="bg-slate-50 text-slate-600 text-xs py-1.5 px-4 border-b border-slate-200/70 hidden md:block">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5 text-slate-800 font-semibold">
+            <a
+              href={siteConfig.googleReviewsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-slate-800 hover:text-red-600 font-semibold transition-colors"
+            >
               <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
               <span>Google Hodnocení 5.0 ★ (Karlovarský kraj)</span>
-            </span>
+            </a>
             <span className="text-slate-500 hidden lg:inline">
               Cheb, Karlovy Vary, Sokolov, Aš • Osobní prohlídka a rozpočet ZDARMA
             </span>

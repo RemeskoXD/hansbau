@@ -18,16 +18,21 @@ export function Hero() {
           {/* Left Column: Copy & CTAs */}
           <div className="lg:col-span-7 space-y-6 sm:space-y-7 text-center lg:text-left">
             {/* Trust badge */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm">
+            <a
+              href={siteConfig.googleReviewsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white hover:bg-slate-50 border border-slate-200 shadow-sm transition-all group"
+            >
               <div className="flex items-center gap-0.5">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <span className="text-xs sm:text-sm font-bold text-slate-800">
+              <span className="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-red-600 transition-colors">
                 Google Hodnocení 5.0 ★ • Karlovarský kraj
               </span>
-            </div>
+            </a>
 
             {/* Main Headline */}
             <div className="space-y-3">
@@ -179,12 +184,17 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="p-4 rounded-2xl bg-slate-50/70 border border-slate-200/60">
-            <div className="text-2xl sm:text-3xl font-black text-amber-500">5.0 ★</div>
-            <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold mt-0.5">
+          <a
+            href={siteConfig.googleReviewsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-4 rounded-2xl bg-slate-50/70 hover:bg-white border border-slate-200/60 hover:border-red-400 text-left transition-all shadow-xs group"
+          >
+            <div className="text-2xl sm:text-3xl font-black text-amber-500 group-hover:scale-105 transition-transform">5.0 ★</div>
+            <div className="text-xs text-slate-500 group-hover:text-red-600 uppercase tracking-wider font-semibold mt-0.5 transition-colors">
               Google hodnocení zákazníků
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>

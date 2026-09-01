@@ -1,5 +1,5 @@
-import { Star, CheckCircle, ExternalLink } from "lucide-react";
-import { reviews } from "@/lib/data";
+import { Star, CheckCircle, ExternalLink, ArrowRight } from "lucide-react";
+import { reviews, siteConfig } from "@/lib/data";
 
 export function GoogleReviewsSection() {
   return (
@@ -16,9 +16,15 @@ export function GoogleReviewsSection() {
             </h2>
           </div>
 
-          {/* Google 5.0 Rating Header Widget */}
-          <div className="p-4 rounded-2xl bg-white border border-slate-200 flex items-center gap-4 shrink-0 shadow-md">
-            <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-500 font-black text-xl">
+          {/* Google 5.0 Rating Header Widget linking to Google Reviews URL */}
+          <a
+            href={siteConfig.googleReviewsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-4 rounded-2xl bg-white hover:border-red-500/80 border border-slate-200 flex items-center gap-4 shrink-0 shadow-md transition-all group hover:-translate-y-0.5"
+            title="Otevřít profil HANSBAU na Google Mapách"
+          >
+            <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-500 font-black text-xl group-hover:scale-105 transition-transform">
               5.0
             </div>
             <div>
@@ -27,28 +33,25 @@ export function GoogleReviewsSection() {
                   <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <div className="text-xs font-bold text-slate-900 mt-1">
+              <div className="text-xs font-bold text-slate-900 group-hover:text-red-600 transition-colors mt-1">
                 Google Recenze (100% doporučuje)
               </div>
             </div>
-            <a
-              href="https://maps.app.goo.gl/gpQg2nwdZpDGTWCL9"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-xl bg-slate-100 hover:bg-red-600 text-slate-600 hover:text-white transition-colors"
-              title="Zobrazit na Google Mapách"
-            >
+            <div className="p-2 rounded-xl bg-slate-100 group-hover:bg-red-600 text-slate-600 group-hover:text-white transition-colors">
               <ExternalLink className="w-4 h-4" />
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
 
         {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {reviews.map((rev) => (
-            <div
+            <a
               key={rev.id}
-              className="p-6 rounded-3xl bg-white border border-slate-200/90 hover:border-slate-300 hover:shadow-md transition-all flex flex-col justify-between space-y-4 shadow-sm transform hover:-translate-y-0.5"
+              href={siteConfig.googleReviewsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-6 rounded-3xl bg-white border border-slate-200/90 hover:border-red-400 hover:shadow-md transition-all flex flex-col justify-between space-y-4 shadow-sm transform hover:-translate-y-0.5 group"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
@@ -70,13 +73,26 @@ export function GoogleReviewsSection() {
 
               <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                 <div>
-                  <div className="text-sm font-bold text-slate-900">{rev.author}</div>
+                  <div className="text-sm font-bold text-slate-900 group-hover:text-red-600 transition-colors">{rev.author}</div>
                   <div className="text-[11px] text-slate-500">{rev.location}</div>
                 </div>
                 <div className="text-[10px] text-slate-400 font-medium">{rev.date}</div>
               </div>
-            </div>
+            </a>
           ))}
+        </div>
+
+        {/* Bottom CTA to write a review / see all reviews on Google */}
+        <div className="mt-10 text-center">
+          <a
+            href={siteConfig.googleReviewsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200 text-xs sm:text-sm font-bold text-slate-900 hover:text-red-600 transition-all shadow-xs"
+          >
+            <span>Zobrazit všechny recenze přímo na Google Mapách</span>
+            <ExternalLink className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </section>

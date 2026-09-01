@@ -72,6 +72,7 @@ export const siteConfig = {
     country: "Česká republika"
   },
   url: "https://hansbau.cz",
+  googleReviewsUrl: "https://www.google.com/search?sca_esv=46f3d15cfb9e1921&sxsrf=APpeQnvHDisvCKI-EN_PCX4GNyIrFCXIZQ:1788275531815&q=HANSBAU+%7C+Rekonstrukce+Byt%C5%AF&si=APenkKmVGdgpMPDQZoEWS8RIAhsqXAKlNLP0B8DNkkiU9KPI0akasRuRMpdcb-RNH7cQdMLDNamyJMeJGaYn0zrYfTQWRCWYSl5KFQ69i65vBE1hFOah5N77WApGsAXbYoWAjyPS4KaH&sa=X&ved=2ahUKEwjA-tW-1c2WAxUm9bsIHeEMNwAQ_coHegQIMxAB",
   rating: {
     score: 5.0,
     reviewCount: 28,

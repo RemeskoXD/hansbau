@@ -136,10 +136,15 @@ export default function ONasPage() {
                   <div className="text-2xl sm:text-3xl font-black text-red-600">40+</div>
                   <div className="text-[11px] text-slate-600 font-semibold">Let tradice řemesla</div>
                 </div>
-                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1 shadow-sm">
-                  <div className="text-2xl sm:text-3xl font-black text-amber-500">5.0 ★</div>
-                  <div className="text-[11px] text-slate-600 font-semibold">Google Recenze</div>
-                </div>
+                <a
+                  href={siteConfig.googleReviewsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 rounded-2xl bg-slate-50 hover:bg-white hover:border-red-400 border border-slate-200 text-center space-y-1 shadow-sm transition-all group"
+                >
+                  <div className="text-2xl sm:text-3xl font-black text-amber-500 group-hover:scale-105 transition-transform">5.0 ★</div>
+                  <div className="text-[11px] text-slate-600 group-hover:text-red-600 font-semibold transition-colors">Google Recenze</div>
+                </a>
               </div>
             </div>
           </div>
