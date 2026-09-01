@@ -22,19 +22,36 @@ export function JsonLd({
   faqs = [],
   serviceData
 }: JsonLdProps) {
-  // Base Organization / GeneralContractor Entity
+  // Base Organization / GeneralContractor Entity with SameAs Google Profile
   const organizationEntity = {
     "@type": ["HomeAndConstructionBusiness", "GeneralContractor", "LocalBusiness"],
     "@id": `${siteConfig.url}/#organization`,
     "name": siteConfig.name,
     "alternateName": ["HANSBAU", "HANSBAU stavební firma", "HANSBAU s.r.o. Cheb"],
     "url": siteConfig.url,
+    "sameAs": [
+      siteConfig.googleReviewsUrl,
+      "https://mescon.cz/"
+    ],
+    "hasMap": siteConfig.googleReviewsUrl,
     "logo": {
       "@type": "ImageObject",
+      "@id": `${siteConfig.url}/#logo`,
       "url": `${siteConfig.url}/images/Logo-17.webp`,
-      "caption": "HANSBAU s.r.o. Logo"
+      "contentUrl": `${siteConfig.url}/images/Logo-17.webp`,
+      "caption": "HANSBAU s.r.o. Logo",
+      "width": "1000",
+      "height": "300"
     },
-    "image": `${siteConfig.url}/images/nove/rekonstrukce-karlovarsky-kraj-hlavni.webp`,
+    "image": {
+      "@type": "ImageObject",
+      "@id": `${siteConfig.url}/#primaryimage`,
+      "url": `${siteConfig.url}/images/nove/rekonstrukce-karlovarsky-kraj-hlavni.webp`,
+      "contentUrl": `${siteConfig.url}/images/nove/rekonstrukce-karlovarsky-kraj-hlavni.webp`,
+      "caption": "HANSBAU Rekonstrukce bytů a koupelen",
+      "width": "1200",
+      "height": "800"
+    },
     "description": "Profesionální stavební firma se specializací na kompletní i částečné rekonstrukce bytů, koupelen a bytových jader na klíč v Karlovarském kraji.",
     "telephone": siteConfig.phoneCZ,
     "email": siteConfig.email,
@@ -61,8 +78,8 @@ export function JsonLd({
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 50.0827,
-      "longitude": 12.3789
+      "latitude": 50.0964,
+      "longitude": 12.4939
     },
     "openingHoursSpecification": [
       {
@@ -74,13 +91,19 @@ export function JsonLd({
     ],
     "aggregateRating": {
       "@type": "AggregateRating",
+      "@id": `${siteConfig.url}/#rating`,
       "ratingValue": siteConfig.rating.score.toString(),
       "reviewCount": siteConfig.rating.reviewCount.toString(),
       "bestRating": siteConfig.rating.maxScore.toString(),
-      "worstRating": "1"
+      "worstRating": "1",
+      "url": siteConfig.googleReviewsUrl,
+      "itemReviewed": {
+        "@id": `${siteConfig.url}/#organization`
+      }
     },
-    "review": reviews.map((r) => ({
+    "review": reviews.map((r, idx) => ({
       "@type": "Review",
+      "@id": `${siteConfig.url}/#review-${idx + 1}`,
       "author": {
         "@type": "Person",
         "name": r.author
@@ -88,9 +111,14 @@ export function JsonLd({
       "reviewRating": {
         "@type": "Rating",
         "ratingValue": r.rating.toString(),
-        "bestRating": "5"
+        "bestRating": "5",
+        "worstRating": "1"
       },
-      "reviewBody": r.text
+      "reviewBody": r.text,
+      "publisher": {
+        "@type": "Organization",
+        "name": "Google Maps"
+      }
     })),
     "areaServed": siteConfig.coverageAreas.map((area) => ({
       "@type": "City",
@@ -116,10 +144,14 @@ export function JsonLd({
       "Sokolov",
       "Aš",
       "Františkovy Lázně",
-      "Mariánské Lázně"
+      "Mariánské Lázně",
+      "Ostrov",
+      "Chodov",
+      "Kraslice"
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
+      "@id": `${siteConfig.url}/#catalog`,
       "name": "Stavební a rekonstrukční služby",
       "itemListElement": services.map((srv, idx) => ({
         "@type": "Offer",
@@ -144,7 +176,11 @@ export function JsonLd({
     "publisher": {
       "@id": `${siteConfig.url}/#organization`
     },
-    "inLanguage": "cs-CZ"
+    "inLanguage": "cs-CZ",
+    "potentialAction": {
+      "@type": "ReadAction",
+      "target": [siteConfig.url]
+    }
   };
 
   // WebPage Entity with speakable attribute for AI voice search

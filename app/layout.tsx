@@ -62,15 +62,17 @@ export const metadata: Metadata = {
     description: "Kompletní i částečné rekonstrukce bytů, koupelen a bytových jader na klíč v Karlovarském kraji.",
     images: ["/images/nove/rekonstrukce-karlovarsky-kraj-hlavni.webp"],
   },
+  manifest: "/manifest.json",
   icons: {
     icon: "/images/cropped-arrow-500-x-500-px-1.png",
     apple: "/images/cropped-arrow-500-x-500-px-1.png",
   },
   other: {
     "geo.region": "CZ-KA",
-    "geo.placename": "Cheb, Karlovy Vary, Sokolov, Aš",
-    "geo.position": "50.0827;12.3789",
-    "ICBM": "50.0827, 12.3789",
+    "geo.placename": "Cheb, Karlovy Vary, Sokolov, Aš, Karlovarský kraj",
+    "geo.position": "50.0964;12.4939",
+    "ICBM": "50.0964, 12.4939",
+    "theme-color": "#ffffff",
     "rating": "General",
     "distribution": "Global",
     "revisit-after": "7 days"
@@ -97,6 +99,7 @@ export default function RootLayout({
     <html lang="cs" className={`${inter.variable} ${montserrat.variable} scroll-smooth`}>
       <head>
         <link rel="icon" href="/images/cropped-arrow-500-x-500-px-1.png" sizes="any" />
+        <link rel="manifest" href="/manifest.json" />
         <link rel="author" href="/llms.txt" />
       </head>
       <body className="bg-white text-slate-900 font-sans antialiased min-h-screen flex flex-col">

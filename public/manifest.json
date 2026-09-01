@@ -1,0 +1,17 @@
+{
+  "name": "HANSBAU - Rekonstrukce bytů Karlovarský kraj",
+  "short_name": "HANSBAU",
+  "description": "Kompletní i částečné rekonstrukce bytů a koupelen na klíč v Karlovarském kraji.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#dc2626",
+  "icons": [
+    {
+      "src": "/images/cropped-arrow-500-x-500-px-1.png",
+      "sizes": "500x500",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
