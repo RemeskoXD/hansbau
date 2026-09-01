@@ -143,16 +143,37 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>
             © {new Date().getFullYear()} {siteConfig.name}. Všechna práva vyhrazena.
           </div>
+
           <div className="flex items-center gap-6">
             <span>Jednatel: {siteConfig.contactPerson}</span>
             <span>•</span>
             <Link href="/kontakt" className="hover:text-red-600 transition-colors font-medium">
               Kontakt & Sídlo
             </Link>
+          </div>
+
+          {/* Mescon Creator Attribution */}
+          <div className="flex items-center gap-2 text-xs text-slate-500">
+            <span>Vytvořil:</span>
+            <a
+              href="https://mescon.cz/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center transition-opacity hover:opacity-80"
+              title="MESCON - Tvorba webových stránek a systémů"
+            >
+              <Image
+                src="/images/mescon-logo.svg"
+                alt="MESCON"
+                width={80}
+                height={32}
+                className="h-6 w-auto object-contain"
+              />
+            </a>
           </div>
         </div>
       </div>
