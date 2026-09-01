@@ -97,13 +97,14 @@ export default function ONasPage() {
             {/* Founder Card with real photo */}
             <div className="lg:col-span-5 space-y-6">
               <div className="p-8 rounded-3xl bg-slate-50 border border-slate-200 space-y-6 shadow-md text-center">
-                <div className="relative w-40 h-40 mx-auto rounded-3xl overflow-hidden border-2 border-red-500 shadow-lg bg-slate-200">
+                <div className="relative w-44 h-56 mx-auto rounded-3xl overflow-hidden border-2 border-red-500 shadow-xl bg-slate-100">
                   <Image
                     src={siteConfig.founderPhoto}
                     alt="Jan Červeňak - jednatel HANSBAU"
                     fill
-                    sizes="160px"
-                    className="object-cover"
+                    priority
+                    sizes="200px"
+                    className="object-cover object-top"
                   />
                 </div>
 
