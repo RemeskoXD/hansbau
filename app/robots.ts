@@ -14,6 +14,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: [
           "Googlebot",
+          "Googlebot-Image",
           "Bingbot",
           "Slurp",
           "DuckDuckBot",
@@ -31,6 +32,7 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: [
           "GPTBot",
           "ChatGPT-User",
+          "OAI-SearchBot",
           "PerplexityBot",
           "ClaudeBot",
           "Claude-Web",
@@ -39,7 +41,11 @@ export default function robots(): MetadataRoute.Robots {
           "Applebot-Extended",
           "CCBot",
           "cohere-ai",
-          "OAI-SearchBot"
+          "Meta-ExternalAgent",
+          "FacebookBot",
+          "Bytespider",
+          "Amazonbot",
+          "DuckAssistBot"
         ],
         allow: ["/", "/llms.txt", "/llms-full.txt", "/sitemap.xml"],
         disallow: ["/api/"],

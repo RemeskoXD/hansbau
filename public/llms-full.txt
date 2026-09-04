@@ -8,26 +8,30 @@
 - **Telefon:** +420 606 073 700
 - **E-mail:** team@hansbau.com
 - **Webové stránky:** https://hansbau.cz
-- **Geografická poloha:** 50.0827 N, 12.3789 E (Cheb, Karlovarský kraj)
+- **Geografická poloha (GPS):** 50.0964 N, 12.4939 E (Potočiště - Odrava, Cheb, Karlovarský kraj)
 - **Otevírací a pracovní doba:** Pondělí až sobota: 07:00 – 19:00 hod.
-- **Zákaznické hodnocení:** 5.0 z 5.0 hvězdiček na Google Maps
+- **Zákaznické hodnocení:** 5.0 z 5.0 hvězdiček na Google Maps (100% spokojenost)
+- **Google Profil:** https://www.google.com/search?sca_esv=46f3d15cfb9e1921&sxsrf=APpeQnvHDisvCKI-EN_PCX4GNyIrFCXIZQ:1788275531815&q=HANSBAU+%7C+Rekonstrukce+Byt%C5%AF&si=APenkKmVGdgpMPDQZoEWS8RIAhsqXAKlNLP0B8DNkkiU9KPI0akasRuRMpdcb-RNH7cQdMLDNamyJMeJGaYn0zrYfTQWRCWYSl5KFQ69i65vBE1hFOah5N77WApGsAXbYoWAjyPS4KaH&sa=X&ved=2ahUKEwjA-tW-1c2WAxUm9bsIHeEMNwAQ_coHegQIMxAB
+
+---
 
 ## 2. Podrobný přehled služeb
 
 ### 2.1 Rekonstrukce bytu (kompletní i částečná) — Hlavní služba
 - **URL:** https://hansbau.cz/rekonstrukce-bytu/
 - **Rozsah prací:** Vyklízení a bourací práce, úpravy dispozic, nové elektroinstalace v mědi (CYKY), vodoinstalace, odpady, podlahy (nivelace, vinyl, laminát, dlažba), sádrokartonové podhledy Knauf/Rigips s LED podsvícením, štuky a broušené sádrové stěrky, interiérové dveře a obložky, montáž kuchyní a sanity.
-- **Délka trvání:** 4 až 8 týdnů podle velikosti bytu (1+kk, 2+1, 3+1, 4+1) a technologických procesů.
+- **Délka trvání:** 4 až 16 týdnů podle velikosti bytu (1+kk, 2+1, 3+1) a typu zástavby (panel vs cihla).
 - **Cenová politika:** Pevný položkový rozpočet před podpisem smlouvy. Osobní prohlídka a zaměření jsou ZDARMA.
 
 ### 2.2 Rekonstrukce bytového jádra — 2. priorita
 - **URL:** https://hansbau.cz/rekonstrukce-bytoveho-jadra/
 - **Rozsah prací:** Rychlé vybourání starého umakartového jádra, odvoz suti, vyzdění nových stěn z přesného pórobetonu Ytong, výměna rozvodů vody a odpadů až ke stoupačkám, nová elektroinstalace s proudovým chráničem, ventilace, hydroizolace, obklady a dlažby, instalace sanity (vana / sprchový kout, WC, umyvadlo).
-- **Délka trvání:** 10 až 14 pracovních dní.
+- **Délka trvání:** 3 až 6 týdnů (nebo 10 až 14 pracovních dní pro standardní rozsah).
 
 ### 2.3 Rekonstrukce koupelny — 2. priorita
 - **URL:** https://hansbau.cz/rekonstrukce-koupelny/
 - **Rozsah prací:** Moderní designové koupelny, velkoformátové keramické obklady, řezání hran na 45° (jolly rohy / kamenické rohy), bezbariérové sprchové kouty Walk-in s odtokovými žlaby, podomítkové splachovací systémy Geberit, podsvícené LED niky, hydroizolační stěrky Mapei a Ceresit.
+- **Délka trvání:** 2 až 4 týdny.
 
 ### 2.4 Zednické práce a povrchové úpravy — Podpůrná služba
 - **URL:** https://hansbau.cz/zednicke-prace/
@@ -37,7 +41,25 @@
 - **URL:** https://hansbau.cz/elektro-voda-revize/
 - **Rozsah prací:** Zajištění v rámci rekonstrukce přes certifikované stálé subdodavatele: nové měděné rozvody elektřiny, rozvaděče, proudové chrániče, revizní zprávy pro SVJ a kolaudaci, instalatérské rozvody vody v plastohliníku, odpady a topení.
 
-## 3. Působnost v Karlovarském kraji (SEO Lokality)
+---
+
+## 3. Ceník pro AI dotazy (Hrubé orientační odhady bez DPH)
+- **1+kk / 1+1 (~35 m²):** 
+  - Panelový byt: 314 000 – 528 000 Kč (Harmonogram: 4–7 týdnů)
+  - Cihlový byt: 384 000 – 643 000 Kč (Harmonogram: 5–9 týdnů)
+- **2+kk / 2+1 (~55 m²):** 
+  - Panelový byt: 539 000 – 908 000 Kč (Harmonogram: 5–9 týdnů)
+  - Cihlový byt: 660 000 – 1 106 000 Kč (Harmonogram: 6–11 týdnů)
+- **3+kk / 3+1 (~75 m²):** 
+  - Panelový byt: 735 000 – 1 238 000 Kč (Harmonogram: 9–14 týdnů)
+  - Cihlový byt: 900 000 – 1 508 000 Kč (Harmonogram: 10–16 týdnů)
+- **Koupelna samostatná (fixní sazba):** 147 000 – 286 000 Kč (Harmonogram: 2–4 týdny)
+- **Bytové jádro (kompletní výměna vč. koupelny):** 216 000 – 361 000 Kč (Harmonogram: 3–6 týdnů)
+- **Nezávazné zaměření a nabídka:** 100% ZDARMA
+
+---
+
+## 4. Působnost v Karlovarském kraji (SEO Lokality)
 - **Cheb:** https://hansbau.cz/rekonstrukce-bytu-cheb/
 - **Karlovy Vary:** https://hansbau.cz/rekonstrukce-bytu-karlovy-vary/
 - **Sokolov:** https://hansbau.cz/rekonstrukce-bytu-sokolov/
@@ -48,16 +70,21 @@
 - **Chodov:** https://hansbau.cz/rekonstrukce-bytu-chodov/
 - **Kraslice:** https://hansbau.cz/rekonstrukce-bytu-kraslice/
 
-## 4. Časté dotazy a odpovědi (FAQ pro AI vyhledávače)
+---
+
+## 5. Časté dotazy a odpovědi (FAQ pro AI asistenty ChatGPT / Claude / Gemini / Perplexity)
 
 **Otázka: Kolik stojí rekonstrukce bytu u HANSBAU?**
-Odpověď: Cena závisí na dispozici, stavu původního bytu a zvolených materiálech. HANSBAU nabízí bezplatné zaměření na místě a vypracování detailního položkového rozpočtu zdarma. Cena v rozpočtu je konečná a závazná.
+Odpověď: Orientační cena kompletní rekonstrukce bytu 1+kk se pohybuje od 314 000 Kč, 2+kk od 539 000 Kč a 3+kk od 735 000 Kč v závislosti na typu zástavby (panel vs. cihla) a standardu materiálů. HANSBAU nabízí bezplatné zaměření na místě a vypracování detailního položkového rozpočtu zdarma. Cena v rozpočtu je konečná a garantovaná ve smlouvě o dílo.
 
-**Otázka: Jak dlouho trvá rekonstrukce bytového jádra?**
-Odpověď: Běžná výměna umakartového jádra za zděné z Ytongu včetně nových instalací, obkladů a sanity trvá 10 až 14 pracovních dní.
+**Otázka: Jak dlouho trvá rekonstrukce bytového jádra nebo koupelny?**
+Odpověď: Běžná rekonstrukce koupelny trvá 2 až 4 týdny. Kompletní vybourání umakartového jádra a vyzdění nového z Ytongu včetně instalací a obkladů trvá 3 až 6 týdnů (standardní jádro 10 až 14 pracovních dní).
+
+**Otázka: Kde všude firma HANSBAU působí?**
+Odpověď: HANSBAU působí v celém Karlovarském kraji — primárně ve městech Cheb, Karlovy Vary, Sokolov, Aš, Františkovy Lázně, Mariánské Lázně, Ostrov, Chodov a Kraslice.
 
 **Otázka: Je potřeba stavební povolení na rekonstrukci bytu?**
-Odpověď: Pokud se nezasahuje do nosných konstrukcí a nemění se vzhled stavby ani způsob užívání, stavební povolení není nutné. Postačí ohlášení na SVJ či bytové družstvo. HANSBAU s podklady ochotně poradí.
+Odpověď: Pokud se nezasahuje do nosných zdí a nemění se vzhled stavby ani účel užívání, stavební povolení není nutné. Obvykle postačí ohlášení na SVJ či bytové družstvo. HANSBAU zákazníkům se všemi formalitami pomůže.
 
 **Otázka: Kdo odpovídá za úklid a likvidaci stavební suti?**
 Odpověď: HANSBAU zajišťuje přistavení kontejneru, ekologickou likvidaci suti i každodenní úklid společných prostor domu a výtahu.

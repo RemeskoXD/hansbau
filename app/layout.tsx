@@ -101,6 +101,7 @@ export default function RootLayout({
         <link rel="icon" href="/images/cropped-arrow-500-x-500-px-1.png" sizes="any" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="author" href="/llms.txt" />
+        <link rel="alternate" type="text/plain" href="/llms-full.txt" title="HANSBAU LLM Knowledge Base" />
       </head>
       <body className="bg-white text-slate-900 font-sans antialiased min-h-screen flex flex-col">
         {children}
