@@ -55,8 +55,12 @@ export interface PortfolioItem {
 }
 
 export const siteConfig = {
-  name: "HANSBAU s.r.o.",
+  name: "HANSBAU",
+  legalName: "Jan Červeňak s.r.o.",
+  ico: "04860837",
+  dic: "CZ04860837",
   tagline: "Rekonstrukce bytů a koupelen v Karlovarském kraji",
+  openingHours: "Po–So 7:00 – 19:00",
   phoneCZ: "+420 606 073 700",
   phoneCZRaw: "+420606073700",
   email: "team@hansbau.com",
@@ -66,8 +70,9 @@ export const siteConfig = {
   logo: "/images/Logo-17.webp",
   address: {
     street: "Potočiště 21 - Odrava",
-    city: "Cheb",
+    city: "Odrava",
     zip: "350 02",
+    postCity: "Cheb",
     region: "Karlovarský kraj",
     country: "Česká republika"
   },

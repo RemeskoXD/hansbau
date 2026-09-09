@@ -27,7 +27,10 @@ export function JsonLd({
     "@type": ["HomeAndConstructionBusiness", "GeneralContractor", "LocalBusiness"],
     "@id": `${siteConfig.url}/#organization`,
     "name": siteConfig.name,
-    "alternateName": ["HANSBAU", "HANSBAU stavební firma", "HANSBAU s.r.o. Cheb"],
+    "legalName": siteConfig.legalName,
+    "taxID": siteConfig.dic,
+    "vatID": siteConfig.dic,
+    "alternateName": ["Jan Červeňak s.r.o.", "HANSBAU", "HANSBAU stavební firma", "HANSBAU Cheb"],
     "url": siteConfig.url,
     "sameAs": [
       siteConfig.googleReviewsUrl,

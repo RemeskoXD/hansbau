@@ -63,7 +63,7 @@ export default function ONasPage() {
 
               <div className="space-y-4 text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
                 <p>
-                  <strong className="text-slate-950 font-bold">HANSBAU s.r.o.</strong> je stavební firma se sídlem v Potočišti u Chebu, založená v roce 2016 s návazností na rodinnou řemeslnou tradici od roku 1984. Naší hlavní specializací jsou kompletní i částečné rekonstrukce bytů a koupelen.
+                  <strong className="text-slate-950 font-bold">{siteConfig.legalName}</strong> (působící pod značkou <strong className="text-slate-950 font-bold">{siteConfig.name}</strong>) je stavební firma se sídlem v Potočišti u Chebu, založená v roce 2016 s návazností na rodinnou řemeslnou tradici od roku 1984. Naší hlavní specializací jsou kompletní i částečné rekonstrukce bytů a koupelen.
                 </p>
                 <p>
                   Řešíme úpravy dispozic, bourací a přípravné práce, zednické práce, sádrokartony, omítky, velkoformátové obklady, dlažby, podlahy a dokončovací práce. V rámci každé rekonstrukce zajistíme také navazující profese, jako jsou instalatérské a elektrikářské práce včetně potřebných revizních zpráv přes naše stálé partnery.

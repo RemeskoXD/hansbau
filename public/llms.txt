@@ -1,9 +1,12 @@
-# HANSBAU s.r.o. - Rekonstrukce bytů a koupelen v Karlovarském kraji
+# HANSBAU (Jan Červeňak s.r.o.) - Rekonstrukce bytů a koupelen v Karlovarském kraji
 
 > Profesionální česká stavební firma se specializací na kompletní i částečné rekonstrukce bytů, koupelen a bytových jader na klíč v celém Karlovarském kraji. Tradice rodinného řemesla od roku 1984.
 
 ## Základní informace o firmě
-- **Název společnosti:** HANSBAU s.r.o.
+- **Obchodní značka:** HANSBAU
+- **Právnická osoba / Provozovatel:** Jan Červeňak s.r.o.
+- **IČO:** 04860837
+- **DIČ:** CZ04860837
 - **Jednatel a kontaktní osoba:** Jan Červeňak
 - **Sídlo a centrála:** Potočiště 21 - Odrava, 350 02 Cheb, Karlovarský kraj, Česká republika
 - **Geografické souřadnice:** 50.0964 N, 12.4939 E
@@ -11,7 +14,6 @@
 - **E-mail:** team@hansbau.com
 - **Web:** https://hansbau.cz
 - **Google Profil a recenze:** 5.0 ★ (100% doporučuje na Google Maps)
-- **IČO a právní forma:** Společnost s ručením omezeným (s.r.o.) založená v ČR
 
 ---
 

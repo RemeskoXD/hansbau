@@ -77,8 +77,10 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
                 <div>
-                  <div className="text-slate-900 font-semibold">{siteConfig.address.street}</div>
-                  <div className="text-slate-600">{siteConfig.address.zip} {siteConfig.address.city}</div>
+                  <div className="text-slate-900 font-bold">{siteConfig.legalName}</div>
+                  <div className="text-slate-700">{siteConfig.address.street}</div>
+                  <div className="text-slate-600">{siteConfig.address.zip} {siteConfig.address.city} (Cheb)</div>
+                  <div className="text-[11px] text-slate-500 mt-1">IČO: {siteConfig.ico} • DIČ: {siteConfig.dic}</div>
                 </div>
               </div>
 
@@ -145,7 +147,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>
-            © {new Date().getFullYear()} {siteConfig.name}. Všechna práva vyhrazena.
+            © {new Date().getFullYear()} {siteConfig.name} ({siteConfig.legalName}, IČO: {siteConfig.ico}). Všechna práva vyhrazena.
           </div>
 
           <div className="flex items-center gap-6">

@@ -91,15 +91,20 @@ export default function KontaktPage() {
               <div className="w-12 h-12 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center">
                 <MapPin className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900">Sídlo společnosti</h3>
+              <h3 className="text-lg font-bold text-slate-900">Sídlo & Fakturační údaje</h3>
               <p className="text-xs text-slate-600 font-normal">
-                Centrála pro Karlovarský kraj.
+                Oficiální sídlo společnosti a centrála.
               </p>
-              <div className="pt-2 text-sm text-slate-800">
-                <div className="font-bold text-slate-900">{siteConfig.name}</div>
-                <div>{siteConfig.address.street}</div>
-                <div>{siteConfig.address.zip} {siteConfig.address.city}</div>
-                <div className="text-xs text-slate-500 mt-1">Jednatel: {siteConfig.contactPerson}</div>
+              <div className="pt-2 text-sm text-slate-800 space-y-1">
+                <div className="font-bold text-slate-950">{siteConfig.legalName}</div>
+                <div className="text-xs text-slate-500 font-medium">Obchodní značka: {siteConfig.name}</div>
+                <div className="text-slate-700">{siteConfig.address.street}</div>
+                <div className="text-slate-700">{siteConfig.address.zip} {siteConfig.address.city} (Cheb)</div>
+                <div className="pt-2 border-t border-slate-200/80 text-xs text-slate-600 space-y-0.5">
+                  <div><strong>IČO:</strong> {siteConfig.ico}</div>
+                  <div><strong>DIČ:</strong> {siteConfig.dic}</div>
+                  <div><strong>Jednatel:</strong> {siteConfig.contactPerson}</div>
+                </div>
               </div>
             </div>
           </div>
