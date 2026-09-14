@@ -63,13 +63,13 @@ export default function ONasPage() {
 
               <div className="space-y-4 text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
                 <p>
-                  <strong className="text-slate-950 font-bold">{siteConfig.legalName}</strong> (působící pod značkou <strong className="text-slate-950 font-bold">{siteConfig.name}</strong>) je stavební firma se sídlem v Potočišti u Chebu, založená v roce 2016 s návazností na rodinnou řemeslnou tradici od roku 1984. Naší hlavní specializací jsou kompletní i částečné rekonstrukce bytů a koupelen.
+                  <strong className="text-slate-950 font-bold">{siteConfig.legalName}</strong> (působící pod značkou <strong className="text-slate-950 font-bold">{siteConfig.name}</strong>) je stavební a zednická firma se sídlem v Potočišti u Chebu. Stavíme na poctivém řemesle, osobním přístupu a rodinné tradici sahající až do roku 1984.
                 </p>
                 <p>
-                  Řešíme úpravy dispozic, bourací a přípravné práce, zednické práce, sádrokartony, omítky, velkoformátové obklady, dlažby, podlahy a dokončovací práce. V rámci každé rekonstrukce zajistíme také navazující profese, jako jsou instalatérské a elektrikářské práce včetně potřebných revizních zpráv přes naše stálé partnery.
+                  Naší hlavní specializací jsou <strong>kompletní rekonstrukce bytů na klíč, zděná bytová jádra z Ytongu a moderní koupelny</strong> po celém Karlovarském kraji. Zákazníkům nabízíme naprostý klid: od bouracích prací a odvozu suti přes novou elektřinu v mědi, instalatérské rozvody, precizní velkoformátové obklady, štuky a sádrové stěrky až po pokládku podlah.
                 </p>
                 <p>
-                  Naším cílem je, aby pro vás rekonstrukce nebyla noční můrou. Nemusíte shánět 5 různých part řemeslníků – u nás máte jednoho spolehlivého partnera, který ručí za celý výsledek smlouvou o dílo.
+                  Nemusíte shánět 5 různých part řemeslníků a složitě je koordinovat. Všechny profese – včetně certifikovaného elektrikáře a instalatéra s revizními zprávami – koordinuje osobně pan Červeňak. Za celý výsledek ručíme pevnou smlouvou o dílo a garantovanou cenou.
                 </p>
               </div>
 
@@ -81,15 +81,33 @@ export default function ONasPage() {
                 </div>
                 <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800 font-medium">
                   <CheckCircle2 className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
-                  <span>Pevná smlouva o dílo a záruka</span>
+                  <span>Pevná smlouva o dílo a termín dokončení</span>
                 </div>
                 <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800 font-medium">
                   <CheckCircle2 className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
-                  <span>Pojištění odpovědnosti pro vaši jistotu</span>
+                  <span>Plné pojištění odpovědnosti za dílo</span>
                 </div>
                 <div className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-800 font-medium">
                   <CheckCircle2 className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
                   <span>Každodenní úklid a ohled na sousedy</span>
+                </div>
+              </div>
+
+              {/* Official Company Credentials Card */}
+              <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-2 text-xs">
+                <div className="font-bold uppercase tracking-wider text-slate-900 text-[11px] text-red-600">
+                  Fakturační & Právní údaje
+                </div>
+                <div className="text-slate-950 font-bold text-sm sm:text-base">
+                  {siteConfig.legalName}
+                </div>
+                <div className="text-slate-600 text-xs">
+                  Sídlo: <strong>{siteConfig.address.street}, {siteConfig.address.zip} {siteConfig.address.city}</strong>
+                </div>
+                <div className="flex flex-wrap gap-x-5 gap-y-1 pt-2 border-t border-slate-100 text-slate-700 text-xs font-semibold">
+                  <span>IČO: <strong>{siteConfig.ico}</strong></span>
+                  <span>DIČ: <strong>{siteConfig.dic}</strong></span>
+                  <span>Jednatel: <strong>{siteConfig.contactPerson}</strong></span>
                 </div>
               </div>
             </div>
@@ -100,7 +118,7 @@ export default function ONasPage() {
                 <div className="relative w-44 h-56 mx-auto rounded-3xl overflow-hidden border-2 border-red-500 shadow-xl bg-slate-100">
                   <Image
                     src={siteConfig.founderPhoto}
-                    alt="Jan Červeňak - jednatel HANSBAU"
+                    alt="Jan Červeňak - jednatel společnosti"
                     fill
                     priority
                     sizes="200px"
@@ -111,21 +129,21 @@ export default function ONasPage() {
                 <div className="space-y-1">
                   <h3 className="text-xl font-bold text-slate-900">{siteConfig.contactPerson}</h3>
                   <div className="text-xs text-red-600 font-semibold uppercase tracking-wider">
-                    {siteConfig.contactRole}
+                    {siteConfig.contactRole} • {siteConfig.legalName}
                   </div>
                 </div>
 
-                <p className="text-xs sm:text-sm text-slate-600 italic leading-relaxed font-normal">
-                  „Každou stavbu realizujeme tak, jako bychom stavěli pro sebe. Naší největší vizitkou je spokojený zákazník, který nás s čistým svědomím doporučí svým známým.“
+                <p className="text-xs sm:text-sm text-slate-700 italic leading-relaxed font-normal bg-white p-4 rounded-2xl border border-slate-200/80 shadow-xs">
+                  „Za každou rekonstrukcí stojím osobně. Když se domluvíme na rozpočtu a termínu, platí to. Sám koordinuji instalatéry i elektrikáře, dohlížím na precizní obklady a zednickou práci a dbám na to, aby po nás každý den zůstalo uklizeno. Naší největší vizitkou je spokojený zákazník a poctivě odvedené řemeslo.“
                 </p>
 
-                <div className="pt-4 border-t border-slate-200 flex items-center justify-center gap-4 text-xs font-bold text-slate-800">
+                <div className="pt-2 border-t border-slate-200 flex items-center justify-center gap-4 text-xs font-bold text-slate-800">
                   <a
                     href={`tel:${siteConfig.phoneCZRaw}`}
-                    className="px-4 py-2 rounded-xl bg-white hover:bg-red-600 hover:text-white border border-slate-300 text-slate-900 transition-all flex items-center gap-1.5 shadow-sm"
+                    className="px-5 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white transition-all flex items-center gap-2 shadow-sm"
                   >
-                    <Phone className="w-3.5 h-3.5 text-red-600" />
-                    <span>{siteConfig.phoneCZ}</span>
+                    <Phone className="w-3.5 h-3.5" />
+                    <span>Zavolat panu Červeňakovi</span>
                   </a>
                 </div>
               </div>

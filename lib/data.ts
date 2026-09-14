@@ -869,74 +869,119 @@ export const portfolioItems: PortfolioItem[] = [
     category: "zednicke",
     categoryLabel: "Zednické práce",
     location: "Karlovarský kraj",
-    image: "/images/pokladka-plovouci-podlahy_66.webp",
-    description: "Přesné kladení zámkové podlahy na kročejovou a tepelně izolační podložku."
+    image: "/images/nove2/IMG_4483.webp",
+    description: "Přesné kladení zámkové podlahy na kročejovou a tepelně izolační podložku v nově zrekonstruovaném pokoji."
   },
   {
     id: "realizace-zednicke-2",
-    title: "Lepení keramické dlažby do hřebenového lože",
+    title: "Sádrové stěrky a štukování stěn a stropu",
     category: "zednicke",
     categoryLabel: "Zednické práce",
     location: "Cheb",
-    image: "/images/1-9.webp",
-    description: "Aplikace flexibilního lepidla C2TES1 zubovým hladítkem pro stoprocentní přilnavost dlaždic."
+    image: "/images/nove2/IMG_4358.webp",
+    description: "Hlazení a finální povrchová úprava stěn sádrovou stěrkou pro dokonale hladký a rovný podklad."
   },
   {
     id: "realizace-zednicke-3",
-    title: "Sádrokartonový rastr na stropě",
+    title: "Jádrové omítky a zapravení stěn po bourání",
     category: "zednicke",
     categoryLabel: "Zednické práce",
-    location: "Karlovy Vary",
-    image: "/images/1-4.webp",
-    description: "Montáž křížového ocelového roštu Knauf pro snížení stropu a osazení bodových světel."
+    location: "Karlovarský kraj",
+    image: "/images/nove2/IMG_4229.webp",
+    description: "Vyrovnání nerovností původního zdiva jádrovou maltou a perlinkou s flexibilním lepidlem."
   },
   {
     id: "realizace-zednicke-4",
-    title: "Výstavba sádrokartonových příček s izolací",
-    category: "zednicke",
-    categoryLabel: "Zednické práce",
+    title: "Sádrokartonové konstrukce a úprava dispozice",
+    category: "byty",
+    categoryLabel: "Rekonstrukce bytu",
+    location: "Cheb",
+    image: "/images/nove2/IMG_3194.webp",
+    description: "Montáž pevných ocelových CW/UW profilů pro nové rozdělení místností a otevření prostoru bytu."
+  },
+  {
+    id: "realizace-jadro-nove-1",
+    title: "Vyzdění nového bytového jádra z tvárnic Ytong",
+    category: "jadra",
+    categoryLabel: "Bytové jádro",
+    location: "Cheb",
+    image: "/images/nove2/IMG_5701.webp",
+    description: "Přesné vyzdění obvodových i vnitřních stěn nového jádra po vybourání původního umakartu."
+  },
+  {
+    id: "realizace-jadro-nove-2",
+    title: "Příprava drážek pro rozvody vody a elektroinstalace",
+    category: "jadra",
+    categoryLabel: "Bytové jádro",
     location: "Sokolov",
-    image: "/images/1-3.webp",
-    description: "Zhotovení protihlukových a protipožárních příček s minerální vatou a ocelovými CW profily."
+    image: "/images/nove2/IMG_5784.webp",
+    description: "Vyfrézované drážky a osazení elektroinstalačních krabic a rozvodů vody ve zděném jádře Ytong."
+  },
+  {
+    id: "realizace-koupelna-nove-1",
+    title: "Hydroizolační stěrka a laserové zaměření koupelny",
+    category: "koupelny",
+    categoryLabel: "Rekonstrukce koupelny",
+    location: "Karlovy Vary",
+    image: "/images/nove2/IMG_5864.webp",
+    description: "Vodotěsná hydroizolační vrstva s těsnicími páskami v rozích a laserové nivelování pro pokládku obkladů."
+  },
+  {
+    id: "realizace-koupelna-nove-2",
+    title: "Precizní obklad koupelny s dřevěným chevron dekorem",
+    category: "koupelny",
+    categoryLabel: "Rekonstrukce koupelny",
+    location: "Karlovarský kraj",
+    image: "/images/nove2/IMG_5914-1.webp",
+    description: "Kombinace velkoformátových obkladů a diagonálního dekoru dřeva s vyrovnávacími nivelačními klíny."
   }
 ];
 
 export const reviews: ReviewItem[] = [
   {
-    id: "rev-1",
-    author: "Petr Novotný",
+    id: "rev-hamrle",
+    author: "Lukas Hamrle",
     rating: 5,
-    date: "Před 1 měsícem",
-    text: "S firmou HANSBAU jsme rekonstruovali byt 3+1 v Chebu na Skalce. Pan Červeňak dodržel do koruny domluvený rozpočet i termín. Zedníci i obkladači byli precizní a po práci vždy uklidili. Jednoznačně doporučuji!",
+    date: "Před rokem",
+    text: "Nechal jsem si od firmy Hansbau zrekonstruovat 4 byty a velka spokojenost. Flexibilita na jednicku, komunikace na jednicku , bez chybicky Velice doporucuji",
     source: "Google",
-    location: "Cheb"
+    location: "Karlovarský kraj"
   },
   {
-    id: "rev-2",
-    author: "Michaela Dvořáková",
+    id: "rev-pock",
+    author: "Vasek Pock",
     rating: 5,
-    date: "Před 2 měsíci",
-    text: "Rekonstrukce koupelny a bytového jádra v Karlových Varech proběhla naprosto hladce. Velkoformátový obklad je položený dokonale rovně a kamenické rohy jsou jako z katalogu. Skvělá komunikace.",
+    date: "Před 9 měsíci",
+    text: "S rekonstrukcí bytového jádra jsme velice spokojeni, profesionalita od samotného začátku až po samotný závěr. Výborná komunikace a flexibilita. Jsou ochotni se přizpůsobit vašim požadavkům. LUXUSNÍ PRÁCE. Doporučuji.",
     source: "Google",
-    location: "Karlovy Vary"
+    location: "Karlovarský kraj"
   },
   {
-    id: "rev-3",
-    author: "Tomáš Král",
+    id: "rev-kriz",
+    author: "Jiří Kříž",
     rating: 5,
-    date: "Před 3 měsíci",
-    text: "Oceňuji férové jednání. Poptali jsme kompletní rekonstrukci bytu v Sokolově. Práce byla hotová dokonce o 3 dny dříve, než byl původní plán. Profesionálové.",
+    date: "Před rokem",
+    text: "Naprosto skvělá spolupráce, úžasná domluva a profesionálně odvedená práce. Předčilo to mé očekávání. Instalatér i elektrikář domluven panem Červeňákem. Vřele doporučuji.",
     source: "Google",
-    location: "Sokolov"
+    location: "Karlovarský kraj"
   },
   {
-    id: "rev-4",
-    author: "Ing. Vladimír Šulc",
+    id: "rev-fiegenbaum",
+    author: "MARTA FIEGENBAUM",
     rating: 5,
-    date: "Před 4 měsíci",
-    text: "Velká spokojenost s vyzděním jádra a novou elektroinstalací v Aši. Vše včetně revize proběhlo bez zádrhelů.",
+    date: "Před rokem",
+    text: "Firma Zednictví Červeňak u nás pracovala na rekonstrukci vnitřních prostorů v nemovitosti, nadále opravila fasádu a venkovní schody. Velká spokojenost, precizní práce a spolehlivost.",
     source: "Google",
-    location: "Aš"
+    location: "Karlovarský kraj"
+  },
+  {
+    id: "rev-motorcycle",
+    author: "Motorcycle Traveling",
+    rating: 5,
+    date: "Před rokem",
+    text: "Nechal jsem si dělat nový plot původní vybourat . Skvělý přístup, ochota, cena a rychlost provedení. Jsem s panem Červeňakem velmi spokojen.",
+    source: "Google",
+    location: "Cheb a okolí"
   }
 ];
 
