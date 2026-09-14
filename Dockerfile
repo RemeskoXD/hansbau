@@ -32,10 +32,18 @@ ENV HOSTNAME="0.0.0.0"
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
+# Ensure data directory exists and has correct permissions for nextjs user
+RUN mkdir -p /app/data && chown -R nextjs:nodejs /app/data
+
 # Copy static assets and standalone build
 COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+# Copy initial seed data store
+COPY --from=builder --chown=nextjs:nodejs /app/data ./data
+
+# Expose volume for persistent NoSQL & CSV backup storage in Coolify
+VOLUME ["/app/data"]
 
 USER nextjs
 

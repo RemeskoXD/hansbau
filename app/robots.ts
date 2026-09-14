@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/"],
+        disallow: ["/api/", "/admin/"],
       },
       {
         userAgent: [
@@ -26,7 +26,7 @@ export default function robots(): MetadataRoute.Robots {
           "ia_archiver"
         ],
         allow: "/",
-        disallow: ["/api/"],
+        disallow: ["/api/", "/admin/"],
       },
       {
         userAgent: [
@@ -48,7 +48,7 @@ export default function robots(): MetadataRoute.Robots {
           "DuckAssistBot"
         ],
         allow: ["/", "/llms.txt", "/llms-full.txt", "/sitemap.xml"],
-        disallow: ["/api/"],
+        disallow: ["/api/", "/admin/"],
       }
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
