@@ -14,8 +14,11 @@ import { ServiceAreaMap } from "@/components/ServiceAreaMap";
 import { FAQSection } from "@/components/FAQSection";
 import { JsonLd } from "@/components/JsonLd";
 import { homeFaq, siteConfig } from "@/lib/data";
+import { getContentStore } from "@/lib/content-store";
 
 export default function HomePage() {
+  const { calculator } = getContentStore().content;
+
   return (
     <>
       <JsonLd
@@ -32,7 +35,12 @@ export default function HomePage() {
         <Hero />
         <ServicesSection />
         <BeforeAfterSlider />
-        <PriceCalculator />
+        <PriceCalculator
+          badge={calculator.badge}
+          title={calculator.title}
+          perex={calculator.perex}
+          disclaimer={calculator.disclaimer}
+        />
         <WhyUsSection />
         <RealizaceGallery limit={8} showViewAll={true} />
         <GoogleReviewsSection />

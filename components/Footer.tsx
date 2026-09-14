@@ -2,8 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Star, ShieldCheck, Clock, ArrowRight } from "lucide-react";
 import { siteConfig, services, locations } from "@/lib/data";
+import { getContentStore } from "@/lib/content-store";
 
 export function Footer() {
+  const { company } = getContentStore().content;
+
   return (
     <footer className="bg-slate-50 text-slate-600 border-t border-slate-200 pt-16 pb-24 lg:pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,10 +80,10 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
                 <div>
-                  <div className="text-slate-900 font-bold">{siteConfig.legalName}</div>
-                  <div className="text-slate-700">{siteConfig.address.street}</div>
-                  <div className="text-slate-600">{siteConfig.address.zip} {siteConfig.address.city} (Cheb)</div>
-                  <div className="text-[11px] text-slate-500 mt-1">IČO: {siteConfig.ico} • DIČ: {siteConfig.dic}</div>
+                  <div className="text-slate-900 font-bold">{company.legalName}</div>
+                  <div className="text-slate-700">{company.street}</div>
+                  <div className="text-slate-600">{company.zip} {company.city} (Cheb)</div>
+                  <div className="text-[11px] text-slate-500 mt-1">IČO: {company.ico} • DIČ: {company.dic}</div>
                 </div>
               </div>
 
@@ -88,10 +91,10 @@ export function Footer() {
                 <Phone className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
                 <div>
                   <a
-                    href={`tel:${siteConfig.phoneCZRaw}`}
+                    href={`tel:${company.phone.replace(/\s+/g, "")}`}
                     className="text-slate-900 font-bold hover:text-red-600 transition-colors block"
                   >
-                    {siteConfig.phoneCZ}
+                    {company.phone}
                   </a>
                   <div className="text-[11px] text-slate-500">Po–So: 7:00 – 19:00 hod</div>
                 </div>
@@ -100,10 +103,10 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <Mail className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
                 <a
-                  href={`mailto:${siteConfig.email}`}
+                  href={`mailto:${company.email}`}
                   className="text-slate-900 font-semibold hover:text-red-600 transition-colors"
                 >
-                  {siteConfig.email}
+                  {company.email}
                 </a>
               </div>
 
@@ -111,7 +114,7 @@ export function Footer() {
                 <Clock className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
                 <div>
                   <div className="text-slate-900 font-medium">Jednatel společnosti</div>
-                  <div className="text-slate-500">{siteConfig.contactPerson}</div>
+                  <div className="text-slate-500">{company.representative}</div>
                 </div>
               </div>
             </div>
@@ -147,11 +150,11 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>
-            © {new Date().getFullYear()} {siteConfig.name} ({siteConfig.legalName}, IČO: {siteConfig.ico}). Všechna práva vyhrazena.
+            © {new Date().getFullYear()} {company.brandName} ({company.legalName}, IČO: {company.ico}). Všechna práva vyhrazena.
           </div>
 
           <div className="flex items-center gap-6">
-            <span>Jednatel: {siteConfig.contactPerson}</span>
+            <span>Jednatel: {company.representative}</span>
             <span>•</span>
             <Link href="/kontakt" className="hover:text-red-600 transition-colors font-medium">
               Kontakt & Sídlo

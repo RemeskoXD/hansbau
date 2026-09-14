@@ -86,7 +86,19 @@ const PRICING_MATRIX: Record<LayoutType, Record<BuildingType, Record<StandardTyp
   }
 };
 
-export function PriceCalculator() {
+export interface PriceCalculatorProps {
+  badge?: string;
+  title?: string;
+  perex?: string;
+  disclaimer?: string;
+}
+
+export function PriceCalculator({
+  badge = "Online kalkulace rozpočtu",
+  title = "Orientační kalkulačka cen rekonstrukcí",
+  perex = "Vyberte parametry vaší rekonstrukce a získejte okamžitý přehled o orientační ceně a harmonogramu. Přesný položkový rozpočet pro vás zdarma připravíme po osobním zaměření na místě.",
+  disclaimer = "Uvedené ceny jsou pouze orientační a bez DPH. Konečná cena se vždy stanovuje až po posouzení aktuálního stavu bytu, rozsahu bouracích prací, stavu rozvodů, dostupnosti a přístupu na stavbu a zvoleného standardu materiálů. Skutečná cena se může od odhadu lišit směrem dolů i nahoru. Kalkulačka slouží jako hrubý odhad pro prvotní orientaci klienta – přesný položkový rozpočet připravujeme zdarma po osobním zaměření na místě v Karlovarském kraji."
+}: PriceCalculatorProps) {
   const [buildingType, setBuildingType] = useState<BuildingType>("panel");
   const [layout, setLayout] = useState<LayoutType>("2kk");
   const [standard, setStandard] = useState<StandardType>("standard");
@@ -194,13 +206,13 @@ export function PriceCalculator() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
           <span className="text-xs sm:text-sm font-black uppercase tracking-widest text-red-600 block">
-            Online kalkulace rozpočtu
+            {badge}
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-slate-950">
-            Orientační kalkulačka cen rekonstrukcí
+            {title}
           </h2>
           <p className="text-sm sm:text-base text-slate-600 font-normal">
-            Vyberte parametry vaší rekonstrukce a získejte okamžitý přehled o orientační ceně a harmonogramu. Přesný položkový rozpočet pro vás zdarma připravíme po osobním zaměření na místě.
+            {perex}
           </p>
         </div>
 
@@ -570,7 +582,7 @@ export function PriceCalculator() {
                     <span>Důležité informace k cenám:</span>
                   </div>
                   <p>
-                    Uvedené ceny jsou pouze orientační a bez DPH. Konečná cena se vždy stanovuje až po posouzení aktuálního stavu bytu, rozsahu bouracích prací, stavu rozvodů, dostupnosti a přístupu na stavbu a zvoleného standardu materiálů. Skutečná cena se může od odhadu lišit směrem dolů i nahoru. Kalkulačka slouží jako hrubý odhad pro prvotní orientaci klienta – přesný položkový rozpočet připravujeme zdarma po osobním zaměření na místě v lokalitě <strong>{selectedCity}</strong> a celém Karlovarském kraji.
+                    {disclaimer} (Aktuálně zvolená lokalita pro zaměření zdarma: <strong>{selectedCity}</strong>).
                   </p>
                 </div>
 

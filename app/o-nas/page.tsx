@@ -6,6 +6,7 @@ import { MobileFloatingBar } from "@/components/MobileFloatingBar";
 import { ContactForm } from "@/components/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/lib/data";
+import { getContentStore } from "@/lib/content-store";
 import { 
   CheckCircle2, 
   Phone
@@ -20,6 +21,8 @@ export const metadata: Metadata = {
 };
 
 export default function ONasPage() {
+  const { about, company } = getContentStore().content;
+
   return (
     <>
       <JsonLd
@@ -54,23 +57,17 @@ export default function ONasPage() {
             <div className="lg:col-span-7 space-y-6">
               <div className="space-y-2">
                 <span className="text-xs font-bold uppercase tracking-widest text-red-600">
-                  Naše hodnoty & filozofie
+                  {about.badge}
                 </span>
                 <h2 className="text-2xl sm:text-4xl font-black uppercase text-slate-950 leading-tight">
-                  Stavíme na důvěře, pevných cenách a čistotě
+                  {about.title}
                 </h2>
               </div>
 
               <div className="space-y-4 text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
-                <p>
-                  <strong className="text-slate-950 font-bold">{siteConfig.legalName}</strong> (působící pod značkou <strong className="text-slate-950 font-bold">{siteConfig.name}</strong>) je stavební a zednická firma se sídlem v Potočišti u Chebu. Stavíme na poctivém řemesle, osobním přístupu a rodinné tradici sahající až do roku 1984.
-                </p>
-                <p>
-                  Naší hlavní specializací jsou <strong>kompletní rekonstrukce bytů na klíč, zděná bytová jádra z Ytongu a moderní koupelny</strong> po celém Karlovarském kraji. Zákazníkům nabízíme naprostý klid: od bouracích prací a odvozu suti přes novou elektřinu v mědi, instalatérské rozvody, precizní velkoformátové obklady, štuky a sádrové stěrky až po pokládku podlah.
-                </p>
-                <p>
-                  Nemusíte shánět 5 různých part řemeslníků a složitě je koordinovat. Všechny profese – včetně certifikovaného elektrikáře a instalatéra s revizními zprávami – koordinuje osobně pan Červeňak. Za celý výsledek ručíme pevnou smlouvou o dílo a garantovanou cenou.
-                </p>
+                <p>{about.storyP1}</p>
+                <p>{about.storyP2}</p>
+                <p>{about.storyP3}</p>
               </div>
 
               {/* 4 Pillars Box */}
@@ -99,15 +96,15 @@ export default function ONasPage() {
                   Fakturační & Právní údaje
                 </div>
                 <div className="text-slate-950 font-bold text-sm sm:text-base">
-                  {siteConfig.legalName}
+                  {company.legalName}
                 </div>
                 <div className="text-slate-600 text-xs">
-                  Sídlo: <strong>{siteConfig.address.street}, {siteConfig.address.zip} {siteConfig.address.city}</strong>
+                  Sídlo: <strong>{company.street}, {company.zip} {company.city}</strong>
                 </div>
                 <div className="flex flex-wrap gap-x-5 gap-y-1 pt-2 border-t border-slate-100 text-slate-700 text-xs font-semibold">
-                  <span>IČO: <strong>{siteConfig.ico}</strong></span>
-                  <span>DIČ: <strong>{siteConfig.dic}</strong></span>
-                  <span>Jednatel: <strong>{siteConfig.contactPerson}</strong></span>
+                  <span>IČO: <strong>{company.ico}</strong></span>
+                  <span>DIČ: <strong>{company.dic}</strong></span>
+                  <span>Jednatel: <strong>{company.representative}</strong></span>
                 </div>
               </div>
             </div>
@@ -127,14 +124,14 @@ export default function ONasPage() {
                 </div>
 
                 <div className="space-y-1">
-                  <h3 className="text-xl font-bold text-slate-900">{siteConfig.contactPerson}</h3>
+                  <h3 className="text-xl font-bold text-slate-900">{company.representative}</h3>
                   <div className="text-xs text-red-600 font-semibold uppercase tracking-wider">
-                    {siteConfig.contactRole} • {siteConfig.legalName}
+                    {about.founderRole} • {company.legalName}
                   </div>
                 </div>
 
                 <p className="text-xs sm:text-sm text-slate-700 italic leading-relaxed font-normal bg-white p-4 rounded-2xl border border-slate-200/80 shadow-xs">
-                  „Za každou rekonstrukcí stojím osobně. Když se domluvíme na rozpočtu a termínu, platí to. Sám koordinuji instalatéry i elektrikáře, dohlížím na precizní obklady a zednickou práci a dbám na to, aby po nás každý den zůstalo uklizeno. Naší největší vizitkou je spokojený zákazník a poctivě odvedené řemeslo.“
+                  „{about.founderQuote}“
                 </p>
 
                 <div className="pt-2 border-t border-slate-200 flex items-center justify-center gap-4 text-xs font-bold text-slate-800">

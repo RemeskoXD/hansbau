@@ -11,6 +11,7 @@ import {
   Sparkles
 } from "lucide-react";
 import { services } from "@/lib/data";
+import { getContentStore } from "@/lib/content-store";
 
 const iconMap: Record<string, typeof Home> = {
   Home,
@@ -21,6 +22,8 @@ const iconMap: Record<string, typeof Home> = {
 };
 
 export function ServicesSection() {
+  const { home } = getContentStore().content;
+
   return (
     <section className="py-20 bg-white text-slate-900 relative overflow-hidden" id="sluzby">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -30,10 +33,10 @@ export function ServicesSection() {
             Stavební servis pro Karlovarský kraj
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-slate-950">
-            Naše specializace na rekonstrukce
+            {home.servicesTitle}
           </h2>
           <p className="text-sm sm:text-base text-slate-600">
-            Od vyklizení a bourání přes rozvody a sádrokartony až po finální předání. Veškeré řemeslné profese zajistíme na klíč pod jednou střechou.
+            {home.servicesPerex}
           </p>
         </div>
 

@@ -1,0 +1,49 @@
+{
+  "updatedAt": "2026-09-14T13:22:03.487Z",
+  "version": 1,
+  "documents": {
+    "home": {
+      "heroBadge": "Google Hodnocení 5.0 ★ • Karlovarský kraj",
+      "heroTitle": "Kompletní rekonstrukce bytů a koupelen na klíč",
+      "heroPerex": "Od bourání a vyklizení přes novou elektřinu v mědi, instalace, sádrové stěrky až po velkoformátové obklady a čistý úklid. Pevná cena ve smlouvě o dílo.",
+      "guaranteePrice": "Pevná cena bez víceprací",
+      "guaranteeTime": "Garantovaný termín dokončení",
+      "guaranteeSurvey": "Osobní zaměření ZDARMA",
+      "servicesTitle": "Kompletní stavební a řemeslné práce",
+      "servicesPerex": "Žádné shánění pěti různých firem. U nás máte jednoho spolehlivého partnera, který ručí za celou stavbu od A do Z."
+    },
+    "about": {
+      "badge": "Naše hodnoty & filozofie",
+      "title": "Stavíme na důvěře, pevných cenách a čistotě",
+      "storyP1": "Jan Červeňak s.r.o. (působící pod značkou HANSBAU) je stavební a zednická firma se sídlem v Potočišti u Chebu. Stavíme na poctivém řemesle, osobním přístupu a rodinné tradici sahající až do roku 1984.",
+      "storyP2": "Naší hlavní specializací jsou kompletní rekonstrukce bytů na klíč, zděná bytová jádra z Ytongu a moderní koupelny po celém Karlovarském kraji. Zákazníkům nabízíme naprostý klid: od bouracích prací a odvozu suti přes novou elektřinu v mědi, instalatérské rozvody, precizní velkoformátové obklady, štuky a sádrové stěrky až po pokládku podlah.",
+      "storyP3": "Nemusíte shánět 5 různých part řemeslníků a složitě je koordinovat. Všechny profese – včetně certifikovaného elektrikáře a instalatéra s revizními zprávami – koordinuje osobně pan Červeňak. Za celý výsledek ručíme pevnou smlouvou o dílo a garantovanou cenou.",
+      "founderQuote": "Za každou rekonstrukcí stojím osobně. Když se domluvíme na rozpočtu a termínu, platí to. Sám koordinuji instalatéry i elektrikáře, dohlížím na precizní obklady a zednickou práci a dbám na to, aby po nás každý den zůstalo uklizeno. Naší největší vizitkou je spokojený zákazník a poctivě odvedené řemeslo.",
+      "founderRole": "Jednatel společnosti"
+    },
+    "calculator": {
+      "badge": "Online kalkulace rozpočtu",
+      "title": "Orientační kalkulačka cen rekonstrukcí",
+      "perex": "Vyberte parametry vaší rekonstrukce a získejte okamžitý přehled o orientační ceně a harmonogramu. Přesný položkový rozpočet pro vás zdarma připravíme po osobním zaměření na místě.",
+      "disclaimer": "Uvedené ceny jsou pouze orientační a bez DPH. Konečná cena se vždy stanovuje až po posouzení aktuálního stavu bytu, rozsahu bouracích prací, stavu rozvodů, dostupnosti a přístupu na stavbu a zvoleného standardu materiálů. Skutečná cena se může od odhadu lišit směrem dolů i nahoru. Kalkulačka slouží jako hrubý odhad pro prvotní orientaci klienta – přesný položkový rozpočet připravujeme zdarma po osobním zaměření na místě v Karlovarském kraji."
+    },
+    "contact": {
+      "title": "Kontaktní informace",
+      "perex": "Máte dotaz nebo zájem o nezávaznou cenovou nabídku? Zavolejte nám, napište e-mail nebo vyplňte formulář níže.",
+      "openingHours": "Pondělí až sobota: 07:00 – 19:00 hod.",
+      "responseSpeed": "Odpovídáme standardně do 24 hodin od doručení poptávky."
+    },
+    "company": {
+      "legalName": "Jan Červeňak s.r.o.",
+      "brandName": "HANSBAU",
+      "street": "Potočiště 21 - Odrava",
+      "city": "Cheb",
+      "zip": "350 02",
+      "ico": "04860837",
+      "dic": "CZ04860837",
+      "phone": "+420 606 073 700",
+      "email": "team@hansbau.com",
+      "representative": "Jan Červeňak"
+    }
+  }
+}

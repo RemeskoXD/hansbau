@@ -6,22 +6,25 @@ import { ContactForm } from "@/components/ContactForm";
 import { ServiceAreaMap } from "@/components/ServiceAreaMap";
 import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/lib/data";
+import { getContentStore } from "@/lib/content-store";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Kontakt - Stavební firma HANSBAU Cheb",
-  description: "Kontaktní údaje stavební firmy HANSBAU s.r.o. Sídlo: Potočiště 21, Cheb. Tel: +420 606 073 700. Bezplatná prohlídka a nezávazná kalkulace.",
+  description: "Kontaktní údaje stavební firmy Jan Červeňak s.r.o. (HANSBAU). Sídlo: Potočiště 21, Cheb. Tel: +420 606 073 700. Bezplatná prohlídka a nezávazná kalkulace.",
   alternates: {
     canonical: "/kontakt/",
   },
 };
 
 export default function KontaktPage() {
+  const { contact, company } = getContentStore().content;
+
   return (
     <>
       <JsonLd
         pageTitle="Kontakt - HANSBAU stavební firma"
-        pageDesc="Kontaktní údaje stavební firmy HANSBAU s.r.o."
+        pageDesc="Kontaktní údaje stavební firmy Jan Červeňak s.r.o. (HANSBAU)."
         pageUrl={`${siteConfig.url}/kontakt/`}
         breadcrumbs={[
           { name: "Domů", url: siteConfig.url },
@@ -34,13 +37,13 @@ export default function KontaktPage() {
         <section className="relative py-16 lg:py-20 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-b border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
             <span className="text-xs sm:text-sm font-black uppercase tracking-widest text-red-600 block">
-              HANSBAU • Karlovarský kraj
+              {company.brandName} • Karlovarský kraj
             </span>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-slate-950">
-              Kontaktní informace
+              {contact.title}
             </h1>
             <p className="text-sm sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
-              Máte dotaz nebo zájem o nezávaznou cenovou nabídku? Zavolejte nám, napište e-mail nebo vyplňte formulář níže.
+              {contact.perex}
             </p>
           </div>
         </section>
@@ -55,14 +58,14 @@ export default function KontaktPage() {
               </div>
               <h3 className="text-lg font-bold text-slate-900">Telefonický kontakt</h3>
               <p className="text-xs text-slate-600 font-normal">
-                Jsme vám k dispozici pondělí až sobota od 7:00 do 19:00.
+                {contact.openingHours}
               </p>
               <div className="pt-2">
                 <a
-                  href={`tel:${siteConfig.phoneCZRaw}`}
+                  href={`tel:${company.phone.replace(/\s+/g, "")}`}
                   className="text-lg font-bold text-red-600 hover:text-red-700 block"
                 >
-                  {siteConfig.phoneCZ}
+                  {company.phone}
                 </a>
               </div>
             </div>
@@ -74,14 +77,14 @@ export default function KontaktPage() {
               </div>
               <h3 className="text-lg font-bold text-slate-900">E-mailová adresa</h3>
               <p className="text-xs text-slate-600 font-normal">
-                Odpovídáme standardně do 24 hodin od doručení poptávky.
+                {contact.responseSpeed}
               </p>
               <div className="pt-2">
                 <a
-                  href={`mailto:${siteConfig.email}`}
+                  href={`mailto:${company.email}`}
                   className="text-base font-bold text-red-600 hover:text-red-700"
                 >
-                  {siteConfig.email}
+                  {company.email}
                 </a>
               </div>
             </div>
@@ -96,14 +99,14 @@ export default function KontaktPage() {
                 Oficiální sídlo společnosti a centrála.
               </p>
               <div className="pt-2 text-sm text-slate-800 space-y-1">
-                <div className="font-bold text-slate-950">{siteConfig.legalName}</div>
-                <div className="text-xs text-slate-500 font-medium">Obchodní značka: {siteConfig.name}</div>
-                <div className="text-slate-700">{siteConfig.address.street}</div>
-                <div className="text-slate-700">{siteConfig.address.zip} {siteConfig.address.city} (Cheb)</div>
+                <div className="font-bold text-slate-950">{company.legalName}</div>
+                <div className="text-xs text-slate-500 font-medium">Obchodní značka: {company.brandName}</div>
+                <div className="text-slate-700">{company.street}</div>
+                <div className="text-slate-700">{company.zip} {company.city} (Cheb)</div>
                 <div className="pt-2 border-t border-slate-200/80 text-xs text-slate-600 space-y-0.5">
-                  <div><strong>IČO:</strong> {siteConfig.ico}</div>
-                  <div><strong>DIČ:</strong> {siteConfig.dic}</div>
-                  <div><strong>Jednatel:</strong> {siteConfig.contactPerson}</div>
+                  <div><strong>IČO:</strong> {company.ico}</div>
+                  <div><strong>DIČ:</strong> {company.dic}</div>
+                  <div><strong>Jednatel:</strong> {company.representative}</div>
                 </div>
               </div>
             </div>

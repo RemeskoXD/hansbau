@@ -2,8 +2,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, ArrowRight, ShieldCheck, Star, CheckCircle2, Calculator, MapPin, Sparkles } from "lucide-react";
 import { siteConfig } from "@/lib/data";
+import { getContentStore } from "@/lib/content-store";
 
 export function Hero() {
+  const { home } = getContentStore().content;
+
   return (
     <section className="relative min-h-[88vh] flex items-center justify-center overflow-hidden bg-white text-slate-900 pt-6 pb-16 lg:py-20 border-b border-slate-200/80">
       {/* Background subtle light ambient pattern */}
@@ -30,7 +33,7 @@ export function Hero() {
                 ))}
               </div>
               <span className="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-red-600 transition-colors">
-                Google Hodnocení 5.0 ★ • Karlovarský kraj
+                {home.heroBadge}
               </span>
             </a>
 
@@ -40,13 +43,13 @@ export function Hero() {
                 Stavební firma HANSBAU • Cheb, Sokolov, Vary, Aš
               </span>
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-slate-950 leading-[1.08] text-balance">
-                Rekonstrukce bytů v Karlovarském kraji <span className="text-red-600">na klíč</span>
+                {home.heroTitle}
               </h1>
             </div>
 
             {/* Subheading */}
             <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-              Kompletní i částečné rekonstrukce bytů, koupelen a bytových jader. Přesnou cenu znáte předem. Žádné starosti se sháněním 5 různých řemeslníků – vše pod jednou smlouvou a se zárukou.
+              {home.heroPerex}
             </p>
 
             {/* Key USPs check-list */}
@@ -55,25 +58,25 @@ export function Hero() {
                 <div className="w-5 h-5 rounded-full bg-red-50 text-red-600 flex items-center justify-center shrink-0">
                   <CheckCircle2 className="w-4 h-4 text-red-600" />
                 </div>
-                <span>Položková kalkulace & zaměření ZDARMA</span>
+                <span>{home.guaranteeSurvey}</span>
               </div>
               <div className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-800 font-medium">
                 <div className="w-5 h-5 rounded-full bg-red-50 text-red-600 flex items-center justify-center shrink-0">
                   <CheckCircle2 className="w-4 h-4 text-red-600" />
                 </div>
-                <span>Pevná smlouva o dílo a 100% záruka</span>
+                <span>{home.guaranteePrice}</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-800 font-medium">
+                <div className="w-5 h-5 rounded-full bg-red-50 text-red-600 flex items-center justify-center shrink-0">
+                  <CheckCircle2 className="w-4 h-4 text-red-600" />
+                </div>
+                <span>{home.guaranteeTime}</span>
               </div>
               <div className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-800 font-medium">
                 <div className="w-5 h-5 rounded-full bg-red-50 text-red-600 flex items-center justify-center shrink-0">
                   <CheckCircle2 className="w-4 h-4 text-red-600" />
                 </div>
                 <span>Všechny profese pod jednou střechou</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-800 font-medium">
-                <div className="w-5 h-5 rounded-full bg-red-50 text-red-600 flex items-center justify-center shrink-0">
-                  <CheckCircle2 className="w-4 h-4 text-red-600" />
-                </div>
-                <span>Každodenní úklid a ohled na sousedy</span>
               </div>
             </div>
 

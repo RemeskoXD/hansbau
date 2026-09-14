@@ -7,6 +7,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { FAQSection } from "@/components/FAQSection";
 import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/lib/data";
+import { getContentStore } from "@/lib/content-store";
 import { Calculator, ShieldCheck, Clock, CheckCircle2, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -37,6 +38,8 @@ const kalkulackaFaq = [
 ];
 
 export default function KalkulackaPage() {
+  const { calculator } = getContentStore().content;
+
   return (
     <>
       <JsonLd
@@ -55,13 +58,13 @@ export default function KalkulackaPage() {
         <section className="relative py-16 lg:py-20 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-b border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
             <span className="text-xs sm:text-sm font-black uppercase tracking-widest text-red-600 block">
-              Transparentní rozpočet • Karlovarský kraj
+              {calculator.badge}
             </span>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-slate-950">
-              Online kalkulačka rekonstrukce bytu
+              {calculator.title}
             </h1>
             <p className="text-sm sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
-              Spočítejte si orientační cenu a dobu trvání rekonstrukce bytu, koupelny nebo jádra. Bezplatnou osobní prohlídku a přesný položkový rozpočet pro vás zajistíme zdarma.
+              {calculator.perex}
             </p>
 
             {/* Quick trust metrics */}
@@ -83,7 +86,12 @@ export default function KalkulackaPage() {
         </section>
 
         {/* Interactive Calculator Section */}
-        <PriceCalculator />
+        <PriceCalculator
+          badge={calculator.badge}
+          title={calculator.title}
+          perex={calculator.perex}
+          disclaimer={calculator.disclaimer}
+        />
 
         {/* FAQ Section */}
         <FAQSection
