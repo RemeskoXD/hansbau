@@ -1,26 +1,31 @@
-import { workProcess } from "@/lib/data";
+import { workProcess as fallbackWorkProcess } from "@/lib/data";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { getContentStore } from "@/lib/content-store";
 
 export function ProcessStepsSection() {
+  const store = getContentStore().content;
+  const processData = store.process;
+  const steps = processData?.steps || fallbackWorkProcess;
+
   return (
     <section className="py-20 bg-white text-slate-900 relative overflow-hidden border-b border-slate-200/80" id="jak-pracujeme">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <span className="text-xs sm:text-sm font-black uppercase tracking-widest text-red-600 block">
-            Jednoduchý postup
+            {processData?.badge || "Jednoduchý postup"}
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-slate-950">
-            Jak probíhá spolupráce s HANSBAU?
+            {processData?.title || "Jak probíhá spolupráce s HANSBAU?"}
           </h2>
           <p className="text-sm sm:text-base text-slate-600">
-            Přehledný a transparentní proces od prvního kontaktu po předání hotového díla na klíč.
+            {processData?.perex || "Přehledný a transparentní proces od prvního kontaktu po předání hotového díla na klíč."}
           </p>
         </div>
 
         {/* 5 Steps Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5">
-          {workProcess.map((item, idx) => (
+          {steps.map((item, idx) => (
             <div
               key={idx}
               className="relative p-6 rounded-3xl bg-slate-50 border border-slate-200/90 hover:border-red-500/60 hover:shadow-md transition-all flex flex-col justify-between space-y-4 group shadow-sm hover:-translate-y-0.5"

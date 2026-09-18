@@ -22,7 +22,7 @@ const iconMap: Record<string, typeof Home> = {
 };
 
 export function ServicesSection() {
-  const { home } = getContentStore().content;
+  const { home, servicesContent } = getContentStore().content;
 
   return (
     <section className="py-20 bg-white text-slate-900 relative overflow-hidden" id="sluzby">
@@ -46,6 +46,9 @@ export function ServicesSection() {
             const Icon = iconMap[srv.iconName] || Home;
             const targetUrl = `/${srv.slug}`;
             const isMain = srv.priority === "hlavní";
+            const customSrv = servicesContent?.[srv.id];
+            const srvTitle = customSrv?.title || srv.title;
+            const srvShortDesc = customSrv?.shortDesc || srv.shortDesc;
 
             return (
               <div
@@ -61,7 +64,7 @@ export function ServicesSection() {
                   <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
                     <Image
                       src={srv.image}
-                      alt={srv.title}
+                      alt={srvTitle}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -85,12 +88,12 @@ export function ServicesSection() {
                   <div className="p-6 space-y-4">
                     <h3 className="text-xl font-bold text-slate-900 group-hover:text-red-600 transition-colors">
                       <Link href={targetUrl} className="hover:underline">
-                        {srv.title}
+                        {srvTitle}
                       </Link>
                     </h3>
 
                     <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                      {srv.shortDesc}
+                      {srvShortDesc}
                     </p>
 
                     {/* Features checklist */}

@@ -7,6 +7,8 @@ import { ContactForm } from "@/components/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/lib/data";
 
+import { getContentStore } from "@/lib/content-store";
+
 export const metadata: Metadata = {
   title: "Realizace a fotogalerie rekonstrukcí bytů | HANSBAU",
   description: "Ukázky našich realizací rekonstrukcí bytů, koupelen, jader a pokojů v Karlovarském kraji (Cheb, Karlovy Vary, Sokolov, Aš). HANSBAU.",
@@ -16,6 +18,8 @@ export const metadata: Metadata = {
 };
 
 export default function RealizacePage() {
+  const { portfolio } = getContentStore().content;
+
   return (
     <>
       <JsonLd
@@ -45,7 +49,7 @@ export default function RealizacePage() {
         </section>
 
         {/* Full Gallery with all items */}
-        <RealizaceGallery showViewAll={false} />
+        <RealizaceGallery items={portfolio?.items} showViewAll={false} />
 
         <ContactForm />
       </main>

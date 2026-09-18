@@ -1,7 +1,13 @@
 import { Star, CheckCircle, ExternalLink, ArrowRight } from "lucide-react";
-import { reviews, siteConfig } from "@/lib/data";
+import { reviews as fallbackReviews, siteConfig } from "@/lib/data";
+import { getContentStore } from "@/lib/content-store";
 
 export function GoogleReviewsSection() {
+  const store = getContentStore().content;
+  const reviewsData = store.reviews?.items || fallbackReviews;
+  const ratingScore = store.reviews?.score || "5.0";
+  const googleUrl = store.reviews?.googleReviewsUrl || siteConfig.googleReviewsUrl;
+
   return (
     <section className="py-20 bg-slate-50/70 text-slate-900 relative overflow-hidden border-b border-slate-200/80" id="reference">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,14 +24,14 @@ export function GoogleReviewsSection() {
 
           {/* Google 5.0 Rating Header Widget linking to Google Reviews URL */}
           <a
-            href={siteConfig.googleReviewsUrl}
+            href={googleUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="p-4 rounded-2xl bg-white hover:border-red-500/80 border border-slate-200 flex items-center gap-4 shrink-0 shadow-md transition-all group hover:-translate-y-0.5"
             title="Otevřít profil HANSBAU na Google Mapách"
           >
             <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-500 font-black text-xl group-hover:scale-105 transition-transform">
-              5.0
+              {ratingScore}
             </div>
             <div>
               <div className="flex items-center gap-1">
@@ -45,7 +51,7 @@ export function GoogleReviewsSection() {
 
         {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {reviews.map((rev) => (
+          {reviewsData.map((rev) => (
             <a
               key={rev.id}
               href={siteConfig.googleReviewsUrl}

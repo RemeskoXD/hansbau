@@ -5,7 +5,9 @@ import { siteConfig, services, locations } from "@/lib/data";
 import { getContentStore } from "@/lib/content-store";
 
 export function Footer() {
-  const { company } = getContentStore().content;
+  const { company, reviews } = getContentStore().content;
+  const ratingScore = reviews?.score || "5.0";
+  const googleUrl = reviews?.googleReviewsUrl || siteConfig.googleReviewsUrl;
 
   return (
     <footer className="bg-slate-50 text-slate-600 border-t border-slate-200 pt-16 pb-24 lg:pb-12">
@@ -28,13 +30,13 @@ export function Footer() {
 
             {/* Rating badge */}
             <a
-              href={siteConfig.googleReviewsUrl}
+              href={googleUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="p-3.5 bg-white hover:border-red-400 border border-slate-200 rounded-2xl flex items-center gap-3 shadow-sm transition-all group hover:-translate-y-0.5"
             >
               <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-500 font-black text-sm group-hover:scale-105 transition-transform">
-                5.0
+                {ratingScore}
               </div>
               <div>
                 <div className="flex items-center gap-0.5">
@@ -43,7 +45,7 @@ export function Footer() {
                   ))}
                 </div>
                 <div className="text-[11px] text-slate-800 group-hover:text-red-600 font-semibold mt-0.5 transition-colors">
-                  Google Hodnocení 5.0 ★ (100% spokojenost)
+                  Google Hodnocení {ratingScore} ★ (100% spokojenost)
                 </div>
               </div>
             </a>

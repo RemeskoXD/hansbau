@@ -30,8 +30,14 @@ export function convertContentToCsv(content: PageContent): string {
   rows.push("page,key,value");
 
   for (const [pageKey, pageObj] of Object.entries(content)) {
-    for (const [itemKey, itemVal] of Object.entries(pageObj as Record<string, string>)) {
-      rows.push(`${pageKey},${itemKey},${escapeCsvValue(itemVal)}`);
+    if (!pageObj || typeof pageObj !== "object") continue;
+    for (const [itemKey, itemVal] of Object.entries(pageObj as Record<string, unknown>)) {
+      if (typeof itemVal === "object" && itemVal !== null) {
+        // Complex objects and arrays are serialized as JSON in the CSV cell
+        rows.push(`${pageKey},${itemKey},${escapeCsvValue(JSON.stringify(itemVal))}`);
+      } else {
+        rows.push(`${pageKey},${itemKey},${escapeCsvValue(String(itemVal ?? ""))}`);
+      }
     }
   }
 
@@ -99,7 +105,16 @@ export function parseCsvToContent(csvText: string): PageContent {
     const [page, key, ...valParts] = row;
     const val = valParts.join(",");
     if (result[page] && key in result[page]) {
-      result[page][key] = val;
+      const defaultField = (DEFAULT_CONTENT as any)[page]?.[key];
+      if (typeof defaultField === "object" && defaultField !== null) {
+        try {
+          result[page][key] = JSON.parse(val);
+        } catch {
+          // If JSON parsing fails, retain default field value
+        }
+      } else {
+        result[page][key] = val;
+      }
     }
   }
 
@@ -122,7 +137,40 @@ export function getContentStore(): { content: PageContent; updatedAt: string; so
           about: { ...DEFAULT_CONTENT.about, ...(parsed.documents.about || {}) },
           calculator: { ...DEFAULT_CONTENT.calculator, ...(parsed.documents.calculator || {}) },
           contact: { ...DEFAULT_CONTENT.contact, ...(parsed.documents.contact || {}) },
-          company: { ...DEFAULT_CONTENT.company, ...(parsed.documents.company || {}) }
+          company: { ...DEFAULT_CONTENT.company, ...(parsed.documents.company || {}) },
+          reviews: {
+            ...DEFAULT_CONTENT.reviews,
+            ...(parsed.documents.reviews || {}),
+            items: parsed.documents.reviews?.items || DEFAULT_CONTENT.reviews.items,
+          },
+          portfolio: {
+            ...DEFAULT_CONTENT.portfolio,
+            ...(parsed.documents.portfolio || {}),
+            items: parsed.documents.portfolio?.items || DEFAULT_CONTENT.portfolio.items,
+          },
+          faq: {
+            ...DEFAULT_CONTENT.faq,
+            ...(parsed.documents.faq || {}),
+            items: parsed.documents.faq?.items || DEFAULT_CONTENT.faq.items,
+          },
+          whyUs: {
+            ...DEFAULT_CONTENT.whyUs,
+            ...(parsed.documents.whyUs || {}),
+            items: parsed.documents.whyUs?.items || DEFAULT_CONTENT.whyUs.items,
+          },
+          process: {
+            ...DEFAULT_CONTENT.process,
+            ...(parsed.documents.process || {}),
+            steps: parsed.documents.process?.steps || DEFAULT_CONTENT.process.steps,
+          },
+          servicesContent: {
+            ...DEFAULT_CONTENT.servicesContent,
+            ...(parsed.documents.servicesContent || {}),
+          },
+          seo: {
+            ...DEFAULT_CONTENT.seo,
+            ...(parsed.documents.seo || {}),
+          },
         };
         return { content: merged, updatedAt: parsed.updatedAt || new Date().toISOString(), source: "nosql" };
       }

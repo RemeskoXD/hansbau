@@ -8,7 +8,8 @@ import {
   Award,
   CheckCircle2
 } from "lucide-react";
-import { whyUsPoints } from "@/lib/data";
+import { whyUsPoints as fallbackWhyUs } from "@/lib/data";
+import { getContentStore } from "@/lib/content-store";
 
 const iconMap: Record<string, typeof BadgeCheck> = {
   BadgeCheck,
@@ -20,6 +21,10 @@ const iconMap: Record<string, typeof BadgeCheck> = {
 };
 
 export function WhyUsSection() {
+  const store = getContentStore().content;
+  const whyUsData = store.whyUs;
+  const items = whyUsData?.items || fallbackWhyUs;
+
   return (
     <section className="py-20 bg-slate-50/70 text-slate-900 relative overflow-hidden border-b border-slate-200/80" id="proc-hansbau">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -28,15 +33,15 @@ export function WhyUsSection() {
           <div className="lg:col-span-5 space-y-6">
             <div className="space-y-2">
               <span className="text-xs sm:text-sm font-black uppercase tracking-widest text-red-600 block">
-                Proč si vybrat HANSBAU?
+                {whyUsData?.badge || "Proč si vybrat HANSBAU?"}
               </span>
               <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-slate-950 leading-tight">
-                Férové stavební řemeslo bez kompromisů a stresu
+                {whyUsData?.title || "Férové stavební řemeslo bez kompromisů a stresu"}
               </h2>
             </div>
 
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-              Víme, jak náročná může být rekonstrukce. Proto stavíme na absolutní transparentnosti, dodržování rozpočtu a precizním řemeslném zpracování. U nás přesně víte, co platíte a kdy bude hotovo.
+              {whyUsData?.perex || "Víme, jak náročná může být rekonstrukce. Proto stavíme na absolutní transparentnosti, dodržování rozpočtu a precizním řemeslném zpracování. U nás přesně víte, co platíte a kdy bude hotovo."}
             </p>
 
             {/* Guarantee Highlight Card */}
@@ -47,22 +52,22 @@ export function WhyUsSection() {
                 </div>
                 <div>
                   <h3 className="text-base font-bold text-slate-900">
-                    Garantovaný položkový rozpočet
+                    {whyUsData?.guaranteeTitle || "Garantovaný položkový rozpočet"}
                   </h3>
                   <div className="text-xs text-red-600 font-semibold">
-                    Žádné skryté poplatky a nečekané doplatky
+                    {whyUsData?.guaranteeSub || "Žádné skryté poplatky a nečekané doplatky"}
                   </div>
                 </div>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed font-normal">
-                Cena sjednaná ve smlouvě o dílo je konečná. Jakékoliv případné úpravy jsou vždy předem schváleny písemným dodatkem.
+                {whyUsData?.guaranteeDesc || "Cena sjednaná ve smlouvě o dílo je konečná. Jakékoliv případné úpravy jsou vždy předem schváleny písemným dodatkem."}
               </p>
             </div>
           </div>
 
           {/* Right Column: 6 Grid Cards */}
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {whyUsPoints.map((item, idx) => {
+            {items.map((item, idx) => {
               const Icon = iconMap[item.icon] || BadgeCheck;
               return (
                 <div

@@ -4,16 +4,19 @@ import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { MapPin, ZoomIn, X, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { portfolioItems, PortfolioItem } from "@/lib/data";
+import { portfolioItems as fallbackPortfolio, PortfolioItem } from "@/lib/data";
 
 interface RealizaceGalleryProps {
+  items?: PortfolioItem[];
   limit?: number;
   showViewAll?: boolean;
 }
 
-export function RealizaceGallery({ limit, showViewAll = false }: RealizaceGalleryProps) {
+export function RealizaceGallery({ items, limit, showViewAll = false }: RealizaceGalleryProps) {
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  const allItems = items || fallbackPortfolio;
 
   const categories = [
     { id: "all", label: "Všechny realizace" },
@@ -25,8 +28,8 @@ export function RealizaceGallery({ limit, showViewAll = false }: RealizaceGaller
   ];
 
   const filteredItems = activeCategory === "all"
-    ? portfolioItems
-    : portfolioItems.filter(item => item.category === activeCategory);
+    ? allItems
+    : allItems.filter(item => item.category === activeCategory);
 
   const displayedItems = limit ? filteredItems.slice(0, limit) : filteredItems;
 
