@@ -6,7 +6,7 @@ import { MobileFloatingBar } from "@/components/MobileFloatingBar";
 import { ServiceAreaMap } from "@/components/ServiceAreaMap";
 import { ContactForm } from "@/components/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
-import { locations, siteConfig } from "@/lib/data";
+import { locations, siteConfig, cityOverviewDescriptions, cityInLocative } from "@/lib/data";
 import { MapPin, ArrowRight, ShieldCheck, Clock, CheckCircle2, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -53,7 +53,7 @@ export default function LokalityPage() {
               Lokality, kde rekonstruujeme byty
             </h1>
             <p className="text-sm sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
-              Naše centrála se nachází v Potočišti u Chebu, což nám umožňuje rychlý a spolehlivý dojezd po celém Karlovarském kraji. Osobní prohlídku a zaměření provádíme bezplatně.
+              Sídlíme v Potočišti u Chebu a byty rekonstruujeme po celém Karlovarském kraji. Prohlídka, zaměření i položkový rozpočet jsou zdarma.
             </p>
           </div>
         </section>
@@ -87,11 +87,11 @@ export default function LokalityPage() {
                   </div>
 
                   <h3 className="text-xl font-bold text-slate-900 group-hover:text-red-600 transition-colors">
-                    Rekonstrukce bytu {loc.city}
+                    Rekonstrukce bytu {cityInLocative[loc.city] || loc.city}
                   </h3>
 
                   <p className="text-xs sm:text-sm text-slate-600 line-clamp-2 leading-relaxed font-normal">
-                    {loc.leadParagraph}
+                    {cityOverviewDescriptions[loc.id] || loc.leadParagraph}
                   </p>
                 </div>
 

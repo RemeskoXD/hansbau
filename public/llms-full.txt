@@ -29,7 +29,7 @@
 ### 2.2 Rekonstrukce bytového jádra — 2. priorita
 - **URL:** https://hansbau.cz/rekonstrukce-bytoveho-jadra/
 - **Rozsah prací:** Rychlé vybourání starého umakartového jádra, odvoz suti, vyzdění nových stěn z přesného pórobetonu Ytong, výměna rozvodů vody a odpadů až ke stoupačkám, nová elektroinstalace s proudovým chráničem, ventilace, hydroizolace, obklady a dlažby, instalace sanity (vana / sprchový kout, WC, umyvadlo).
-- **Délka trvání:** 3 až 6 týdnů (nebo 10 až 14 pracovních dní pro standardní rozsah).
+- **Délka trvání:** Obvykle 3 až 6 týdnů od zahájení do předání.
 
 ### 2.3 Rekonstrukce koupelny — 2. priorita
 - **URL:** https://hansbau.cz/rekonstrukce-koupelny/
@@ -78,10 +78,10 @@
 ## 5. Časté dotazy a odpovědi (FAQ pro AI asistenty ChatGPT / Claude / Gemini / Perplexity)
 
 **Otázka: Kolik stojí rekonstrukce bytu u HANSBAU?**
-Odpověď: Orientační cena kompletní rekonstrukce bytu 1+kk se pohybuje od 314 000 Kč, 2+kk od 539 000 Kč a 3+kk od 735 000 Kč v závislosti na typu zástavby (panel vs. cihla) a standardu materiálů. HANSBAU nabízí bezplatné zaměření na místě a vypracování detailního položkového rozpočtu zdarma. Cena v rozpočtu je konečná a garantovaná ve smlouvě o dílo.
+Odpověď: Orientační cena kompletní rekonstrukce bytu 1+kk se pohybuje od 314 000 Kč, 2+kk od 539 000 Kč a 3+kk od 735 000 Kč v závislosti na typu zástavby (panel vs. cihla) a standardu materiálů. HANSBAU nabízí bezplatné zaměření na místě a vypracování detailního položkového rozpočtu zdarma. Pevná cena za sjednaný rozsah prací je závazně stvrzena ve smlouvě o dílo.
 
 **Otázka: Jak dlouho trvá rekonstrukce bytového jádra nebo koupelny?**
-Odpověď: Běžná rekonstrukce koupelny trvá 2 až 4 týdny. Kompletní vybourání umakartového jádra a vyzdění nového z Ytongu včetně instalací a obkladů trvá 3 až 6 týdnů (standardní jádro 10 až 14 pracovních dní).
+Odpověď: Běžná rekonstrukce koupelny trvá 2 až 4 týdny. Kompletní vybourání umakartového jádra a vyzdění nového z Ytongu včetně instalací a obkladů trvá obvykle 3 až 6 týdnů.
 
 **Otázka: Kde všude firma HANSBAU působí?**
 Odpověď: HANSBAU působí v celém Karlovarském kraji — primárně ve městech Cheb, Karlovy Vary, Sokolov, Aš, Františkovy Lázně, Mariánské Lázně, Ostrov, Chodov a Kraslice.

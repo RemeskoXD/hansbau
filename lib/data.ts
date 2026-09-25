@@ -430,6 +430,30 @@ export const services: ServiceItem[] = [
   }
 ];
 
+export const cityInLocative: Record<string, string> = {
+  "Cheb": "v Chebu",
+  "Karlovy Vary": "v Karlových Varech",
+  "Sokolov": "v Sokolově",
+  "Aš": "v Aši",
+  "Františkovy Lázně": "ve Františkových Lázních",
+  "Mariánské Lázně": "v Mariánských Lázních",
+  "Ostrov": "v Ostrově",
+  "Chodov": "v Chodově",
+  "Kraslice": "v Kraslicích",
+};
+
+export const cityOverviewDescriptions: Record<string, string> = {
+  "cheb": "Naše domovské město. Panelové byty na Skalce, Zlatém vrchu a Spáleništi i cihlové byty v centru.",
+  "karlovy-vary": "Paneláky v Rybářích, Drahovicích a Staré Roli i byty s vysokými stropy v centru. Rekonstrukci umíme řídit i na dálku.",
+  "sokolov": "Sídliště Michal, Slavíčkova i Šenvert. Nejčastěji výměna umakartových jader a nové rozvody.",
+  "as": "Byty a koupelny v Aši a Ašském výběžku, v panelových i starších cihlových domech.",
+  "frantiskovy-lazne": "Byty v lázeňských domech i novější zástavbě. Pár minut od našeho sídla.",
+  "marianske-lazne": "Byty pro stálé bydlení i apartmány k pronájmu, v lázeňské zóně i na sídlištích.",
+  "ostrov": "Byty v domech ve stylu sorela i v panelových domech, včetně Jáchymova a Hroznětína.",
+  "chodov": "Panelové byty a bytová jádra v Chodově, Novém Sedle a Vintířově.",
+  "kraslice": "Byty a koupelny v Kraslicích, Rotavě a okolních obcích.",
+};
+
 export const locations: LocationItem[] = [
   {
     id: "cheb",
@@ -440,14 +464,14 @@ export const locations: LocationItem[] = [
     neighborhoods: ["Sídliště Skalka", "Zlatý vrch", "Spáleniště", "Háje", "Historické centrum", "Hradiště", "Dřenice", "Podhrad"],
     title: "Rekonstrukce bytu Cheb",
     metaTitle: "Rekonstrukce bytu Cheb | Koupelny a jádra na klíč HANSBAU",
-    metaDesc: "Kompletní i částečné rekonstrukce bytů a koupelen v Chebu a okolí. Sídlo máme přímo v Potočišti u Chebu. Přesná cena předem, prohlídka zdarma.",
-    perex: "Hledáte spolehlivou stavební firmu na rekonstrukci bytu v Chebu? Máme centrálu přímo u Chebu (Potočiště) a nabízíme kompletní servis od bourání po klíč.",
-    leadParagraph: "Jako lokální stavební firma sídlící v Potočišti u Chebu máme Cheb a přilehlé obce v malíku. Ať už plánujete rekonstrukci panelového bytu na sídlišti Skalka, Zlatém vrchu, Spáleništi, nebo renovaci historického cihlového bytu v centru Chebu, zajistíme pro vás kompletní proměnu bez stresu a s pevnou smluvní cenou.",
+    metaDesc: "Kompletní i částečné rekonstrukce bytů a koupelen v Chebu a okolí. Sídlo máme přímo v Potočišti u Chebu. Pevná cena za sjednaný rozsah, prohlídka zdarma.",
+    perex: "Sídlíme v Potočišti u Chebu, takže do Chebu to máme pár minut. Rekonstruujeme panelové byty na Skalce, Zlatém vrchu i Spáleništi a cihlové byty v centru. Rozsah prací, cenu a termín sjednáme předem ve smlouvě.",
+    leadParagraph: "Sídlíme v Potočišti u Chebu, takže do Chebu to máme pár minut. Rekonstruujeme panelové byty na Skalce, Zlatém vrchu i Spáleništi a cihlové byty v centru. Rozsah prací, cenu a termín sjednáme předem ve smlouvě.",
     specifics: [
-      "Sídlo firmy přímo u Chebu – dojezd na zaměření do 15 minut",
-      "Zkušenosti s panelovými domy na sídlištích Skalka, Zlatý vrch i Spáleniště",
-      "Zajištění kontejneru na suť a vyřízení povolení záboru u MěÚ Cheb",
-      "Pravidelný každodenní úklid společných prostor a výtahů SVJ"
+      "Sídlo firmy u Chebu – prohlídku domluvíme rychle",
+      "Zkušenosti s paneláky na Skalce, Zlatém vrchu a Spáleništi",
+      "Odvoz suti je součástí rozpočtu",
+      "Ochrana společných prostor a úklid na konci každého pracovního dne"
     ],
     heroImage: "/images/nove/cheb-realizace.webp",
     realizaceImages: [
@@ -456,14 +480,14 @@ export const locations: LocationItem[] = [
       { src: "/images/nove/rekonstrukce-bytu-cheb-detail.webp", title: "Pokoj po rekonstrukci Cheb", desc: "Dřevěná plovoucí podlaha a sádrové stěrky" }
     ],
     whyHere: [
-      { title: "Jsme místní firma z Chebu", desc: "Naše zázemí v Potočišti znamená okamžitou dostupnost, nulové prostoje a osobní dohled jednatele Jana Červeňaka." },
-      { title: "Garantovaný rozpočet", desc: "V Chebu známe specifika místních staveb. Cenová nabídka po zaměření je konečná a závazná." },
+      { title: "Sídlo firmy u Chebu", desc: "Z Potočiště to máme do Chebu pár minut. Každou zakázku řídí osobně jednatel Jan Červeňák." },
+      { title: "Pevná cena za sjednaný rozsah", desc: "Změny s vámi vždy předem písemně odsouhlasíme." },
       { title: "Vše pod jednou střechou", desc: "Nemusíte shánět zedníka, elektrikáře ani instalatéra. Všechny profese dodáme my." }
     ],
     faq: [
-      { q: "Jak rychle můžete přijet na zaměření bytu v Chebu?", a: "Jelikož sídlíme přímo u Chebu, zaměření a konzultaci můžeme provést obvykle do 24 až 48 hodin od poptávky." },
+      { q: "Jak rychle můžete přijet na prohlídku bytu v Chebu?", a: "Ozveme se do 1 pracovního dne a prohlídku domluvíme obvykle během několika dní. Sídlíme přímo u Chebu, takže se přizpůsobíme i vašemu času." },
       { q: "Potřebuji na rekonstrukci bytu v Chebu stavební povolení?", a: "U běžných rekonstrukcí bez zásahu do nosných zdí stačí ohlášení na SVJ či bytové družstvo. Rádi vám pomůžeme s technickými podklady." },
-      { q: "Kde v Chebu zajišťujete odvoz stavební suti?", a: "Přistavíme vlastní kontejner a suť odvážíme na certifikovanou skládku v souladu s předpisy města Cheb." }
+      { q: "Kde v Chebu zajišťujete odvoz stavební suti?", a: "Odvoz a likvidace suti na certifikované skládce je součástí rozpočtu. Přistavíme kontejner a po práci uklidíme." }
     ],
     neighboringLocations: [
       { name: "Františkovy Lázně", slug: "rekonstrukce-bytu-frantiskovy-lazne" },
@@ -481,14 +505,14 @@ export const locations: LocationItem[] = [
     neighborhoods: ["Rybáře", "Drahovice", "Stará Role", "Tuhnice", "Čankovská", "Lázeňské centrum", "Doubí", "Tašovice", "Bohatice"],
     title: "Rekonstrukce bytu Karlovy Vary",
     metaTitle: "Rekonstrukce bytu Karlovy Vary | Rekonstrukce na klíč HANSBAU",
-    metaDesc: "Kompletní rekonstrukce bytů, koupelen a bytových jader v Karlových Varech (Rybáře, Drahovice, Stará Role, Tuhnice). Pevná cena, zaměření zdarma.",
-    perex: "Profesionální rekonstrukce bytů v Karlových Varech na klíč. Realizujeme proměny panelových bytů i náročné renovace historických cihlových interiérů.",
-    leadParagraph: "V Karlových Varech provádíme komplexní stavební rekonstrukce pro majitele bytů i investory. Ať už se jedná o panelové byty v Rybářích, Drahovicích, Staré Roli či Tuhnicích, nebo stylové byty v lázeňském centru s vysokými stropy, dodáme špičkové řemeslo, moderní materiály a bezchybný finální výsledek.",
+    metaDesc: "Kompletní rekonstrukce panelových i cihlových bytů a koupelen v Karlových Varech (Rybáře, Drahovice, Stará Role, Tuhnice). Pevná cena za sjednaný rozsah, zaměření zdarma.",
+    perex: "V Karlových Varech rekonstruujeme panelové byty v Rybářích, Drahovicích, Staré Roli nebo Tuhnicích i cihlové byty s vysokými stropy v centru. Pro majitele, kteří ve Varech nebydlí, umíme rekonstrukci řídit na dálku.",
+    leadParagraph: "V Karlových Varech rekonstruujeme panelové byty v Rybářích, Drahovicích, Staré Roli nebo Tuhnicích i cihlové byty s vysokými stropy v centru. Pro majitele, kteří ve Varech nebydlí, umíme rekonstrukci řídit na dálku.",
     specifics: [
-      "Pravidelné realizace v lokalitách Rybáře, Drahovice, Stará Role, Čankovská a Tuhnice",
-      "Zkušenosti s renovací historických bytů (vysoké stropy, sádrokartony, akustika)",
-      "Kompletní výměna rozvodů elektřiny, vody i topení s revizemi",
-      "Dodržování nočního klidu a přísných pravidel domovních řádů SVJ"
+      "Panelové i cihlové byty napříč Karlovými Vary",
+      "Byty s vysokými stropy: podhledy, nové rozvody, akustika",
+      "Hlučné práce jen v časech povolených domovním řádem",
+      "Rekonstrukce na dálku: předáte klíče, průběžně vás informujeme o postupu"
     ],
     heroImage: "/images/nove/rekonstrukce-bytu-karlovy-vary-detail.webp",
     realizaceImages: [
@@ -497,13 +521,13 @@ export const locations: LocationItem[] = [
       { src: "/images/nove/loznice-po-rekonstrukci.webp", title: "Ložnice Karlovy Vary", desc: "Pokoj s klenutým oknem a černými dveřmi" }
     ],
     whyHere: [
-      { title: "Zkušenosti s náročnými interiéry", desc: "V Karlových Varech máme za sebou desítky úspěšných rekonstrukcí včetně investičních apartmánů." },
-      { title: "Pevná smluvní cena", desc: "Předem vypracovaný položkový rozpočet platí. Žádná nečekaná navýšení během stavby." },
-      { title: "Kompletní servis bez starostí", desc: "Nemusíte denně jezdit na stavbu. Posíláme fotoreporty a koordinujeme všechny profese." }
+      { title: "Zkušenosti s byty napříč Vary", desc: "Pokud byt ve Varech pronajímáte nebo v něm nebydlíte, předáte nám klíče a rekonstrukci koordinujeme my." },
+      { title: "Pevná cena za sjednaný rozsah", desc: "Předem vypracovaný položkový rozpočet platí. Změny s vámi vždy předem písemně odsouhlasíme." },
+      { title: "Průběžná informovanost", desc: "Nemusíte denně jezdit na stavbu. Průběžně vás informujeme o postupu prací." }
     ],
     faq: [
-      { q: "Jak probíhá rekonstrukce bytu v Karlových Varech, pokud tam trvale nebydlím?", a: "Často rekonstruujeme byty pro klienty na dálku. Předáme si klíče, stavbu řídíme a pravidelně vám posíláme fotodokumentaci a videoreporty." },
-      { q: "Zvládnete i rekonstrukci bytu s vysokými stropy v centru Varů?", a: "Ano, máme bohaté zkušenosti se snížením stropů pomocí sádrokartonových podhledů, zateplením a protihlukovou izolací." }
+      { q: "Jak probíhá rekonstrukce, když ve Varech trvale nebydlím?", a: "Předáte nám klíče, rekonstrukci koordinujeme my a průběžně vás informujeme o postupu. Důležitá rozhodnutí, jako změny rozsahu nebo výběr materiálu, s vámi vždy řešíme předem." },
+      { q: "Zvládnete i byt s vysokými stropy v centru Varů?", a: "Ano. U domů v lázeňském území mohou platit požadavky památkové péče, například u oken nebo zásahů do konstrukcí. Při prohlídce posoudíme, co je potřeba." }
     ],
     neighboringLocations: [
       { name: "Ostrov", slug: "rekonstrukce-bytu-ostrov" },
@@ -521,14 +545,14 @@ export const locations: LocationItem[] = [
     neighborhoods: ["Sídliště Michal", "Slavíčkova", "Šenvert", "Centrum", "Kraslická", "Královské Poříčí", "Citice", "Svatava"],
     title: "Rekonstrukce bytu Sokolov",
     metaTitle: "Rekonstrukce bytu Sokolov | Jádra a koupelny HANSBAU",
-    metaDesc: "Rekonstrukce panelových bytů a bytových jader v Sokolově (sídliště Michal, Slavíčkova, Šenvert). Rychle, precizně, za pevnou cenu.",
-    perex: "Hledáte spolehlivé řemeslníky pro rekonstrukci bytu či jádra v Sokolově? HANSBAU zajistí kompletní práce na klíč za 4-8 týdnů.",
-    leadParagraph: "V Sokolově a přilehlém okolí (Královské Poříčí, Citice, Svatava, Březová) rekonstruujeme desítky panelových i cihlových bytů. Specializujeme se na rychlé a čisté vybourání starých umakartových jader, zdění nových koupelen z Ytongu a kompletní elektroinstalaci v mědi.",
+    metaDesc: "Rekonstrukce panelových i cihlových bytů a bytových jader v Sokolově (sídliště Michal, Slavíčkova, Šenvert). Pevná cena za sjednaný rozsah, precizní práce.",
+    perex: "V Sokolově a okolí (Královské Poříčí, Citice, Svatava, Březová) rekonstruujeme panelové i cihlové byty. Nejčastěji měníme umakartová jádra za zděná z tvárnic Ytong a staré rozvody za nové v mědi.",
+    leadParagraph: "V Sokolově a okolí (Královské Poříčí, Citice, Svatava, Březová) rekonstruujeme panelové i cihlové byty. Nejčastěji měníme umakartová jádra za zděná z tvárnic Ytong a staré rozvody za nové v mědi.",
     specifics: [
-      "Skvělá znalost sokolovských panelových domů (Michal, Slavíčkova, Šenvert)",
-      "Výměna bytového jádra hotová za 10 až 14 pracovních dní",
-      "Nové rozvody elektřiny bez nutnosti povrchových lišt (drážkování a podhledy)",
-      "Pravidelný odvoz suti a úklid chodeb"
+      "Znalost sokolovských paneláků – Michal, Slavíčkova, Šenvert",
+      "Výměna jádra obvykle za 3–6 týdnů od zahájení do předání",
+      "Nové rozvody v drážkách a podhledech, bez lišt na stěnách",
+      "Odvoz suti v rozpočtu, úklid nečistot po naší práci každý den"
     ],
     heroImage: "/images/nove/sokolov-realizace.webp",
     realizaceImages: [
@@ -538,12 +562,12 @@ export const locations: LocationItem[] = [
     ],
     whyHere: [
       { title: "Rychlý dojezd do Sokolova", desc: "Z naší centrály v Potočišti jsme v Sokolově za 20 minut po dálnici D6." },
-      { title: "Specialisté na panelová jádra", desc: "Zbouráme umakart, vyzdíme novou koupelnu a uděláme rozvody bez zbytečných průtahů." },
-      { title: "Férové ceny bez víceprací", desc: "Rozpočet schválený na začátku je neměnný." }
+      { title: "Specialisté na panelová jádra", desc: "Zbouráme umakart, vyzdíme novou koupelnu z tvárnic Ytong a uděláme rozvody." },
+      { title: "Pevná cena za sjednaný rozsah", desc: "Změny s vámi vždy předem písemně odsouhlasíme." }
     ],
     faq: [
-      { q: "Lze v sokolovském paneláku propojit obývák s kuchyní?", a: "U nenosných příček ano. Na místě posoudíme stavbu a případně doporučíme statické posouzení." },
-      { q: "Jak dlouho trvá rekonstrukce jádra v Sokolově?", a: "Běžné panelákové jádro zvládneme vybourat a nově vyzdít a vybavit za 10–14 dní." }
+      { q: "Lze v sokolovském paneláku propojit obývák s kuchyní?", a: "U nenosných příček ano. Nosné stěny bez posouzení statika a souhlasu stavebního úřadu nebouráme. Při prohlídce posoudíme, o jakou stěnu jde." },
+      { q: "Jak dlouho trvá výměna jádra v Sokolově?", a: "Od zahájení prací do předání obvykle 3–6 týdnů, podle rozsahu, vybavení a dodacích lhůt materiálu. Přesný termín potvrdíme ve smlouvě." }
     ],
     neighboringLocations: [
       { name: "Chodov", slug: "rekonstrukce-bytu-chodov" },
@@ -561,14 +585,14 @@ export const locations: LocationItem[] = [
     neighborhoods: ["Mokřiny", "Centrum Aše", "Hranice u Aše", "Krásná", "Hazlov", "Kopaniny", "Vernéřov"],
     title: "Rekonstrukce bytu Aš",
     metaTitle: "Rekonstrukce bytu Aš | Koupelny a zednické práce HANSBAU",
-    metaDesc: "Kompletní rekonstrukce bytů a koupelen v Aši a okolí. Vyzdění jader, sádrokartony, obklady a elektřina. Pevná cena, zaměření zdarma.",
-    perex: "Spolehlivá rekonstrukce bytu v Aši a okolí. Přijedeme, prostor zaměříme a vypracujeme nezávazný rozpočet ZDARMA.",
-    leadParagraph: "V Aši a celém Ašském výběžku (Hranice, Krásná, Hazlov) nabízíme komplexní stavební a řemeslné práce pro byty i rodinné domy. Od vyklizení starého nábytku a bourání přes nové instalace až po moderní designové koupelny a podlahy.",
+    metaDesc: "Kompletní rekonstrukce bytů a koupelen v Aši a okolí. Vyzdění jader, sádrokartony, obklady a elektřina. Pevná cena za sjednaný rozsah, zaměření zdarma.",
+    perex: "V Aši a Ašském výběžku (Hranice, Krásná, Hazlov) rekonstruujeme byty a koupelny v panelových i starších cihlových domech. Koupelny děláme i v rodinných domech.",
+    leadParagraph: "V Aši a Ašském výběžku (Hranice, Krásná, Hazlov) rekonstruujeme byty a koupelny v panelových i starších cihlových domech. Koupelny děláme i v rodinných domech.",
     specifics: [
-      "Dojezd do Aše do 25 minut",
-      "Zkušenosti s panelovými byty i kamennými/cihlovými stavbami v Aši",
-      "Kompletní servis od A do Z – nemusíte shánět řemeslníky zvlášť",
-      "Záruka na provedené dílo stvrzená smlouvou"
+      "Panelové i cihlové byty v Aši a okolí",
+      "Kompletní rekonstrukce od bourání po úklid – řemeslníky koordinujeme my",
+      "Koupelny v bytech i rodinných domech",
+      "Délku a podmínky záruky uvádíme ve smlouvě"
     ],
     heroImage: "/images/nove/as-koupelna.webp",
     realizaceImages: [
@@ -577,11 +601,11 @@ export const locations: LocationItem[] = [
       { src: "/images/nove/pokoj-po-rekonstrukci.webp", title: "Interiér bytu Aš", desc: "Sádrové omítky a nová okna" }
     ],
     whyHere: [
-      { title: "Dostupnost v Ašském výběžku", desc: "Pravidelně zde realizujeme zakázky a garantujeme spolehlivý nástup." },
-      { title: "Záruka a smlouva o dílo", desc: "Žádná práce na dobré slovo. Vše je podloženo řádnou smlouvou a zárukou." }
+      { title: "Dostupnost v Ašském výběžku", desc: "Nastupujeme v termínu, který si sjednáme ve smlouvě." },
+      { title: "Záruka a smlouva o dílo", desc: "Délku a podmínky záruky uvádíme ve smlouvě. Vše je podloženo řádnou smlouvou o dílo." }
     ],
     faq: [
-      { q: "Děláte v Aši i rekonstrukce koupelen?", a: "Ano, rekonstrukce koupelen a bytových jader v Aši patří k našim nejčastějším realizacím." }
+      { q: "Děláte v Aši i rekonstrukce koupelen?", a: "Ano, rekonstrukce koupelen a bytových jader v Aši děláme." }
     ],
     neighboringLocations: [
       { name: "Cheb", slug: "rekonstrukce-bytu-cheb" },
@@ -598,14 +622,14 @@ export const locations: LocationItem[] = [
     neighborhoods: ["Lázeňské centrum", "Slatina", "Horní Ves", "Dlouhé Mosty", "Aleje", "Žírovice"],
     title: "Rekonstrukce bytu Františkovy Lázně",
     metaTitle: "Rekonstrukce bytu Františkovy Lázně | HANSBAU",
-    metaDesc: "Kvalitní rekonstrukce bytů a koupelen ve Františkových Lázních. Sídlo máme jen 10 minut od vás. Bezplatná prohlídka a pevný rozpočet.",
-    perex: "Rekonstrukce bytů a koupelen ve Františkových Lázních. Rychlý dojezd do 10 minut z Potočiště, precizní řemeslo a čistota na pracovišti.",
-    leadParagraph: "Ve Františkových Lázních provádíme rekonstrukce bytů v historické zástavbě i v modernějších bytových domech. Klademe maximální důraz na čistotu, nehlučný provoz v rámci možností a špičkové řemeslné zpracování detailů.",
+    metaDesc: "Kvalitní rekonstrukce bytů a koupelen ve Františkových Lázních. Sídlo máme jen 10 minut od vás. Bezplatná prohlídka a rozpočet zdarma.",
+    perex: "Ve Františkových Lázních rekonstruujeme byty v lázeňských domech i v novější zástavbě. Společné prostory při práci chráníme a hlučné práce plánujeme tak, aby co nejméně obtěžovaly sousedy.",
+    leadParagraph: "Ve Františkových Lázních rekonstruujeme byty v lázeňských domech i v novější zástavbě. Společné prostory při práci chráníme a hlučné práce plánujeme tak, aby co nejméně obtěžovaly sousedy.",
     specifics: [
-      "Bleskový dojezd do 10 minut z naší centrály v Potočišti",
-      "Citlivý přístup k lázeňské architektuře a interiérům",
-      "Využití moderních velkoformátových materiálů a sádrokartonů",
-      "100% dodržení termínů a rozpočtu"
+      "Sídlo v Potočišti – jsme u vás za pár minut",
+      "Zkušenosti se staršími cihlovými domy",
+      "Požadavky památkové péče u lázeňských domů posoudíme při prohlídce",
+      "Ochrana společných prostor a úklid na konci každého dne"
     ],
     heroImage: "/images/nove/chodba-po-rekonstrukci.webp",
     realizaceImages: [
@@ -614,11 +638,11 @@ export const locations: LocationItem[] = [
       { src: "/images/nove/pokoj-2-po-rekonstrukci.webp", title: "Pokoj Františkovy Lázně", desc: "Čisté stěny s podlahovými lištami" }
     ],
     whyHere: [
-      { title: "Jsme vaši sousedé", desc: "Z Potočiště jsme u vás za pár minut. Okamžitá reakce na jakékoliv potřeby na stavbě." },
-      { title: "Čistota a pořádek", desc: "Chráníme společné prostory a po práci vždy uklidíme." }
+      { title: "Sídlo jen pár minut od vás", desc: "Z Potočiště jsme u vás za pár minut. Když je na stavbě potřeba něco řešit, jsme rychle na místě." },
+      { title: "Termín a cena ve smlouvě", desc: "Termín dokončení a cenu sjednáme ve smlouvě." }
     ],
     faq: [
-      { q: "Kdy můžete přijet na prohlídku bytu ve Fr. Lázních?", a: "Obvykle ještě dnes nebo zítra, zaměření je nezávazné a zdarma." }
+      { q: "Kdy můžete přijet na prohlídku bytu ve Františkových Lázních?", a: "Ozveme se do 1 pracovního dne a prohlídku domluvíme obvykle během několika dní. Prohlídka i rozpočet jsou zdarma a nezávazné." }
     ],
     neighboringLocations: [
       { name: "Cheb", slug: "rekonstrukce-bytu-cheb" },
@@ -635,14 +659,14 @@ export const locations: LocationItem[] = [
     neighborhoods: ["Lázeňská zóna", "Úšovice", "Hamrníky", "Centrum", "Dyleňská", "Velká Hleďsebe"],
     title: "Rekonstrukce bytu Mariánské Lázně",
     metaTitle: "Rekonstrukce bytu Mariánské Lázně | Koupelny HANSBAU",
-    metaDesc: "Profesionální rekonstrukce bytů a koupelen v Mariánských Lázních. Stylové rekonstrukce interiérů, pevná cena a záruka.",
-    perex: "Hledáte stavební firmu pro rekonstrukci bytu v Mariánských Lázních? Nabízíme kompletní rekonstrukce na klíč od návrhu po realizaci.",
-    leadParagraph: "V Mariánských Lázních realizujeme rekonstrukce bytů pro stálé obyvatele i pro majitele rekreačních a investičních apartmánů. Zajistíme veškeré řemeslné práce, nové instalace, luxusní koupelny a moderní podlahy.",
+    metaDesc: "Profesionální rekonstrukce bytů a apartmánů v Mariánských Lázních. Pevná cena za sjednaný rozsah, precizní práce a záruka.",
+    perex: "V Mariánských Lázních rekonstruujeme byty pro stálé bydlení i apartmány k pronájmu – v lázeňské zóně, Úšovicích i na sídlištích. Majitelům, kteří na místě nebydlí, umíme rekonstrukci řídit na dálku.",
+    leadParagraph: "V Mariánských Lázních rekonstruujeme byty pro stálé bydlení i apartmány k pronájmu – v lázeňské zóně, Úšovicích i na sídlištích. Majitelům, kteří na místě nebydlí, umíme rekonstrukci řídit na dálku.",
     specifics: [
-      "Dojezd z centrály do 30 minut",
-      "Zkušenosti s lázeňskými apartmány a náročnými klienty",
-      "Kompletní realizace na klíč včetně možnosti správy na dálku",
-      "Oficiální revize a předávací protokoly"
+      "Byty i apartmány v lázeňské zóně a na sídlištích",
+      "Rekonstrukce na dálku – předáte klíče, průběžně vás informujeme",
+      "Pečlivé detaily: kamenické rohy 45°, rovné spáry, hladké stěrky",
+      "Revizní zprávy a předávací protokol"
     ],
     heroImage: "/images/2.webp",
     realizaceImages: [
@@ -651,7 +675,8 @@ export const locations: LocationItem[] = [
       { src: "/images/nove/pracovna-po-rekonstrukci.webp", title: "Pracovna Mariánské Lázně", desc: "Hladké stěrky a nová podlaha" }
     ],
     whyHere: [
-      { title: "Prémiová kvalita zpracování", desc: "Dbáme na každý detail – přesné spáry, kamenické rohy a bezvadné povrchy." }
+      { title: "Detaily, které jsou vidět", desc: "Dbáme na každý detail – rovné spáry, kamenické rohy 45° a hladké stěrky." },
+      { title: "Správa rekonstrukce na dálku", desc: "Rekonstrukci umíme řídit na dálku. Předáte klíče a my vás průběžně informujeme o postupu." }
     ],
     faq: [
       { q: "Provádíte rekonstrukce i v zimních měsících?", a: "Ano, interiérové rekonstrukce bytů a koupelen provádíme celoročně." }
@@ -671,13 +696,13 @@ export const locations: LocationItem[] = [
     neighborhoods: ["Historická Sorela", "Sídliště Za Nemocnicí", "Staré město", "Lidická", "Jáchymov", "Hroznětín"],
     title: "Rekonstrukce bytu Ostrov",
     metaTitle: "Rekonstrukce bytu Ostrov nad Ohří | HANSBAU",
-    metaDesc: "Kompletní i částečné rekonstrukce bytů v Ostrově (sídliště, sorela, novostavby). Pevná cena, zaměření zdarma.",
-    perex: "Rekonstrukce bytů a bytových jader v Ostrově nad Ohří. Od bourání po finální malby a podlahy s pevnou smlouvou o dílo.",
-    leadParagraph: "V Ostrově nad Ohří a okolí (Jáchymov, Hroznětín) provádíme kompletní rekonstrukce bytů jak v historické zástavbě ve stylu sorela, tak v klasických panelových domech. Zajistíme nové rozvody, rovné omítky, zateplené podhledy a moderní koupelny.",
+    metaDesc: "Kompletní i částečné rekonstrukce bytů v Ostrově (sídliště, sorela, novostavby). Pevná cena za sjednaný rozsah, zaměření zdarma.",
+    perex: "V Ostrově a okolí (Jáchymov, Hroznětín) rekonstruujeme byty v domech ve stylu sorela i v panelových domech. Zajistíme nové rozvody, omítky, podhledy i koupelny.",
+    leadParagraph: "V Ostrově a okolí (Jáchymov, Hroznětín) rekonstruujeme byty v domech ve stylu sorela i v panelových domech. Zajistíme nové rozvody, omítky, podhledy i koupelny.",
     specifics: [
-      "Zkušenosti se specifickou zástavbou v Ostrově (cihlové domy i paneláky)",
-      "Nové rozvody elektřiny a vody s revizí",
-      "Kompletní servis bez nutnosti shánět další řemeslníky"
+      "Zkušenosti s cihlovými domy ve stylu sorela i s paneláky",
+      "Nové rozvody elektřiny a vody s revizí a tlakovou zkouškou",
+      "Řemeslníky koordinujeme my, vy máte jednu kontaktní osobu"
     ],
     heroImage: "/images/nove/rekonstrukce-karlovarsky-kraj-hlavni.webp",
     realizaceImages: [
@@ -686,10 +711,10 @@ export const locations: LocationItem[] = [
       { src: "/images/nove/koupelna-po-rekonstrukci.webp", title: "Koupelna Ostrov", desc: "Nové bytové jádro s vanou a zástěnou" }
     ],
     whyHere: [
-      { title: "Spolehlivost a dodržení termínů", desc: "Nastupujeme v dohodnutý den a předáváme hotové dílo včas." }
+      { title: "Termín zahájení a dokončení ve smlouvě", desc: "Termín zahájení a dokončení sjednáme ve smlouvě a nastupujeme v dohodnutý den." }
     ],
     faq: [
-      { q: "Jak probíhá kalkulace pro byt v Ostrově?", a: "Přijedeme, byt zaměříme a do 48 hodin vám zašleme položkový rozpočet zdarma." }
+      { q: "Jak probíhá kalkulace pro byt v Ostrově?", a: "Přijedeme, byt zaměříme a připravíme položkový rozpočet zdarma. Termín jeho dodání vám potvrdíme při prohlídce. Orientační cenu si můžete předem spočítat v naší kalkulačce." }
     ],
     neighboringLocations: [
       { name: "Karlovy Vary", slug: "rekonstrukce-bytu-karlovy-vary" },
@@ -705,13 +730,13 @@ export const locations: LocationItem[] = [
     neighborhoods: ["Sídliště U Koupaliště", "Tovární", "Centrum", "Nové Sedlo", "Vintířov", "Chranišov"],
     title: "Rekonstrukce bytu Chodov",
     metaTitle: "Rekonstrukce bytu Chodov | Jádra a koupelny HANSBAU",
-    metaDesc: "Rekonstrukce panelových bytů a jader v Chodově u Karlových Varů. Pevná cena, záruka, úklid. HANSBAU.",
-    perex: "Hledáte ověřenou firmu na rekonstrukci bytu v Chodově? HANSBAU zajistí kompletní proměnu vašeho domova na klíč.",
-    leadParagraph: "V Chodově u Karlových Varů a okolí (Nové Sedlo, Vintířov) rekonstruujeme panelové byty a bytová jádra. Pomůžeme vám proměnit starý panelákový byt v moderní a vzdušné bydlení.",
+    metaDesc: "Rekonstrukce panelových bytů a jader v Chodově u Karlových Varů. Pevná cena za sjednaný rozsah, záruka, úklid. HANSBAU.",
+    perex: "V Chodově a okolí (Nové Sedlo, Vintířov) rekonstruujeme panelové byty a bytová jádra. Umakart vyměníme za zděné jádro, uděláme nové rozvody, podlahy i povrchy.",
+    leadParagraph: "V Chodově a okolí (Nové Sedlo, Vintířov) rekonstruujeme panelové byty a bytová jádra. Umakart vyměníme za zděné jádro, uděláme nové rozvody, podlahy i povrchy.",
     specifics: [
-      "Skvělá dostupnost do Chodova z D6",
-      "Rychlá výměna bytových jader za 10–14 dní",
-      "Pevná kalkulace předem bez skrytých poplatků"
+      "Dobrá dostupnost po D6",
+      "Výměna jádra obvykle za 3–6 týdnů od zahájení do předání",
+      "Pevná cena za sjednaný rozsah, změny jen po písemném odsouhlasení"
     ],
     heroImage: "/images/nove/balthasar-byt.webp",
     realizaceImages: [
@@ -720,10 +745,10 @@ export const locations: LocationItem[] = [
       { src: "/images/IMG-20250823-WA0018.webp", title: "Závěsné WC Chodov", desc: "Podomítkový modul Geberit a keramická dlažba" }
     ],
     whyHere: [
-      { title: "Záruka od prověřené české firmy", desc: "Ručíme za kvalitu všech prací a materiálů." }
+      { title: "Záruka na provedené práce", desc: "Délku a podmínky záruky uvádíme ve smlouvě. Ručíme za poctivé řemeslné provedení." }
     ],
     faq: [
-      { q: "Zvládnete i výměnu oken a dveří?", a: "V rámci kompletní rekonstrukce zajistíme i obložkové zárubně a dveře." }
+      { q: "Zajistíte i výměnu oken a dveří?", a: "Dveře a obložkové zárubně dodáme a osadíme v rámci rekonstrukce. Okna sami nedodáváme, ale výměnu umíme naplánovat do harmonogramu s ověřenou firmou." }
     ],
     neighboringLocations: [
       { name: "Sokolov", slug: "rekonstrukce-bytu-sokolov" },
@@ -740,25 +765,25 @@ export const locations: LocationItem[] = [
     neighborhoods: ["Centrum Kraslic", "Tisová", "Rotava", "Šindelová", "Bublava", "Stříbrná", "Jindřichovice"],
     title: "Rekonstrukce bytu Kraslice",
     metaTitle: "Rekonstrukce bytu Kraslice | Koupelny a zednické práce HANSBAU",
-    metaDesc: "Rekonstrukce bytů a domů v Kraslicích a okolí (Rotava, Šindelová, Bublava). Férové ceny, záruka, bezplatná kalkulace.",
-    perex: "Kompletní stavební rekonstrukce bytů a koupelen v Kraslicích a Krušných horách. Pevný rozpočet a spolehliví řemeslníci.",
-    leadParagraph: "V Kraslicích, Rotavě a okolních horských obcích provádíme rekonstrukce bytů, koupelen a půdních vestaveb. Zvládneme zateplení, sádrokartony, nové rozvody i pokládku odolných podlahových krytin.",
+    metaDesc: "Rekonstrukce bytů a koupelen v Kraslicích a okolí (Rotava, Šindelová, Bublava). Pevná cena za sjednaný rozsah, záruka a kalkulace zdarma.",
+    perex: "V Kraslicích, Rotavě a okolních obcích rekonstruujeme byty a koupelny v panelových i starších cihlových domech. Zajistíme nové rozvody, sádrokartony, omítky, obklady i podlahy.",
+    leadParagraph: "V Kraslicích, Rotavě a okolních obcích rekonstruujeme byty a koupelny v panelových i starších cihlových domech. Zajistíme nové rozvody, sádrokartony, omítky, obklady i podlahy.",
     specifics: [
-      "Dojezd do Kraslic a Krušných hor",
-      "Zateplení sádrokartonových podkroví a půdních prostor",
-      "Kompletní realizace na klíč s revizemi"
+      "Byty a koupelny v Kraslicích, Rotavě a okolí",
+      "Nové rozvody elektřiny a vody s revizí a tlakovou zkouškou",
+      "Kompletní realizace – řemeslníky koordinujeme my"
     ],
     heroImage: "/images/nove/pokoj-po-rekonstrukci.webp",
     realizaceImages: [
-      { src: "/images/nove/pokoj-po-rekonstrukci.webp", title: "Podkrovní byt Kraslice", desc: "Zateplení podkroví a sádrokartony" },
+      { src: "/images/nove/pokoj-po-rekonstrukci.webp", title: "Rekonstrukce bytu Kraslice", desc: "Nové omítky, sádrokartony a podlahy" },
       { src: "/images/nove/as-koupelna.webp", title: "Koupelna Kraslice", desc: "Moderní koupelna s nerezovou sanitou" },
       { src: "/images/pokladka-plovouci-podlahy_66.webp", title: "Podlahy Kraslice", desc: "Izolace a pokládka plovoucí podlahy" }
     ],
     whyHere: [
-      { title: "Kvalitní tepelná a zvuková izolace", desc: "Pro horské podmínky volíme prémiové izolační materiály." }
+      { title: "Vše pod jednou střechou", desc: "Všechny práce zajistíme pod jednou smlouvou a řemeslníky koordinujeme my." }
     ],
     faq: [
-      { q: "Děláte i rekonstrukce podkrovních bytů?", a: "Ano, půdní vestavby a sádrokartony jsou naší specializací." }
+      { q: "Děláte i rekonstrukce podkrovních bytů?", a: "Rekonstrukce stávajících podkrovních bytů ano – rozvody, sádrokartony, koupelny, povrchy. Nové půdní vestavby nenabízíme, protože vyžadují projekt a stavební řízení." }
     ],
     neighboringLocations: [
       { name: "Sokolov", slug: "rekonstrukce-bytu-sokolov" },
@@ -1118,7 +1143,7 @@ export const workProcess = [
   {
     step: "03",
     title: "Položkový rozpočet ZDARMA",
-    desc: "Do 48 hodin vám zašleme přehledný položkový rozpočet s garantovanou pevnou cenou."
+    desc: "Připravíme přehledný položkový rozpočet s pevnou cenou za sjednaný rozsah prací."
   },
   {
     step: "04",
@@ -1135,7 +1160,7 @@ export const workProcess = [
 export const homeFaq = [
   {
     q: "Jak probíhá kalkulace a je skutečně bezplatná?",
-    a: "Ano, kalkulace je 100% nezávazná a zdarma. Přijedeme na místo do vašeho bytu, prostor zaměříme, prodiskutujeme materiály a do 48 hodin vám pošleme detailní položkový rozpočet."
+    a: "Ano, kalkulace i zaměření jsou nezávazné a zdarma. Přijedeme na místo do vašeho bytu, prostor zaměříme, prodiskutujeme materiály a připravíme detailní položkový rozpočet."
   },
   {
     q: "V jakých lokalitách stavební práce provádíte?",

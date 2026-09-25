@@ -21,15 +21,15 @@ export const metadata: Metadata = {
 const kalkulackaFaq = [
   {
     q: "Jak přesný je výpočet v online kalkulačce?",
-    a: "Online kalkulačka poskytuje reálný orientační odhad na základě stovek našich předchozích realizací v Karlovarském kraji. Přesný položkový rozpočet s garantovanou pevnou cenou vám zdarma a nezávazně připravíme po osobním zaměření vašeho bytu."
+    a: "Online kalkulačka poskytuje reálný orientační odhad na základě našich předchozích realizací v Karlovarském kraji. Přesný položkový rozpočet s pevnou cenou za sjednaný rozsah vám zdarma a nezávazně připravíme po osobním zaměření vašeho bytu."
   },
   {
     q: "Je osobní zaměření a cenová nabídka opravdu zdarma?",
-    a: "Ano, 100% zdarma a nezávazně. Přijedeme k vám do bytu kdekoliv v Karlovarském kraji (Cheb, Karlovy Vary, Sokolov, Aš atd.), zaměříme prostory a do 48 hodin vám pošleme detailní položkový rozpočet."
+    a: "Ano, zaměření i položkový rozpočet jsou zdarma a nezávazně. Přijedeme k vám do bytu kdekoliv v Karlovarském kraji (Cheb, Karlovy Vary, Sokolov, Aš atd.), zaměříme prostory a připravíme detailní položkový rozpočet."
   },
   {
     q: "Může se cena po podpisu smlouvy o dílo navýšit?",
-    a: "Ne. Cena uvedená ve smlouvě o dílo je pevná a garantovaná. Pokud si v průběhu rekonstrukce sami nevyžádáte změnu materiálů či prací navíc, cena se nemění ani o korunu."
+    a: "Cena sjednaná ve smlouvě o dílo je pevná za dohodnutý rozsah prací. Jakékoliv případné změny či práce navíc s vámi vždy předem písemně odsouhlasíme dřív, než se na nich začne pracovat."
   },
   {
     q: "Co všechno je v celkové ceně rekonstrukce zahrnuto?",

@@ -7,7 +7,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { FAQSection } from "@/components/FAQSection";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
 import { JsonLd } from "@/components/JsonLd";
-import { LocationItem, services, siteConfig } from "@/lib/data";
+import { LocationItem, cityInLocative, services, siteConfig } from "@/lib/data";
 import { 
   MapPin, 
   CheckCircle2, 
@@ -31,6 +31,7 @@ interface LocationDetailTemplateProps {
 }
 
 export function LocationDetailTemplate({ location }: LocationDetailTemplateProps) {
+  const inCity = cityInLocative[location.city] || `v ${location.city}`;
   const iconList = [Home, Layers, Bath, Hammer];
 
   return (
@@ -43,7 +44,7 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
         breadcrumbs={[
           { name: "Domů", url: siteConfig.url },
           { name: "Lokality", url: `${siteConfig.url}/lokality/` },
-          { name: `Rekonstrukce bytu ${location.city}`, url: `${siteConfig.url}/${location.slug}/` },
+          { name: `Rekonstrukce bytu ${inCity}`, url: `${siteConfig.url}/${location.slug}/` },
         ]}
       />
       <Navbar />
@@ -66,7 +67,7 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
                 </div>
 
                 <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-slate-950 leading-tight">
-                  Rekonstrukce bytu <span className="text-red-600">{location.city}</span> na klíč
+                  Rekonstrukce bytu <span className="text-red-600">{inCity}</span>
                 </h1>
 
                 <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
@@ -76,7 +77,7 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
                 {/* Specifics for this city */}
                 <div className="space-y-2 pt-2 border-t border-slate-200">
                   <div className="text-xs font-bold uppercase tracking-wider text-slate-800 mb-2">
-                    Co pro vás v lokalitě {location.city} garantujeme:
+                    Co u nás {inCity} dostanete:
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     {location.specifics.map((spec, idx) => (
@@ -94,7 +95,7 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
                     href="/kontakt"
                     className="w-full sm:w-auto px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-black text-sm uppercase tracking-wider rounded-2xl shadow-lg shadow-red-600/25 hover:shadow-xl hover:shadow-red-600/35 transition-all flex items-center justify-center gap-2"
                   >
-                    <span>Nezávazná nabídka v {location.city}</span>
+                    <span>Nezávazná nabídka zdarma</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
 
@@ -121,7 +122,7 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white shadow-xl bg-slate-100">
                   <Image
                     src={location.heroImage}
-                    alt={`Rekonstrukce bytu ${location.city}`}
+                    alt={`Rekonstrukce bytu ${inCity}`}
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 500px"
@@ -134,7 +135,7 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
                         <MapPin className="w-4 h-4 text-red-600" />
                         <span className="text-xs font-bold text-slate-900 uppercase">{location.city}</span>
                       </div>
-                      <span className="text-[11px] font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded border border-green-200">Bezplatné zaměření</span>
+                      <span className="text-[11px] font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded border border-green-200">Bezplatná prohlídka a zaměření</span>
                     </div>
                   </div>
                 </div>
@@ -153,7 +154,7 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
                     Místní dostupnost
                   </span>
                   <div className="text-sm font-bold text-slate-900">
-                    Čtvrti a sídliště, kde v lokalitě {location.city} působíme:
+                    Čtvrti a sídliště, kde {inCity} působíme:
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-1.5">
@@ -176,13 +177,13 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
             <div className="text-center max-w-3xl mx-auto space-y-3">
               <span className="text-xs font-black uppercase tracking-widest text-red-600 block">
-                Jak probíhá spolupráce
+                Průběh prací
               </span>
               <h2 className="text-2xl sm:text-4xl font-black uppercase text-slate-950">
-                Průběh rekonstrukce bytu v lokalitě {location.city}
+                Jak rekonstrukce probíhá
               </h2>
               <p className="text-sm text-slate-600">
-                Žádný chaos, žádné prodlevy. Celou stavbu řídíme systematicky v 4 jasných krocích:
+                Od první poptávky po předání hotové rekonstrukce ve 4 krocích.
               </p>
             </div>
 
@@ -190,23 +191,23 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
               {[
                 {
                   step: "01",
-                  title: `Zaměření v ${location.city}`,
-                  desc: "Přijedeme k vám do bytu, vyslechneme vaše představy, prostor přesně zaměříme a zhodnotíme stav sítí. 100% ZDARMA.",
+                  title: "Prohlídka a zaměření zdarma",
+                  desc: "Přijedeme k vám, byt zaměříme, posoudíme stav rozvodů a probereme vaše představy.",
                 },
                 {
                   step: "02",
-                  title: "Položkový rozpočet",
-                  desc: "Do 48 hodin vám pošleme detailní položkovou nabídku. Cena uvedená ve smlouvě o dílo je konečná a pevná.",
+                  title: "Položkový rozpočet zdarma",
+                  desc: "Připravíme rozpočet s rozpisem prací a materiálu. Termín jeho zaslání vám potvrdíme při prohlídce.",
                 },
                 {
                   step: "03",
-                  title: "Realizace na klíč",
-                  desc: "Vybourání, odvoz suti, nové rozvody elektřiny a vody, zdění Ytongem, sádrokartony, obklady i podlahy.",
+                  title: "Smlouva a realizace",
+                  desc: "Ve smlouvě potvrdíme rozsah, cenu a termíny. Zajistíme bourání, rozvody, zdění, sádrokartony, obklady i podlahy a řemeslníky koordinujeme my.",
                 },
                 {
                   step: "04",
-                  title: "Předání se zárukou",
-                  desc: "Závěrečný úklid bytu, předání revizních zpráv a předávacího protokolu se zárukou na celé dílo.",
+                  title: "Úklid a předání",
+                  desc: "Uklidíme, společně projdeme hotové práce a předáme předávací protokol a revizní zprávy.",
                 },
               ].map((st, idx) => (
                 <div
@@ -226,46 +227,68 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
         <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-3">
             <span className="text-xs font-black uppercase tracking-widest text-red-600 block">
-              Co pro vás v lokalitě {location.city} zajistíme
+              Naše služby
             </span>
             <h2 className="text-2xl sm:text-4xl font-black uppercase text-slate-950">
-              Stavební služby pro byty a koupelny v {location.city}
+              Co {inCity} děláme
             </h2>
             <p className="text-sm text-slate-600">
-              Všechny práce provádíme na klíč pod jednou smlouvou o dílo. Klikněte pro detail jednotlivých služeb:
+              Všechny práce zajistíme pod jednou smlouvou o dílo.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.slice(0, 4).map((srv, idx) => {
-              const Icon = iconList[idx] || Home;
-              return (
-                <div
-                  key={srv.slug}
-                  className="p-6 rounded-3xl bg-slate-50 border border-slate-200 hover:border-red-500/50 hover:shadow-md transition-all flex flex-col justify-between space-y-4 group"
-                >
-                  <div className="space-y-3">
-                    <div className="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center">
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-red-600 transition-colors">
-                      <Link href={`/${srv.slug}`}>{srv.title}</Link>
-                    </h3>
-                    <p className="text-xs text-slate-600 leading-relaxed font-normal">
-                      {srv.shortDesc}
-                    </p>
+            {[
+              {
+                title: "Rekonstrukce bytu",
+                slug: "rekonstrukce-bytu",
+                desc: "Kompletní i částečné rekonstrukce panelových a cihlových bytů. Řemeslníky koordinujeme my, cenu a termín sjednáme ve smlouvě.",
+                Icon: Home,
+              },
+              {
+                title: "Rekonstrukce bytového jádra",
+                slug: "rekonstrukce-bytoveho-jadra",
+                desc: "Výměna umakartového jádra za zděné z tvárnic Ytong. Nové rozvody, hydroizolace, obklady a sanita. Obvykle 3–6 týdnů od zahájení do předání.",
+                Icon: Layers,
+              },
+              {
+                title: "Rekonstrukce koupelny a WC",
+                slug: "rekonstrukce-koupelny",
+                desc: "Koupelny a WC v bytech i rodinných domech. Hydroizolace, velkoformátové obklady, walk-in kouty a podomítková sanita.",
+                Icon: Bath,
+              },
+              {
+                title: "Zednické práce a omítky",
+                slug: "zednicke-prace",
+                desc: "Zděné příčky, omítky, štuky, sádrové stěrky a vyrovnání podlah. Připravíme podklad pro malování, obklady i podlahy.",
+                Icon: Hammer,
+              },
+            ].map((srv) => (
+              <div
+                key={srv.slug}
+                className="p-6 rounded-3xl bg-slate-50 border border-slate-200 hover:border-red-500/50 hover:shadow-md transition-all flex flex-col justify-between space-y-4 group"
+              >
+                <div className="space-y-3">
+                  <div className="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center">
+                    <srv.Icon className="w-5 h-5" />
                   </div>
-
-                  <Link
-                    href={`/${srv.slug}`}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-red-600 hover:text-red-700 pt-2 border-t border-slate-200"
-                  >
-                    <span>Zjistit více</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
+                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-red-600 transition-colors">
+                    <Link href={`/${srv.slug}`}>{srv.title}</Link>
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                    {srv.desc}
+                  </p>
                 </div>
-              );
-            })}
+
+                <Link
+                  href={`/${srv.slug}`}
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-red-600 hover:text-red-700 pt-2 border-t border-slate-200"
+                >
+                  <span>Zjistit více</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -279,7 +302,7 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
                     Fotogalerie prací
                   </span>
                   <h2 className="text-2xl sm:text-3xl font-black uppercase text-slate-950">
-                    Ukázky rekonstrukcí v {location.city} a okolí
+                    Ukázky rekonstrukcí {inCity} a okolí
                   </h2>
                 </div>
                 <Link
@@ -325,13 +348,13 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 space-y-4">
               <span className="text-xs font-bold uppercase tracking-widest text-red-600">
-                Spolehlivý partner pro {location.city}
+                Spolehlivý partner {inCity}
               </span>
               <h2 className="text-2xl sm:text-4xl font-black uppercase text-slate-950">
-                Proč si vybrat HANSBAU v lokalitě {location.city}?
+                Proč si vybrat HANSBAU {inCity}?
               </h2>
               <p className="text-sm text-slate-600 leading-relaxed font-normal">
-                Rekonstrukce bytu je významná investice. S námi máte jistotu, že stavební práce proběhnou bez zbytečných prodlev, s ohledem na sousedy a za předem garantovanou pevnou cenu.
+                Rekonstrukce bytu je velká investice. Proto rozsah, cenu a termín sjednáme předem písemně a změny s vámi vždy odsouhlasíme dřív, než se na nich začne pracovat.
               </p>
 
               <div className="pt-2">
@@ -340,7 +363,7 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
                   className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-md transition-all"
                 >
                   <Calculator className="w-4 h-4" />
-                  <span>Kalkulačka pro {location.city}</span>
+                  <span>Spočítat orientační cenu</span>
                 </Link>
               </div>
             </div>
@@ -363,8 +386,8 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
         {location.faq && location.faq.length > 0 && (
           <FAQSection
             customFaq={location.faq}
-            title={`Časté dotazy k rekonstrukci bytu v ${location.city}`}
-            subtitle={`Otázky & Odpovědi • ${location.city}`}
+            title={`Časté dotazy k rekonstrukci bytu ${inCity}`}
+            subtitle="Otázky a odpovědi"
           />
         )}
 
@@ -373,7 +396,7 @@ export function LocationDetailTemplate({ location }: LocationDetailTemplateProps
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="text-xs sm:text-sm font-bold text-slate-700">
-                Rekonstrukce provádíme i v sousedních městech:
+                Rekonstrukce děláme i v okolních městech:
               </div>
               <div className="flex flex-wrap gap-2">
                 {location.neighboringLocations.map((nei) => (
