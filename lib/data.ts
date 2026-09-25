@@ -60,13 +60,13 @@ export const siteConfig = {
   ico: "04860837",
   dic: "CZ04860837",
   tagline: "Rekonstrukce bytů a koupelen v Karlovarském kraji",
-  openingHours: "Po–So 7:00 – 19:00",
+  openingHours: "Po–Pá 8:00 – 16:30",
   phoneCZ: "+420 606 073 700",
   phoneCZRaw: "+420606073700",
   email: "team@hansbau.com",
   contactPerson: "Jan Červeňak",
   contactRole: "Jednatel společnosti",
-  founderPhoto: "/images/nove/jan-cervenak-jednatel.webp",
+  founderPhoto: "/images/nove/jan-cervenak-hopa.png",
   logo: "/images/Logo-17.webp",
   address: {
     street: "Potočiště 21 - Odrava",
@@ -172,7 +172,7 @@ export const services: ServiceItem[] = [
     ],
     features: [
       "Rychlé vybourání a ekologická likvidace starého umakartu",
-      "Vyzdění nových příček z přesných tvárnic Ytong",
+      "Vyzdění nových příček",
       "Kompletní výměna rozvodů vody a odpadů až ke stoupačkám",
       "Nová elektroinstalace včetně proudových chráničů a ventilátorů",
       "Zvýšení akustické a tepelné izolace koupelny a WC"
@@ -259,7 +259,7 @@ export const services: ServiceItem[] = [
     shortDesc: "Přesné zednické práce, bourání příček, zdění Ytongem, jádrové a štukové omítky, stěrky, nivelace podlah a pokládka dlažeb.",
     fullDesc: "Kvalitní zednické práce jsou základem každé úspěšné rekonstrukce. Provádíme veškeré zednické práce v interiérech od přípravy podkladů přes zdění příček až po finální štuky, sádrové stěrky a pokládku podlah.",
     iconName: "Hammer",
-    image: "/images/pokladka-plovouci-podlahy_66.webp",
+    image: "/images/nove2/IMG_4358.webp",
     galleryImages: [
       "/images/1-3.webp",
       "/images/1-4.webp",
@@ -269,8 +269,8 @@ export const services: ServiceItem[] = [
       "/images/1-12.webp"
     ],
     features: [
-      "Zdění příček a úpravy dispozic z tvárnic Ytong / Porofix",
-      "Vnitřní jádrové a štukové omítky, moderní sádrové hladké stěrky",
+      "Zdění příček a úpravy dispozic",
+      "Vnitřní jádrové a štukové omítky",
       "Samonivelační stěrky pro perfektně rovné podlahy",
       "Montáž sádrokartonových podhledů a příček Knauf / Rigips",
       "Opravy prasklin, zapravení šliců po elektřině a vodě"
@@ -719,15 +719,6 @@ export const portfolioItems: PortfolioItem[] = [
     location: "Mariánské Lázně",
     image: "/images/nove/karlovy-vary-realizace.webp",
     description: "Protiskluzová vzorovaná dlažba, bezbariérový sprchový kout se skleněnou stěnou a kulatým zrcadlem."
-  },
-  {
-    id: "realizace-koupelna-6",
-    title: "Precizní pokládka velkoformátové dlažby",
-    category: "koupelny",
-    categoryLabel: "Koupelny",
-    location: "Františkovy Lázně",
-    image: "/images/1-8.webp",
-    description: "Laserem nivelovaná pokládka rektifikované velkoformátové dlažby s distančními klínky."
   },
 
   // 2. Bytová jádra (Housing cores)

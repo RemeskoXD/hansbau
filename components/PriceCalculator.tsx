@@ -245,9 +245,6 @@ export function PriceCalculator({
                     <span className="text-sm font-bold">Panelový byt</span>
                     <Building2 className={`w-4 h-4 ${buildingType === "panel" ? "text-white" : "text-slate-400"}`} />
                   </div>
-                  <div className={`text-xs mt-1 font-normal ${buildingType === "panel" ? "text-red-100" : "text-slate-500"}`}>
-                    Sazba: 9 800 – 16 500 Kč/m²
-                  </div>
                 </button>
 
                 <button
@@ -262,9 +259,6 @@ export function PriceCalculator({
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-bold">Cihlový byt</span>
                     <Home className={`w-4 h-4 ${buildingType === "brick" ? "text-white" : "text-slate-400"}`} />
-                  </div>
-                  <div className={`text-xs mt-1 font-normal ${buildingType === "brick" ? "text-red-100" : "text-slate-500"}`}>
-                    Sazba: 12 000 – 20 100 Kč/m²
                   </div>
                 </button>
               </div>

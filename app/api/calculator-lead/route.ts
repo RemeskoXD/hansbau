@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import nodemailer from "nodemailer";
+import { saveLead, updateLead } from "@/lib/leads-store";
 
 // In-memory rate limiting store (sliding window per IP)
 const rateLimitMap = new Map<string, { count: number; firstRequest: number }>();
@@ -148,7 +149,25 @@ Odesláno z IP: ${clientIp}
 </html>
     `.trim();
 
-    // 5. SMTP Configuration
+    // 5. Persist lead to local disk storage (safety net so no inquiry is ever lost)
+    const savedLead = saveLead({
+      type: "calculator",
+      name: validatedData.name,
+      phone: validatedData.phone,
+      email: validatedData.email || undefined,
+      city: validatedData.city || undefined,
+      clientIp,
+      emailDelivered: false,
+      calculatorDetails: {
+        buildingType: validatedData.buildingType,
+        layout: validatedData.layout,
+        standard: validatedData.standard,
+        priceRange: validatedData.priceRange,
+        timeEstimate: validatedData.timeEstimate,
+      },
+    });
+
+    // 6. SMTP Configuration
     const smtpHost = process.env.SMTP_HOST || "mail.mescon.eu";
     const smtpPort = parseInt(process.env.SMTP_PORT || "465", 10);
     const smtpSecure = smtpPort === 465;
@@ -158,27 +177,41 @@ Odesláno z IP: ${clientIp}
     const smtpFrom = process.env.SMTP_FROM || `"HANSBAU Kalkulačka" <${smtpUser}>`;
 
     if (smtpPass) {
-      const transporter = nodemailer.createTransport({
-        host: smtpHost,
-        port: smtpPort,
-        secure: smtpSecure,
-        auth: {
-          user: smtpUser,
-          pass: smtpPass,
-        },
-      });
+      try {
+        const transporter = nodemailer.createTransport({
+          host: smtpHost,
+          port: smtpPort,
+          secure: smtpSecure,
+          auth: {
+            user: smtpUser,
+            pass: smtpPass,
+          },
+        });
 
-      await transporter.sendMail({
-        from: smtpFrom,
-        to: contactEmailTo,
-        replyTo: validatedData.email || undefined,
-        subject: `[Kalkulačka Lead] ${validatedData.name} (${validatedData.phone}) - ${validatedData.layout} - Odhad: ${validatedData.priceRange}`,
-        text: emailBodyText,
-        html: emailBodyHtml,
-      });
+        await transporter.sendMail({
+          from: smtpFrom,
+          to: contactEmailTo,
+          replyTo: validatedData.email || undefined,
+          subject: `[Kalkulačka Lead] ${validatedData.name} (${validatedData.phone}) - ${validatedData.layout} - Odhad: ${validatedData.priceRange}`,
+          text: emailBodyText,
+          html: emailBodyHtml,
+        });
+
+        updateLead(savedLead.id, { emailDelivered: true });
+      } catch (mailErr: unknown) {
+        console.error("Failed to send calculator lead email via SMTP:", mailErr);
+        updateLead(savedLead.id, {
+          emailDelivered: false,
+          emailError: mailErr instanceof Error ? mailErr.message : String(mailErr),
+        });
+      }
     } else {
-      console.log("=== NEW CALCULATOR LEAD (SMTP_PASS not set, logging to console) ===");
+      console.log("=== NEW CALCULATOR LEAD (SMTP_PASS not set, stored in disk leads store) ===");
       console.log(emailBodyText);
+      updateLead(savedLead.id, {
+        emailDelivered: false,
+        emailError: "SMTP_PASS not configured in environment",
+      });
     }
 
     return NextResponse.json({ success: true, message: "Kalkulace byla úspěšně odeslána." });

@@ -132,7 +132,7 @@ export const DEFAULT_CONTENT: PageContent = {
     storyP1: "Jan Červeňak s.r.o. (působící pod značkou HANSBAU) je stavební a zednická firma se sídlem v Potočišti u Chebu. Stavíme na poctivém řemesle, osobním přístupu a rodinné tradici sahající až do roku 1984.",
     storyP2: "Naší hlavní specializací jsou kompletní rekonstrukce bytů na klíč, zděná bytová jádra z Ytongu a moderní koupelny po celém Karlovarském kraji. Zákazníkům nabízíme naprostý klid: od bouracích prací a odvozu suti přes novou elektřinu v mědi, instalatérské rozvody, precizní velkoformátové obklady, štuky a sádrové stěrky až po pokládku podlah.",
     storyP3: "Nemusíte shánět 5 různých part řemeslníků a složitě je koordinovat. Všechny profese – včetně certifikovaného elektrikáře a instalatéra s revizními zprávami – koordinuje osobně pan Červeňak. Za celý výsledek ručíme pevnou smlouvou o dílo a garantovanou cenou.",
-    founderQuote: "Za každou rekonstrukcí stojím osobně. Když se domluvíme na rozpočtu a termínu, platí to. Sám koordinuji instalatéry i elektrikáře, dohlížím na precizní obklady a zednickou práci a dbám na to, aby po nás každý den zůstalo uklizeno. Naší největší vizitkou je spokojený zákazník a poctivě odvedené řemeslo.",
+    founderQuote: "Každou zakázku řídím osobně. Co si domluvíme to se dodrží.",
     founderRole: "Jednatel společnosti"
   },
   calculator: {
@@ -144,7 +144,7 @@ export const DEFAULT_CONTENT: PageContent = {
   contact: {
     title: "Kontaktní informace",
     perex: "Máte dotaz nebo zájem o nezávaznou cenovou nabídku? Zavolejte nám, napište e-mail nebo vyplňte formulář níže.",
-    openingHours: "Pondělí až sobota: 07:00 – 19:00 hod.",
+    openingHours: "Pondělí až pátek: 08:00 – 16:30 hod.",
     responseSpeed: "Odpovídáme standardně do 24 hodin od doručení poptávky."
   },
   company: {

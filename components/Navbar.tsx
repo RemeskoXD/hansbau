@@ -63,7 +63,7 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-4">
-            <span className="text-slate-500 font-medium">Po–So: 7:00 – 19:00</span>
+            <span className="text-slate-500 font-medium">Po–Pá: 8:00 – 16:30</span>
             <div className="h-3 w-[1px] bg-slate-300"></div>
             <a
               href={`tel:${siteConfig.phoneCZRaw}`}

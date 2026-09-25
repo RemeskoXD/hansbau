@@ -98,7 +98,7 @@ export function Footer() {
                   >
                     {company.phone}
                   </a>
-                  <div className="text-[11px] text-slate-500">Po–So: 7:00 – 19:00 hod</div>
+                  <div className="text-[11px] text-slate-500">Po–Pá: 8:00 – 16:30 hod</div>
                 </div>
               </div>
 

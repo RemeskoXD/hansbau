@@ -119,7 +119,7 @@ export function ContactForm({ defaultService = "" }: ContactFormProps) {
                 </div>
                 <div>
                   <div className="text-[11px] text-slate-500 font-semibold uppercase tracking-wider">
-                    Telefonní kontakt (Po–So 7:00–19:00)
+                    Telefonní kontakt (Po–Pá 8:00–16:30)
                   </div>
                   <div className="text-base sm:text-lg font-black text-slate-900 group-hover:text-red-600 transition-colors">
                     {siteConfig.phoneCZ}

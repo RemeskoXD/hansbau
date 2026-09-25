@@ -24,10 +24,12 @@ import {
   Home,
   BookOpen,
   Calculator,
-  Phone
+  Phone,
+  Inbox
 } from "lucide-react";
 import { PageContent, DEFAULT_CONTENT, ReviewItem, PortfolioItem } from "@/lib/content-schema";
 
+import { TabLeads } from "./tabs/TabLeads";
 import { TabHome } from "./tabs/TabHome";
 import { TabAbout } from "./tabs/TabAbout";
 import { TabReviews } from "./tabs/TabReviews";
@@ -50,6 +52,7 @@ interface AdminDashboardProps {
 }
 
 export type AdminTab =
+  | "leads"
   | "home"
   | "about"
   | "reviews"
@@ -354,6 +357,7 @@ export function AdminDashboard({ initialContent, initialUpdatedAt, onLogout }: A
   };
 
   const TABS_CONFIG: { id: AdminTab; label: string; icon: React.ComponentType<{ className?: string }> }[] = [
+    { id: "leads", label: "📥 Poptávky & Leady", icon: Inbox },
     { id: "home", label: "Úvod (Domů)", icon: Home },
     { id: "about", label: "O nás & Příběh", icon: BookOpen },
     { id: "reviews", label: "Recenze & Hodnocení", icon: Star },
@@ -502,6 +506,7 @@ export function AdminDashboard({ initialContent, initialUpdatedAt, onLogout }: A
       <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* Editor Form Column */}
         <div className={`${showLivePreview ? "lg:col-span-6 xl:col-span-6" : "lg:col-span-12"} space-y-6`}>
+          {activeTab === "leads" && <TabLeads />}
           {activeTab === "home" && <TabHome content={content} updateField={updateField} />}
           {activeTab === "about" && <TabAbout content={content} updateField={updateField} />}
           {activeTab === "reviews" && (

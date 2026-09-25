@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import nodemailer from "nodemailer";
+import { saveLead, updateLead } from "@/lib/leads-store";
 
 // In-memory rate limiting store (sliding window per IP)
 const rateLimitMap = new Map<string, { count: number; firstRequest: number }>();
@@ -138,7 +139,21 @@ Odesláno z IP: ${clientIp}
 </html>
     `.trim();
 
-    // 5. SMTP Configuration with defaults matching Mescon infrastructure
+    // 5. Persist lead to local disk storage (safety net so no inquiry is ever lost)
+    const savedLead = saveLead({
+      type: "contact",
+      name: validatedData.name,
+      phone: validatedData.phone,
+      email: validatedData.email || undefined,
+      city: validatedData.city || undefined,
+      service: validatedData.service || undefined,
+      areaSize: validatedData.areaSize || undefined,
+      message: validatedData.message || undefined,
+      clientIp,
+      emailDelivered: false,
+    });
+
+    // 6. SMTP Configuration with defaults matching Mescon infrastructure
     const smtpHost = process.env.SMTP_HOST || "mail.mescon.eu";
     const smtpPort = parseInt(process.env.SMTP_PORT || "465", 10);
     const smtpSecure = smtpPort === 465;
@@ -148,28 +163,42 @@ Odesláno z IP: ${clientIp}
     const smtpFrom = process.env.SMTP_FROM || `"HANSBAU Web" <${smtpUser}>`;
 
     if (smtpPass) {
-      const transporter = nodemailer.createTransport({
-        host: smtpHost,
-        port: smtpPort,
-        secure: smtpSecure,
-        auth: {
-          user: smtpUser,
-          pass: smtpPass,
-        },
-      });
+      try {
+        const transporter = nodemailer.createTransport({
+          host: smtpHost,
+          port: smtpPort,
+          secure: smtpSecure,
+          auth: {
+            user: smtpUser,
+            pass: smtpPass,
+          },
+        });
 
-      await transporter.sendMail({
-        from: smtpFrom,
-        to: contactEmailTo,
-        replyTo: validatedData.email || undefined,
-        subject: `[Nová poptávka] ${validatedData.service || "Rekonstrukce"} - ${validatedData.name} (${validatedData.phone})`,
-        text: emailBodyText,
-        html: emailBodyHtml,
-      });
+        await transporter.sendMail({
+          from: smtpFrom,
+          to: contactEmailTo,
+          replyTo: validatedData.email || undefined,
+          subject: `[Nová poptávka] ${validatedData.service || "Rekonstrukce"} - ${validatedData.name} (${validatedData.phone})`,
+          text: emailBodyText,
+          html: emailBodyHtml,
+        });
+
+        updateLead(savedLead.id, { emailDelivered: true });
+      } catch (mailErr: unknown) {
+        console.error("Failed to send contact inquiry email via SMTP:", mailErr);
+        updateLead(savedLead.id, {
+          emailDelivered: false,
+          emailError: mailErr instanceof Error ? mailErr.message : String(mailErr),
+        });
+      }
     } else {
       // Fallback log when password is not yet configured in Coolify
-      console.log("=== NEW CONTACT INQUIRY (SMTP_PASS not set, logging to console) ===");
+      console.log("=== NEW CONTACT INQUIRY (SMTP_PASS not set, stored in disk leads store) ===");
       console.log(emailBodyText);
+      updateLead(savedLead.id, {
+        emailDelivered: false,
+        emailError: "SMTP_PASS not configured in environment",
+      });
     }
 
     return NextResponse.json({ success: true, message: "Poptávka byla úspěšně odeslána." });

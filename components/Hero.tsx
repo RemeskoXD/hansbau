@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/data";
 import { getContentStore } from "@/lib/content-store";
 
 export function Hero() {
-  const { home } = getContentStore().content;
+  const { home, about } = getContentStore().content;
 
   return (
     <section className="relative min-h-[88vh] flex items-center justify-center overflow-hidden bg-white text-slate-900 pt-6 pb-16 lg:py-20 border-b border-slate-200/80">
@@ -83,7 +83,7 @@ export function Hero() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-3">
               <Link
-                href="/kontakt"
+                href="#kontakt"
                 className="w-full sm:w-auto px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-black text-xs sm:text-sm uppercase tracking-wider rounded-2xl shadow-md shadow-red-600/20 hover:shadow-lg hover:shadow-red-600/30 transition-all flex items-center justify-center gap-2.5 transform hover:-translate-y-0.5 active:translate-y-0"
               >
                 <span>Nezávazná nabídka zdarma</span>
@@ -156,7 +156,7 @@ export function Hero() {
                   <div className="text-xs font-bold text-slate-900">{siteConfig.contactPerson}</div>
                   <div className="text-[10px] text-red-600 font-semibold">{siteConfig.contactRole}</div>
                   <p className="text-[11px] text-slate-600 italic mt-0.5">
-                    „Stavíme s poctivou zárukou a pevnou cenou.“
+                    „{about?.founderQuote || "Každou zakázku řídím osobně. Co si domluvíme to se dodrží."}“
                   </p>
                 </div>
               </div>
@@ -166,38 +166,40 @@ export function Hero() {
 
         {/* Bottom stats banner */}
         <div className="mt-14 pt-8 border-t border-slate-200/80 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <div className="p-4 rounded-2xl bg-slate-50/70 border border-slate-200/60">
-            <div className="text-2xl sm:text-3xl font-black text-slate-900">40+ let</div>
-            <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold mt-0.5">
-              Tradice řemesla od 1984
-            </div>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-slate-50/70 border border-slate-200/60">
-            <div className="text-2xl sm:text-3xl font-black text-red-600">500+</div>
-            <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold mt-0.5">
-              Dokončených rekonstrukcí
-            </div>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-slate-50/70 border border-slate-200/60">
-            <div className="text-2xl sm:text-3xl font-black text-slate-900">100%</div>
-            <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold mt-0.5">
-              Dodržení pevného rozpočtu
-            </div>
-          </div>
-
           <a
             href={siteConfig.googleReviewsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-4 rounded-2xl bg-slate-50/70 hover:bg-white border border-slate-200/60 hover:border-red-400 text-left transition-all shadow-xs group"
+            className="p-4 rounded-2xl bg-slate-50/70 hover:bg-white border border-slate-200/60 hover:border-red-400 transition-all shadow-xs group flex flex-col justify-center items-center"
           >
-            <div className="text-2xl sm:text-3xl font-black text-amber-500 group-hover:scale-105 transition-transform">5.0 ★</div>
+            <div className="text-2xl sm:text-3xl font-black text-amber-500 group-hover:scale-105 transition-transform">
+              5.0 ★
+            </div>
             <div className="text-xs text-slate-500 group-hover:text-red-600 uppercase tracking-wider font-semibold mt-0.5 transition-colors">
               Google hodnocení zákazníků
             </div>
           </a>
+
+          <div className="p-4 rounded-2xl bg-slate-50/70 border border-slate-200/60 flex flex-col justify-center items-center">
+            <div className="text-2xl sm:text-3xl font-black text-red-600">0 Kč</div>
+            <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold mt-0.5">
+              Zaměření a rozpočet zdarma
+            </div>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-slate-50/70 border border-slate-200/60 flex flex-col justify-center items-center">
+            <div className="text-2xl sm:text-3xl font-black text-slate-900">do 24 h</div>
+            <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold mt-0.5">
+              Ozveme se s termínem prohlídky
+            </div>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-slate-50/70 border border-slate-200/60 flex flex-col justify-center items-center">
+            <div className="text-2xl sm:text-3xl font-black text-slate-900">9 měst</div>
+            <div className="text-xs text-slate-500 uppercase tracking-wider font-semibold mt-0.5">
+              Působíme v celém Karlovarském kraji
+            </div>
+          </div>
         </div>
       </div>
     </section>

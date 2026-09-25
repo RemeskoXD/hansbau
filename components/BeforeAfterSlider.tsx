@@ -92,7 +92,7 @@ export function BeforeAfterSlider() {
             >
               <div className="relative w-full h-full min-w-[100%]">
                 <Image
-                  src="/images/nove/balthasar-byt.webp"
+                  src="/images/nove2/IMG_6378.webp"
                   alt="Před rekonstrukcí - původní stav"
                   fill
                   sizes="(max-width: 1024px) 100vw, 900px"
