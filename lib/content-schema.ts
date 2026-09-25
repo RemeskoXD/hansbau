@@ -123,8 +123,8 @@ export const DEFAULT_CONTENT: PageContent = {
     guaranteePrice: "Pevná cena bez víceprací",
     guaranteeTime: "Garantovaný termín dokončení",
     guaranteeSurvey: "Osobní zaměření ZDARMA",
-    servicesTitle: "Kompletní stavební a řemeslné práce",
-    servicesPerex: "Žádné shánění pěti různých firem. U nás máte jednoho spolehlivého partnera, který ručí za celou stavbu od A do Z."
+    servicesTitle: "Rekonstrukce bytů, jader a koupelen",
+    servicesPerex: "Rekonstruujeme byty, bytová jádra a koupelny. Zajistíme bourání, nové rozvody, zdění, obklady, podlahy i závěrečný úklid. Rozsah prací, cenu a termín sjednáme předem ve smlouvě."
   },
   about: {
     badge: "Naše hodnoty & filozofie",
@@ -192,32 +192,32 @@ export const DEFAULT_CONTENT: PageContent = {
     "rekonstrukce-bytu": {
       id: "rekonstrukce-bytu",
       title: "Rekonstrukce bytu (kompletní i částečná)",
-      shortDesc: "Kompletní proměna bytu na klíč od vyklizení a bourání po finální předání. Žádné starosti se sháněním 5 různých řemeslníků. Pevná cena a termín.",
-      fullDesc: "Plánujete rekonstrukci panelového nebo cihlového bytu v Karlovarském kraji? HANSBAU se postará o celou proměnu vašeho domova. Zajistíme vyklizení, bourací práce, novou elektroinstalaci, vodoinstalaci, sádrokartony, omítky, obklady, podlahy i montáž sanitární keramiky a dveří."
+      shortDesc: "Rekonstruujeme panelové i cihlové byty, celé nebo jen vybrané místnosti. Zajistíme bourání, novou elektroinstalaci a rozvody vody, zdění a sádrokartony, omítky, obklady, podlahy i montáž sanity a dveří.",
+      fullDesc: "Rekonstruujeme panelové i cihlové byty, celé nebo jen vybrané místnosti. Zajistíme vyklizení a bourání, novou elektroinstalaci a rozvody vody, zdění a sádrokartony, omítky, obklady, podlahy i montáž sanity a dveří. Rozsah prací, cenu a termín sjednáme předem ve smlouvě."
     },
     "rekonstrukce-bytoveho-jadra": {
       id: "rekonstrukce-bytoveho-jadra",
       title: "Rekonstrukce bytového jádra",
-      shortDesc: "Výměna starého umakartového jádra za moderní zděné z pórobetonu (Ytong). Vybourání, nové rozvody, hydroizolace a obklady hotové za 10–14 dní.",
-      fullDesc: "Máte v bytě staré umakartové jádro, kde hučí stoupačky a opadávají obklady? Provedeme kompletní vybourání a vyzdění nového pórobetonového jádra s novými rozvody vody, odpadů a elektřiny."
+      shortDesc: "Máte v bytě původní umakartové jádro? Vybouráme ho a postavíme nové zděné z tvárnic Ytong. Vyměníme rozvody vody, odpadů a elektřiny, uděláme hydroizolaci, obklady a namontujeme vybavení.",
+      fullDesc: "Máte v bytě původní umakartové jádro? Vybouráme ho a postavíme nové zděné z tvárnic Ytong. Vyměníme rozvody vody, odpadů a elektřiny, uděláme hydroizolaci, obklady a namontujeme vybavení. Rozsah prací, cenu a termín sjednáme předem ve smlouvě."
     },
     "rekonstrukce-koupelny": {
       id: "rekonstrukce-koupelny",
       title: "Rekonstrukce koupelny",
-      shortDesc: "Designové koupelny na míru v panelácích i rodinných domech. Velkoformátové obklady, walk-in sprchové kouty s lineárními žlaby, podomítková sanita a LED niky.",
-      fullDesc: "Koupelna je místem každodenní relaxace. Provádíme rekonstrukce koupelen a WC s důrazem na špičkovou hydroizolaci, dokonale rovné kamenické rohy (jolly hrany 45°) a spolehlivou instalaci sanity značek Geberit, Grohe, Hansgrohe či Ravak."
+      shortDesc: "Rekonstruujeme koupelny a WC v bytech i rodinných domech. Provedeme nové rozvody, hydroizolaci, obklady a dlažbu i montáž vybavení. Montujeme sanitu běžných značek, např. Geberit, Grohe, Hansgrohe nebo Ravak.",
+      fullDesc: "Rekonstruujeme koupelny a WC v bytech i rodinných domech. Provedeme nové rozvody, hydroizolaci, obklady a dlažbu i montáž vybavení. Montujeme sanitu běžných značek, např. Geberit, Grohe, Hansgrohe nebo Ravak. Rozsah prací, cenu a termín sjednáme předem ve smlouvě."
     },
     "zednicke-prace": {
       id: "zednicke-prace",
       title: "Zednické práce a povrchové úpravy",
-      shortDesc: "Přesné zednické práce, bourání příček, zdění Ytongem, jádrové a štukové omítky, stěrky, nivelace podlah a pokládka dlažeb.",
-      fullDesc: "Kvalitní zednické práce jsou základem každé úspěšné rekonstrukce. Provádíme veškeré zednické práce v interiérech od přípravy podkladů přes zdění příček až po finální štuky, sádrové stěrky a pokládku podlah."
+      shortDesc: "Zděné příčky, opravy zdiva, omítky, štuky a stěrky. Připravíme a vyrovnáme povrchy pro malování, obklady nebo pokládku podlah.",
+      fullDesc: "Zděné příčky, opravy zdiva, omítky, štuky a stěrky. Připravíme a vyrovnáme povrchy pro malování, obklady nebo pokládku podlah. Zednické práce děláme jako součást rekonstrukcí i samostatně."
     },
     "elektro-voda-revize": {
       id: "elektro-voda-revize",
       title: "Elektroinstalace, voda a revize",
-      shortDesc: "Kompletní rozvody elektřiny v mědi, nové rozvody vody a odpadů, topenářské práce a oficiální revizní zprávy pro kolaudaci a SVJ.",
-      fullDesc: "Žádná rekonstrukce se neobejde bez bezpečných rozvodů. V rámci našich rekonstrukcí bytů a jader zajišťujeme kompletní elektroinstalační a instalatérské práce přes naše ověřené a certifikované subdodavatele, včetně oficiálních revizních zpráv."
+      shortDesc: "Zajistíme nové rozvody elektřiny, vody a odpadů i úpravy topení. Práce provádí naši ověření a certifikovaní subdodavatele. Součástí jsou potřebné zkoušky a revize podle rozsahu prací.",
+      fullDesc: "Při rekonstrukci bytu, jádra nebo koupelny zajistíme nové rozvody elektřiny, vody a odpadů. Práce provádí náš stálý elektrikář a instalatér, se kterými dlouhodobě spolupracujeme. Na konci dostanete revizní zprávu elektro."
     }
   },
   seo: {

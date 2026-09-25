@@ -6,8 +6,8 @@ import { notFound } from "next/navigation";
 const service = services.find((s) => s.slug === "elektro-voda-revize")!;
 
 export const metadata: Metadata = {
-  title: "Elektroinstalace, instalatérské práce a revize | HANSBAU",
-  description: "Kompletní rozvody elektřiny v mědi, rozvody vody a odpadů, topení a oficiální revizní zprávy pro SVJ a kolaudaci. HANSBAU.",
+  title: "Elektroinstalace, voda a revize při rekonstrukci | HANSBAU",
+  description: "Nové rozvody elektřiny v mědi, rozvody vody a odpadů, úpravy topení a výchozí revizní zprávy elektro při rekonstrukci. HANSBAU.",
   alternates: {
     canonical: "/elektro-voda-revize/",
   },

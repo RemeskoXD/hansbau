@@ -56,7 +56,7 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
                 </div>
 
                 <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-slate-950 leading-tight">
-                  {service.title}
+                  {service.pageH1 || service.title}
                 </h1>
 
                 <p className="text-sm sm:text-lg text-slate-600 leading-relaxed font-normal">
@@ -67,19 +67,19 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                   <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-800 font-medium">
                     <CheckCircle2 className="w-4 h-4 text-red-600 shrink-0" />
-                    <span>Položkový rozpočet ZDARMA</span>
+                    <span>Prohlídka a rozpočet zdarma</span>
                   </div>
                   <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-800 font-medium">
                     <CheckCircle2 className="w-4 h-4 text-red-600 shrink-0" />
-                    <span>Pevná smlouva o dílo & záruka</span>
+                    <span>Pevná cena za sjednaný rozsah</span>
                   </div>
                   <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-800 font-medium">
                     <CheckCircle2 className="w-4 h-4 text-red-600 shrink-0" />
-                    <span>Realizace bez starostí na klíč</span>
+                    <span>Termín dokončení ve smlouvě</span>
                   </div>
                   <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-800 font-medium">
                     <CheckCircle2 className="w-4 h-4 text-red-600 shrink-0" />
-                    <span>Lokalita: Cheb, Sokolov, Aš, Karlovy Vary</span>
+                    <span>Celý Karlovarský kraj</span>
                   </div>
                 </div>
 
@@ -116,7 +116,7 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
                 <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white shadow-xl bg-slate-100">
                   <Image
                     src={service.image}
-                    alt={service.title}
+                    alt={service.pageH1 || service.title}
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 500px"
@@ -137,7 +137,7 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
             <div className="p-8 sm:p-10 rounded-3xl bg-slate-50 border border-slate-200 space-y-6 shadow-sm">
               <h2 className="text-2xl font-black uppercase text-slate-950 flex items-center gap-3">
                 <Award className="w-6 h-6 text-red-600 shrink-0" />
-                <span>Hlavní přednosti a výhody</span>
+                <span>{service.whyTitle || "Hlavní přednosti a výhody"}</span>
               </h2>
               <div className="space-y-4">
                 {service.benefits.map((ben, idx) => (
@@ -155,15 +155,25 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
             <div className="p-8 sm:p-10 rounded-3xl bg-slate-50 border border-slate-200 space-y-6 shadow-sm">
               <h2 className="text-2xl font-black uppercase text-slate-950 flex items-center gap-3">
                 <Layers className="w-6 h-6 text-red-600 shrink-0" />
-                <span>Rozsah a položky realizace</span>
+                <span>{service.includedTitle || "Rozsah a položky realizace"}</span>
               </h2>
               <div className="space-y-3">
-                {service.included.map((inc, idx) => (
-                  <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700 font-medium">
-                    <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0 mt-0.5" />
-                    <span>{inc}</span>
-                  </div>
-                ))}
+                {service.included.map((inc, idx) => {
+                  const isCategoryHeader = inc.endsWith(":");
+                  if (isCategoryHeader) {
+                    return (
+                      <div key={idx} className="pt-3 pb-1 font-black text-xs uppercase tracking-wider text-red-600 border-b border-red-100">
+                        {inc.replace(":", "")}
+                      </div>
+                    );
+                  }
+                  return (
+                    <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700 font-medium">
+                      <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0 mt-0.5" />
+                      <span>{inc}</span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -221,7 +231,7 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
         {service.faq && service.faq.length > 0 && (
           <FAQSection
             customFaq={service.faq}
-            title={`Časté dotazy: ${service.title}`}
+            title={service.faqTitle || `Časté dotazy: ${service.title}`}
             subtitle="Otázky & Odpovědi"
           />
         )}

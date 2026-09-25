@@ -7,7 +7,7 @@ const service = services.find((s) => s.slug === "rekonstrukce-bytoveho-jadra")!;
 
 export const metadata: Metadata = {
   title: "Rekonstrukce bytového jádra Cheb & Karlovarský kraj | HANSBAU",
-  description: "Vybourání umakartu a vyzdění nového pórobetonového jádra (Ytong) za 10-14 dní. Nová elektřina, odpady, voda, obklady a sanita. HANSBAU.",
+  description: "Vybourání umakartu a vyzdění nového jádra z tvárnic Ytong. Nová elektřina, odpady, voda, hydroizolace, obklady a sanita. Pevná cena a termín ve smlouvě.",
   alternates: {
     canonical: "/rekonstrukce-bytoveho-jadra/",
   },

@@ -10,8 +10,8 @@ import { services, siteConfig } from "@/lib/data";
 import { ArrowRight, CheckCircle2, Home, Layers, Bath, Hammer, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Stavební a řemeslné služby na klíč | HANSBAU Karlovarský kraj",
-  description: "Rekonstrukce bytů (kompletní i částečné), bytová jádra, koupelny, zednické práce a elektro/voda/revize v Karlovarském kraji. HANSBAU.",
+  title: "Rekonstrukce bytů, jader a koupelen | HANSBAU Karlovarský kraj",
+  description: "Rekonstruujeme byty, bytová jádra a koupelny. Bourání, rozvody, zdění, obklady, podlahy i závěrečný úklid. Pevná cena a termín ve smlouvě.",
   alternates: {
     canonical: "/sluzby/",
   },
@@ -29,8 +29,8 @@ export default function SluzbyPage() {
   return (
     <>
       <JsonLd
-        pageTitle="Stavební a řemeslné služby na klíč - HANSBAU"
-        pageDesc="Kompletní nabídka rekonstrukcí bytů a koupelen HANSBAU v Karlovarském kraji."
+        pageTitle="Rekonstrukce bytů, jader a koupelen - HANSBAU"
+        pageDesc="Rekonstruujeme byty, bytová jádra a koupelny v Karlovarském kraji. Pevná cena a termín předem ve smlouvě."
         pageUrl={`${siteConfig.url}/sluzby/`}
         breadcrumbs={[
           { name: "Domů", url: siteConfig.url },
@@ -46,10 +46,10 @@ export default function SluzbyPage() {
               HANSBAU • Karlovarský kraj
             </span>
             <h1 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-slate-950">
-              Stavební a řemeslné služby na klíč
+              Rekonstrukce bytů, jader a koupelen
             </h1>
             <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
-              Zajišťujeme kompletní realizace od bouracích prací přes rozvody, sádrokartony, obklady až po finální výmalbu a předání. S pevnou cenou a zárukou.
+              Rekonstruujeme byty, bytová jádra a koupelny. Zajistíme bourání, nové rozvody, zdění, obklady, podlahy i závěrečný úklid. Rozsah prací, cenu a termín sjednáme předem ve smlouvě.
             </p>
           </div>
         </section>
@@ -112,7 +112,7 @@ export default function SluzbyPage() {
                       {srv.title}
                     </h2>
                     <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                      {srv.fullDesc}
+                      {srv.shortDesc}
                     </p>
                   </div>
 

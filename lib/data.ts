@@ -2,6 +2,7 @@ export interface ServiceItem {
   id: string;
   slug: string;
   title: string;
+  pageH1?: string;
   priority: "hlavní" | "priorita-2" | "podpůrná";
   shortDesc: string;
   fullDesc: string;
@@ -9,8 +10,11 @@ export interface ServiceItem {
   image: string;
   galleryImages: string[];
   features: string[];
+  whyTitle?: string;
   benefits: string[];
+  includedTitle?: string;
   included: string[];
+  faqTitle?: string;
   faq: { q: string; a: string }[];
 }
 
@@ -101,9 +105,10 @@ export const services: ServiceItem[] = [
     id: "rekonstrukce-bytu",
     slug: "rekonstrukce-bytu",
     title: "Rekonstrukce bytu (kompletní i částečná)",
+    pageH1: "Rekonstrukce bytu v Chebu a Karlovarském kraji",
     priority: "hlavní",
-    shortDesc: "Kompletní proměna bytu na klíč od vyklizení a bourání po finální předání. Žádné starosti se sháněním 5 různých řemeslníků. Pevná cena a termín.",
-    fullDesc: "Plánujete rekonstrukci panelového nebo cihlového bytu v Karlovarském kraji? HANSBAU se postará o celou proměnu vašeho domova. Zajistíme vyklizení, bourací práce, novou elektroinstalaci, vodoinstalaci, sádrokartony, omítky, obklady, podlahy i montáž sanitární keramiky a dveří.",
+    shortDesc: "Rekonstruujeme panelové i cihlové byty, celé nebo jen vybrané místnosti. Zajistíme bourání, novou elektroinstalaci a rozvody vody, zdění a sádrokartony, omítky, obklady, podlahy i montáž sanity a dveří.",
+    fullDesc: "Rekonstruujeme panelové i cihlové byty, celé nebo jen vybrané místnosti. Zajistíme vyklizení a bourání, novou elektroinstalaci a rozvody vody, zdění a sádrokartony, omítky, obklady, podlahy i montáž sanity a dveří. Rozsah prací, cenu a termín sjednáme předem ve smlouvě.",
     iconName: "Home",
     image: "/images/nove/rekonstrukce-bytu-karlovy-vary-detail.webp",
     galleryImages: [
@@ -118,38 +123,45 @@ export const services: ServiceItem[] = [
       "Kompletní realizace na klíč od A do Z",
       "Pevná smlouva o dílo a garantovaný položkový rozpočet",
       "Koordinace všech profesí (zedníci, instalatéři, elektrikáři, podlaháři)",
-      "Pravidelný kontrolní den a fotodokumentace postupu",
-      "Každodenní úklid a ekologická likvidace stavebního odpadu"
+      "Průběžné informace o postupu prací",
+      "Úklid na konci každého pracovního dne a odvoz odpadu"
     ],
+    whyTitle: "Proč rekonstrukci bytu s námi",
     benefits: [
-      "Nemusíte shánět a koordinovat 5 různých part řemeslníků",
-      "Záruka na celé dílo od jedné prověřené české firmy",
-      "Přesný rozpočet bez skrytých víceprací a nepříjemných překvapení",
-      "Bohaté zkušenosti s panelovými i cihlovými byty v celém kraji"
+      "Nesháníte zedníka, elektrikáře, instalatéra a obkladače zvlášť. Koordinujeme je my a vy máte jednu kontaktní osobu.",
+      "Záruka na celé dílo od jedné firmy, ne od pěti řemeslníků.",
+      "Položkový rozpočet předem. Pokud se po odkrytí konstrukcí objeví něco nečekaného, cenu i dopad na termín s vámi písemně odsouhlasíme dřív, než se na tom začne pracovat.",
+      "Panelové i cihlové byty po celém Karlovarském kraji."
     ],
+    includedTitle: "Co rekonstrukce zahrnuje",
     included: [
-      "Bezplatná osobní prohlídka a přesné zaměření bytu",
-      "Příprava detailního položkového rozpočtu ZDARMA",
+      "Prohlídka a zaměření bytu zdarma",
+      "Položkový rozpočet zdarma",
       "Ochrana společných prostor domu a výtahu",
-      "Bourací a vyklízecí práce včetně odvozu suti na skládku",
-      "Nové rozvody elektřiny, vody, odpadů a topení s revizemi",
-      "Zednické práce, jádrové a štukové omítky, nivelace podlah",
-      "Sádrokartonové podhledy s LED osvětlením",
-      "Pokládka podlahových krytin a osazení obložek dveří",
+      "Vyklizení, bourací práce a odvoz suti",
+      "Nové rozvody elektřiny, vody a odpadů s revizemi",
+      "Zednické práce, jádrové a štukové omítky, vyrovnání podlah",
+      "Sádrokartonové podhledy včetně přípravy pro osvětlení",
+      "Pokládka podlah a osazení zárubní a dveří",
       "Závěrečný úklid a předávací protokol"
     ],
+    faqTitle: "Časté dotazy k rekonstrukci bytu",
     faq: [
       {
-        q: "Jak dlouho trvá kompletní rekonstrukce bytu 2+1 nebo 3+1?",
-        a: "Běžná kompletní rekonstrukce bytu trvá obvykle 4 až 8 týdnů podle rozsahu stavebních úprav, změn dispozic a technologických pauz při schnutí podlah a omítek."
+        q: "Jak dlouho rekonstrukce bytu trvá?",
+        a: "Záleží na velikosti bytu, typu zástavby a rozsahu prací. Orientační dobu pro váš byt uvidíte v naší kalkulačce. Přesný termín zahájení a dokončení potvrdíme ve smlouvě."
       },
       {
-        q: "Je zaměření a cenová nabídka opravdu nezávazná a zdarma?",
-        a: "Ano, přijedeme k vám do bytu, prostor pečlivě zaměříme, prodiskutujeme vaše požadavky a vypracujeme položkový rozpočet zcela zdarma."
+        q: "Může se cena během rekonstrukce změnit?",
+        a: "Za sjednaný rozsah platí cena ze smlouvy. Pokud si během prací budete přát změnu nebo se po odkrytí objeví skrytá vada, cenu i dopad na termín s vámi předem písemně odsouhlasíme. Bez vašeho souhlasu nic navíc neděláme."
+      },
+      {
+        q: "Je prohlídka a cenová nabídka opravdu zdarma?",
+        a: "Ano. Přijedeme k vám, byt zaměříme a probereme vaše požadavky. Poté připravíme položkový rozpočet. Prohlídka i rozpočet jsou zdarma a k ničemu vás nezavazují. Termín dodání rozpočtu vám potvrdíme při prohlídce."
       },
       {
         q: "Zajistíte i odvoz suti a úklid společných prostor?",
-        a: "Samozřejmě. V ceně je vždy zahrnut kontejner, odvoz suti a každodenní úklid společných chodeb a výtahu, abychom neobtěžovali sousedy."
+        a: "Ano. Odvoz suti je součástí rozpočtu, podle rozsahu prací kontejnerem nebo odvozem. Společné prostory domu včetně výtahu při práci chráníme a na konci každého pracovního dne uklidíme nečistoty, které vznikly naší činností."
       }
     ]
   },
@@ -157,9 +169,10 @@ export const services: ServiceItem[] = [
     id: "rekonstrukce-bytoveho-jadra",
     slug: "rekonstrukce-bytoveho-jadra",
     title: "Rekonstrukce bytového jádra",
+    pageH1: "Rekonstrukce bytového jádra",
     priority: "priorita-2",
-    shortDesc: "Výměna starého umakartového jádra za moderní zděné z pórobetonu (Ytong). Vybourání, nové rozvody, hydroizolace a obklady hotové za 10–14 dní.",
-    fullDesc: "Máte v bytě staré umakartové jádro, kde hučí stoupačky a opadávají obklady? Provedeme kompletní vybourání a vyzdění nového pórobetonového jádra s novými rozvody vody, odpadů a elektřiny.",
+    shortDesc: "Máte v bytě původní umakartové jádro? Vybouráme ho a postavíme nové zděné z tvárnic Ytong. Vyměníme rozvody vody, odpadů a elektřiny, uděláme hydroizolaci, obklady a namontujeme vybavení.",
+    fullDesc: "Máte v bytě původní umakartové jádro? Vybouráme ho a postavíme nové zděné z tvárnic Ytong. Vyměníme rozvody vody, odpadů a elektřiny, uděláme hydroizolaci, obklady a namontujeme vybavení. Rozsah prací, cenu a termín sjednáme předem ve smlouvě.",
     iconName: "Layers",
     image: "/images/nove/as-koupelna.webp",
     galleryImages: [
@@ -171,35 +184,50 @@ export const services: ServiceItem[] = [
       "/images/1-11.webp"
     ],
     features: [
-      "Rychlé vybourání a ekologická likvidace starého umakartu",
-      "Vyzdění nových příček",
-      "Kompletní výměna rozvodů vody a odpadů až ke stoupačkám",
-      "Nová elektroinstalace včetně proudových chráničů a ventilátorů",
-      "Zvýšení akustické a tepelné izolace koupelny a WC"
+      "Rychlé vybourání a likvidace starého umakartu",
+      "Vyzdění nových příček z tvárnic Ytong",
+      "Kompletní výměna rozvodů vody a odpadů",
+      "Nová elektroinstalace",
+      "Lepší zvuková izolace než u původního umakartu"
     ],
+    whyTitle: "Proč jádro s námi",
     benefits: [
-      "Kompletní výměna jádra hotová za 10 až 14 pracovních dní",
-      "Moderní dispozice – možnost zvětšení koupelny či propojení s WC",
-      "Bezpečné rozvody v mědi a plastohliníku s revizní zprávou",
-      "Výrazné zvýšení hodnoty vašeho bytu"
+      "Jedna firma pro celé jádro: bourání, zdění, rozvody, obklady i sanita. Řemeslníky koordinujeme my, vy máte jednu kontaktní osobu.",
+      "Rozvody vody a odpadů až ke stoupačkám, nová elektroinstalace.",
+      "Zděné jádro je pevnější, tišší a lépe se udržuje než umakart.",
+      "Nové jádro zvyšuje hodnotu bytu při prodeji i pronájmu.",
+      "Úpravu dispozice, např. propojení koupelny a WC, posoudíme při prohlídce."
     ],
+    includedTitle: "Co výměna jádra zahrnuje",
     included: [
-      "Demontáž sanity a bezpečné odpojení sítí",
-      "Odvoz suti a starého umakartu",
-      "Vyzdění nových stěn z Ytongu s perlinkou a lepidlem",
-      "Nové rozvody vody, odpadů a elektroinstalace",
-      "Sádrokartonový podhled s bodovými LED světly",
-      "Hydroizolační stěrky v celé mokré zóně",
-      "Obkladačské práce a osazení sanity"
+      "Prohlídka, zaměření a položkový rozpočet zdarma",
+      "Ochrana společných prostor domu a výtahu",
+      "Demontáž sanity a odpojení rozvodů",
+      "Vybourání umakartu a odvoz suti",
+      "Vyzdění nových stěn z tvárnic Ytong",
+      "Nové rozvody vody, odpadů a elektřiny včetně ventilátoru",
+      "Hydroizolace celé mokré zóny",
+      "Sádrokartonový podhled s bodovými světly",
+      "Obklady, dlažba a montáž sanity",
+      "Revize elektro, tlaková zkouška vody, úklid a předávací protokol"
     ],
+    faqTitle: "Časté dotazy k rekonstrukci bytového jádra",
     faq: [
       {
-        q: "Jak dlouho rekonstrukce bytového jádra trvá?",
-        a: "Kompletní proměna bytového jádra na klíč trvá zpravidla 10 až 14 pracovních dní."
+        q: "Jak dlouho výměna jádra trvá?",
+        a: "Od zahájení prací do předání obvykle 3–6 týdnů, podle rozsahu, vybavení a dodacích lhůt materiálu. Orientační dobu pro váš byt uvidíte v kalkulačce, přesný termín zahájení a dokončení potvrdíme ve smlouvě."
       },
       {
-        q: "Musím mít na rekonstrukci jádra stavební povolení?",
-        a: "Pokud neměníte nosné konstrukce a zachováváte půdorys bytu, stačí ohlášení na SVJ či bytové družstvo. Rádi vám s podklady poradíme."
+        q: "Budu mít během prací funkční koupelnu a WC?",
+        a: "Během výměny jádra jsou koupelna i WC mimo provoz. Harmonogram s vámi projdeme předem, abyste přesně věděli, kdy bude byt bez vody, a mohli si to zařídit."
+      },
+      {
+        q: "Potřebuji na výměnu jádra stavební povolení?",
+        a: "Výměna jádra bez zásahu do nosných konstrukcí stavební povolení obvykle nevyžaduje. Práce je ale potřeba předem oznámit správci domu nebo SVJ, hlavně kvůli odstávce vody na stoupačkách a hluku. Pokud chcete měnit dispozici, při prohlídce posoudíme, co je k tomu potřeba."
+      },
+      {
+        q: "Může se cena během prací změnit?",
+        a: "Za sjednaný rozsah platí cena ze smlouvy. Pokud si během prací budete přát změnu nebo se po vybourání objeví skrytá vada, cenu i dopad na termín s vámi předem písemně odsouhlasíme. Bez vašeho souhlasu nic navíc neděláme."
       }
     ]
   },
@@ -207,9 +235,10 @@ export const services: ServiceItem[] = [
     id: "rekonstrukce-koupelny",
     slug: "rekonstrukce-koupelny",
     title: "Rekonstrukce koupelny",
+    pageH1: "Rekonstrukce koupelny",
     priority: "priorita-2",
-    shortDesc: "Designové koupelny na míru v panelácích i rodinných domech. Velkoformátové obklady, walk-in sprchové kouty s lineárními žlaby, podomítková sanita a LED niky.",
-    fullDesc: "Koupelna je místem každodenní relaxace. Provádíme rekonstrukce koupelen a WC s důrazem na špičkovou hydroizolaci, dokonale rovné kamenické rohy (jolly hrany 45°) a spolehlivou instalaci sanity značek Geberit, Grohe, Hansgrohe či Ravak.",
+    shortDesc: "Rekonstruujeme koupelny a WC v bytech i rodinných domech. Provedeme nové rozvody, hydroizolaci, obklady a dlažbu i montáž vybavení. Montujeme sanitu běžných značek, např. Geberit, Grohe, Hansgrohe nebo Ravak.",
+    fullDesc: "Rekonstruujeme koupelny a WC v bytech i rodinných domech. Provedeme nové rozvody, hydroizolaci, obklady a dlažbu i montáž vybavení. Montujeme sanitu běžných značek, např. Geberit, Grohe, Hansgrohe nebo Ravak. Rozsah prací, cenu a termín sjednáme předem ve smlouvě.",
     iconName: "Bath",
     image: "/images/nove/rekonstrukce-koupelny-cheb-detail.webp",
     galleryImages: [
@@ -217,37 +246,54 @@ export const services: ServiceItem[] = [
       "/images/nove/as-koupelna.webp",
       "/images/nove/sokolov-realizace.webp",
       "/images/nove/karlovy-vary-realizace.webp",
-      "/images/IMG-20250823-WA0014.webp",
-      "/images/1-8.webp"
+      "/images/IMG-20250823-WA0014.webp"
     ],
     features: [
       "Velkoformátové keramické obklady a dlažba",
       "Kamenické rohy (seříznutí pod úhlem 45°) bez plastových lišt",
       "Moderní bezbariérové sprchové kouty Walk-in s lineárním žlabem",
-      "Závěsné toalety s podomítkovým modulem Geberit",
-      "Podsvícené LED niky na šampony a kosmetiku"
+      "Závěsné WC s podomítkovým modulem",
+      "Podsvícené niky na kosmetiku"
     ],
+    whyTitle: "Proč koupelnu s námi",
     benefits: [
-      "100% garance vodotěsnosti díky systémové hydroizolaci Mapei / Ceresit",
-      "Pomoc s výběrem obkladů v partnerských studiích se slevou",
-      "Dokonalá rovinnost ověřená laserovými nivelačními klínky",
-      "Záruka na provedené řemeslné práce"
+      "Systémová hydroizolace celé mokré zóny, těsnicí pásky v rozích a kolem prostupů. Právě tady se u koupelen šetří nejčastěji a za pár let to teče k sousedům.",
+      "Velkoformátové obklady, kamenické rohy 45° bez plastových lišt, walk-in kouty s lineárním žlabem.",
+      "Pomůžeme vám s výběrem obkladů a sanity, aby vše sedělo k rozměrům a rozpočtu.",
+      "Koupelna je obvykle hotová za 2–4 týdny od zahájení prací.",
+      "Délku a podmínky záruky uvedeme ve smlouvě."
     ],
+    includedTitle: "Co rekonstrukce koupelny zahrnuje",
     included: [
-      "Osekání starých obkladů a vyrovnání podkladu",
-      "Úprava vodoinstalace a kanalizace",
-      "Dvouvrstvá hydroizolační stěrka s těsnicími páskami v rozích",
-      "Pokládka obkladů a dlažby včetně přesného spárování",
-      "Montáž van, sprchových zástěn, baterií, umyvadel a nábytku"
+      "Prohlídka, zaměření a položkový rozpočet zdarma",
+      "Ochrana společných prostor domu a výtahu",
+      "Demontáž sanity, osekání obkladů a odvoz suti",
+      "Vyrovnání stěn a podlahy",
+      "Úprava rozvodů vody a odpadů, tlaková zkouška",
+      "Elektro: světla, zásuvky, ventilátor",
+      "Hydroizolace s těsnicími páskami v rozích a kolem prostupů",
+      "Pokládka obkladů a dlažby, spárování",
+      "Sádrokartonový podhled, podomítkové moduly, niky",
+      "Montáž van, sprchových koutů, baterií, umyvadel, WC a nábytku",
+      "Úklid a předávací protokol"
     ],
+    faqTitle: "Časté dotazy k rekonstrukci koupelny",
     faq: [
       {
-        q: "Pomůžete mi s výběrem a nákupem obkladů a sanity?",
-        a: "Ano, spolupracujeme s předními koupelnovými studii v Karlovarském kraji a zajistíme vám výhodnější ceny materiálu."
+        q: "Jak dlouho rekonstrukce koupelny trvá?",
+        a: "Od zahájení prací do předání obvykle 2–4 týdny, podle rozsahu, vybavení a dodacích lhůt materiálu. Přesný termín zahájení a dokončení potvrdíme ve smlouvě."
       },
       {
-        q: "Děláte i spádování sprchových koutů bez vaničky (walk-in)?",
-        a: "Ano, na bezbariérové sprchové kouty s nerezovým odtokovým žlabem a dokonalým spádem se přímo specializujeme."
+        q: "Pomůžete mi s výběrem obkladů a sanity?",
+        a: "Ano. Probereme s vámi, co se do koupelny hodí rozměrově i cenově, a doporučíme, kde materiál vybrat. Materiál můžeme zajistit my, nebo si ho koupíte sami. Vše uvedeme v rozpočtu."
+      },
+      {
+        q: "Děláte sprchové kouty bez vaničky (walk-in)?",
+        a: "Ano. Uděláme spád podlahy k lineárnímu žlabu, hydroizolaci celé sprchové zóny a osadíme skleněnou stěnu. Zda je walk-in ve vašem bytě technicky možný (výška odpadu, skladba podlahy), posoudíme při prohlídce."
+      },
+      {
+        q: "Může se cena během prací změnit?",
+        a: "Za sjednaný rozsah platí cena ze smlouvy. Pokud si během prací budete přát změnu nebo se po osekání obkladů objeví skrytá vada, cenu i dopad na termín s vámi předem písemně odsouhlasíme. Bez vašeho souhlasu nic navíc neděláme."
       }
     ]
   },
@@ -255,9 +301,10 @@ export const services: ServiceItem[] = [
     id: "zednicke-prace",
     slug: "zednicke-prace",
     title: "Zednické práce a povrchové úpravy",
+    pageH1: "Zednické práce a povrchové úpravy",
     priority: "podpůrná",
-    shortDesc: "Přesné zednické práce, bourání příček, zdění Ytongem, jádrové a štukové omítky, stěrky, nivelace podlah a pokládka dlažeb.",
-    fullDesc: "Kvalitní zednické práce jsou základem každé úspěšné rekonstrukce. Provádíme veškeré zednické práce v interiérech od přípravy podkladů přes zdění příček až po finální štuky, sádrové stěrky a pokládku podlah.",
+    shortDesc: "Zděné příčky, opravy zdiva, omítky, štuky a stěrky. Připravíme a vyrovnáme povrchy pro malování, obklady nebo pokládku podlah.",
+    fullDesc: "Zděné příčky, opravy zdiva, omítky, štuky a stěrky. Připravíme a vyrovnáme povrchy pro malování, obklady nebo pokládku podlah. Zednické práce děláme jako součást rekonstrukcí i samostatně.",
     iconName: "Hammer",
     image: "/images/nove2/IMG_4358.webp",
     galleryImages: [
@@ -269,27 +316,47 @@ export const services: ServiceItem[] = [
       "/images/1-12.webp"
     ],
     features: [
-      "Zdění příček a úpravy dispozic",
-      "Vnitřní jádrové a štukové omítky",
-      "Samonivelační stěrky pro perfektně rovné podlahy",
-      "Montáž sádrokartonových podhledů a příček Knauf / Rigips",
-      "Opravy prasklin, zapravení šliců po elektřině a vodě"
+      "Zdění příček a úpravy dispozic z tvárnic Ytong",
+      "Vnitřní jádrové a štukové omítky, sádrové stěrky",
+      "Samonivelační stěrky na podlahy",
+      "Sádrokartonové podhledy a příčky (Knauf, Rigips)",
+      "Opravy prasklin, zapravení drážek po elektřině a vodě"
     ],
+    whyTitle: "Proč zednické práce s námi",
     benefits: [
-      "Rovné zdi a pravé úhly pro snadnou montáž kuchyní a nábytku",
-      "Použití certifikovaných stavebních směsí a lepidel",
-      "Rychlý a čistý průběh prací"
+      "Rovné stěny a pravé úhly, takže kuchyňská linka, vestavěné skříně i obklady sednou bez podkládání a řezání.",
+      "Podklad připravíme tak, aby na něm malíř, obkladač i podlahář mohli rovnou pokračovat.",
+      "Zednictví je náš původní obor. Děláme ho od začátku firmy.",
+      "Na konci každého pracovního dne uklidíme nečistoty vzniklé naší činností."
     ],
+    includedTitle: "Co zednické práce zahrnují",
     included: [
-      "Penetrace podkladu a osazení omítníků a rohových lišt",
-      "Natažení lepidla s výztužnou perlinkou proti prasklinám",
-      "Finální štuk nebo broušená sádrová stěrka",
-      "Vylití samonivelační podlahové stěrky"
+      "Zdění příček a úpravy dispozic z tvárnic Ytong",
+      "Vnitřní jádrové a štukové omítky",
+      "Sádrové stěrky, výztužná perlinka proti vzniku prasklin",
+      "Osazení omítníků a rohových lišt",
+      "Samonivelační stěrky na podlahy",
+      "Sádrokartonové podhledy a příčky (Knauf, Rigips)",
+      "Opravy prasklin, zapravení drážek po elektřině a vodě",
+      "Penetrace a příprava podkladu pro malování, obklady a podlahy"
     ],
+    faqTitle: "Časté dotazy k zednickým pracím",
     faq: [
       {
-        q: "Děláte i menší zednické práce nebo jen celé byty?",
-        a: "Přednostně realizujeme ucelené rekonstrukce bytů a koupelen, ale v rámci zakázek zajistíme jakékoliv navazující zednické úpravy."
+        q: "Děláte i menší zednické práce, nebo jen celé byty?",
+        a: "Zednické práce děláme jako součást rekonstrukcí i samostatně. Menší opravy rádi doplníme k jiné zakázce. Napište nám, co potřebujete, a řekneme vám, jestli je to pro nás."
+      },
+      {
+        q: "Můžete vybourat příčku a spojit kuchyň s obývákem?",
+        a: "Příčky, které nejsou nosné, bouráme běžně. V panelových domech je ale řada stěn nosných a do těch bez posouzení statika nezasahujeme. Při prohlídce posoudíme, o jakou stěnu jde a co je k úpravě potřeba."
+      },
+      {
+        q: "Jaký je rozdíl mezi štukem a sádrovou stěrkou?",
+        a: "Štuk je tradiční vápenná omítka s jemnou strukturou. Sádrová stěrka je hladší, rychleji se zpracovává a je vhodná pod malbu v interiéru. Doporučíme podle stavu stěn a toho, co od povrchu čekáte."
+      },
+      {
+        q: "Může se cena během prací změnit?",
+        a: "Za sjednaný rozsah platí cena ze smlouvy. Pokud se po odkrytí objeví skrytá vada, například uvolněná omítka nebo poškozené zdivo, cenu i dopad na termín s vámi předem písemně odsouhlasíme. Bez vašeho souhlasu nic navíc neděláme."
       }
     ]
   },
@@ -297,9 +364,10 @@ export const services: ServiceItem[] = [
     id: "elektro-voda-revize",
     slug: "elektro-voda-revize",
     title: "Elektroinstalace, voda a revize",
+    pageH1: "Elektroinstalace, voda a revize při rekonstrukci",
     priority: "podpůrná",
-    shortDesc: "Kompletní rozvody elektřiny v mědi, nové rozvody vody a odpadů, topenářské práce a oficiální revizní zprávy pro kolaudaci a SVJ.",
-    fullDesc: "Žádná rekonstrukce se neobejde bez bezpečných rozvodů. V rámci našich rekonstrukcí bytů a jader zajišťujeme kompletní elektroinstalační a instalatérské práce přes naše ověřené a certifikované subdodavatele, včetně oficiálních revizních zpráv.",
+    shortDesc: "Zajistíme nové rozvody elektřiny, vody a odpadů i úpravy topení. Práce provádí naši ověření a certifikovaní subdodavatele. Součástí jsou potřebné zkoušky a revize podle rozsahu prací.",
+    fullDesc: "Při rekonstrukci bytu, jádra nebo koupelny zajistíme nové rozvody elektřiny, vody a odpadů. Práce provádí náš stálý elektrikář a instalatér, se kterými dlouhodobě spolupracujeme. Na konci dostanete revizní zprávu elektro.",
     iconName: "ShieldCheck",
     image: "/images/IMG-20250823-WA0012.webp",
     galleryImages: [
@@ -309,27 +377,54 @@ export const services: ServiceItem[] = [
       "/images/IMG-20250823-WA0019.webp"
     ],
     features: [
-      "Nové rozvody elektřiny v mědi (CYKY) se samostatnými okruhy pro kuchyň a spotřebiče",
-      "Nová jističová skříň s proudovými chrániči pro maximální bezpečnost",
-      "Rozvody vody v plastohliníku a odpadní potrubí",
-      "Příprava pro LED pásky, podhledová bodová světla a internetové rozvody",
-      "Oficiální výchozí revizní zpráva elektro a tlakové zkoušky vody"
+      "Nové rozvody elektřiny v mědi se samostatnými okruhy pro kuchyň a spotřebiče",
+      "Nová jističová skříň s proudovými chrániči",
+      "Rozvody vody a odpadní potrubí",
+      "Úpravy topení, přesun a výměna radiátorů",
+      "Příprava pro LED pásky, bodová světla v podhledu a datové rozvody",
+      "Výchozí revizní zpráva elektro a potřebné zkoušky"
     ],
+    whyTitle: "Proč rozvody s námi",
     benefits: [
-      "Nemusíte shánět revizního technika ani elektrikáře zvlášť",
-      "Veškeré koordinace instalací probíhají hladce podle harmonogramu",
-      "Plná bezpečnost a certifikace pro pojišťovny a SVJ"
+      "Nesháníte elektrikáře, instalatéra ani revizního technika zvlášť. Vše koordinujeme my, v návaznosti na bourání, zdění a obklady.",
+      "Ověření řemeslníci, se kterými pracujeme dlouhodobě, ne náhodní subdodavatelé z inzerátu.",
+      "Nové rozvody v mědi se samostatnými okruhy pro kuchyň a spotřebiče a jističová skříň s proudovými chrániči.",
+      "Revizní zprávu a všechny potřebné dokumenty dostanete při předání. Budete je potřebovat pro pojišťovnu i při prodeji bytu."
     ],
+    includedTitle: "Co práce zahrnují",
     included: [
-      "Drážkování a uložení kabelů a potrubí",
-      "Zapojení nového rozvaděče a osazení zásuvek a vypínačů",
-      "Připojení bojlerů, praček, myček a varných desek",
-      "Předání kompletní revizní dokumentace"
+      "Elektro:",
+      "Drážkování a uložení nových kabelů v mědi",
+      "Samostatné okruhy pro kuchyň, pračku a další spotřebiče",
+      "Nová jističová skříň s proudovými chrániči",
+      "Osazení zásuvek, vypínačů a světel",
+      "Příprava pro LED pásky, bodová světla v podhledu a datové rozvody",
+      "Připojení varné desky, trouby, myčky a bojleru",
+      "Výchozí revizní zpráva elektro",
+      "Voda a odpady:",
+      "Nové rozvody vody a odpadů od stoupačky po jednotlivá odběrná místa",
+      "Příprava pro podomítkové moduly WC a baterie",
+      "Připojení pračky, myčky, dřezu, umyvadla a sprchy",
+      "Tlaková zkouška rozvodů vody",
+      "Topení: přesun a výměna radiátorů"
     ],
+    faqTitle: "Časté dotazy k elektroinstalaci a rozvodům vody",
     faq: [
       {
-        q: "Dostanu k nové elektřině platnou revizní zprávu?",
-        a: "Ano, po dokončení rozvodů provede certifikovaný revizní technik kontrolu a vystaví oficiální revizní zprávu."
+        q: "Dostanu k nové elektřině revizní zprávu?",
+        a: "Ano. Po dokončení rozvodů provede kontrolu revizní technik s platným oprávněním a vystaví výchozí revizní zprávu a tu předáváme spolu s předávacím protokolem."
+      },
+      {
+        q: "Děláte elektroinstalaci nebo vodu i samostatně?",
+        a: "Rozvody děláme jako součást rekonstrukce bytu, bytového jádra nebo koupelny. Samostatné drobné opravy, jako výměnu jističe nebo baterie, nenabízíme."
+      },
+      {
+        q: "Vyměníte i stoupačky?",
+        a: "Stoupačky jsou společná část domu a jejich výměnu řeší SVJ nebo družstvo. My měníme rozvody vody a odpadů od stoupačky dál, tedy vše, co patří k vašemu bytu. Pokud dům výměnu stoupaček plánuje, rádi se s vaší rekonstrukcí přizpůsobíme."
+      },
+      {
+        q: "Je potřeba měnit starou hliníkovou elektroinstalaci?",
+        a: "U kompletní rekonstrukce ano. Hliníkové rozvody ve starých panelácích nejsou dimenzované na dnešní spotřebiče a spoje časem povolují a zahřívají se. Při rekonstrukci je měníme za měď. Stav posoudíme při prohlídce."
       }
     ]
   }
