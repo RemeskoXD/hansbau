@@ -86,7 +86,7 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
                 {/* CTAs */}
                 <div className="pt-4 flex flex-col sm:flex-row items-center gap-3.5">
                   <Link
-                    href="/kontakt"
+                    href="#kontakt"
                     className="w-full sm:w-auto px-8 py-4 bg-red-600 hover:bg-red-700 text-white font-black text-sm uppercase tracking-wider rounded-2xl shadow-lg shadow-red-600/25 hover:shadow-xl hover:shadow-red-600/35 transition-all flex items-center justify-center gap-2"
                   >
                     <span>Nezávazná nabídka zdarma</span>
