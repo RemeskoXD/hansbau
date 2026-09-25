@@ -120,7 +120,7 @@ export const DEFAULT_CONTENT: PageContent = {
     heroBadge: "Google Hodnocení 5.0 ★ • Karlovarský kraj",
     heroTitle: "Kompletní rekonstrukce bytů a koupelen na klíč",
     heroPerex: "Od bourání a vyklizení přes novou elektřinu v mědi, instalace, sádrové stěrky až po velkoformátové obklady a čistý úklid. Pevná cena ve smlouvě o dílo.",
-    guaranteePrice: "Pevná cena bez víceprací",
+    guaranteePrice: "Pevná cena za sjednaný rozsah",
     guaranteeTime: "Garantovaný termín dokončení",
     guaranteeSurvey: "Osobní zaměření ZDARMA",
     servicesTitle: "Rekonstrukce bytů, jader a koupelen",
@@ -222,6 +222,6 @@ export const DEFAULT_CONTENT: PageContent = {
   },
   seo: {
     homeTitle: "Rekonstrukce bytu Cheb & Karlovarský Kraj | HANSBAU",
-    homeDesc: "Kompletní i částečné rekonstrukce bytů a koupelen v Karlovarském kraji na klíč. Pevná cena bez víceprací, osobní zaměření ZDARMA a záruka."
+    homeDesc: "Kompletní i částečné rekonstrukce bytů a koupelen v Karlovarském kraji na klíč. Pevná cena za sjednaný rozsah, osobní zaměření ZDARMA a záruka."
   }
 };

@@ -71,7 +71,7 @@ export default function KalkulackaPage() {
             <div className="flex flex-wrap items-center justify-center gap-6 pt-4 text-xs font-semibold text-slate-700">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-red-600" />
-                <span>Osobní zaměření 100% ZDARMA</span>
+                <span>Osobní zaměření a kalkulace zdarma</span>
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-red-600" />

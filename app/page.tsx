@@ -21,7 +21,7 @@ export function generateMetadata(): Metadata {
   const { seo } = getContentStore().content;
   return {
     title: seo?.homeTitle || "Rekonstrukce bytu Cheb & Karlovarský Kraj | HANSBAU",
-    description: seo?.homeDesc || "Kompletní i částečné rekonstrukce bytů a koupelen v Karlovarském kraji na klíč. Pevná cena bez víceprací, osobní zaměření ZDARMA a záruka.",
+    description: seo?.homeDesc || "Kompletní i částečné rekonstrukce bytů a koupelen v Karlovarském kraji na klíč. Pevná cena za sjednaný rozsah, osobní zaměření ZDARMA a záruka.",
     alternates: {
       canonical: "/",
     },
