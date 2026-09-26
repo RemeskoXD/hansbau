@@ -214,6 +214,21 @@ export function PriceCalculator({
     }
   }, [isUnlocked]);
 
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash) {
+      const hash = window.location.hash;
+      if (hash === "#kalkulacka" || hash === "#doplnovaci-kalkulacka" || hash === "#kalkulacka-sekce") {
+        const timer = setTimeout(() => {
+          const el = document.getElementById("kalkulacka") || document.getElementById("doplnovaci-kalkulacka");
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }, 120);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, []);
+
   const handlePreFill = () => {
     const prefillData = {
       name: clientName,
@@ -257,7 +272,7 @@ export function PriceCalculator({
   const isScopeCoreOrBath = layout === "koupelna" || layout === "jadro";
 
   return (
-    <section className="py-20 bg-white text-slate-900 relative overflow-hidden border-b border-slate-200/80" id="kalkulacka">
+    <section className="py-20 bg-white text-slate-900 relative overflow-hidden border-b border-slate-200/80 scroll-mt-20" id="kalkulacka-sekce">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
@@ -272,10 +287,10 @@ export function PriceCalculator({
           </p>
         </div>
 
-        {/* Calculator Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Controls Column (7 cols) */}
-          <div className="lg:col-span-7 space-y-7 bg-slate-50/90 border border-slate-200 p-6 sm:p-8 rounded-3xl shadow-sm">
+        {/* Calculator Main Grid - Target for direct navigation */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start scroll-mt-24 sm:scroll-mt-28" id="kalkulacka">
+          {/* Controls Column (7 cols) - Doplňovací část */}
+          <div className="lg:col-span-7 space-y-7 bg-slate-50/90 border border-slate-200 p-6 sm:p-8 rounded-3xl shadow-sm scroll-mt-24 sm:scroll-mt-28" id="doplnovaci-kalkulacka">
             
             {/* 1. Typ zástavby */}
             <div className="space-y-3">

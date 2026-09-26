@@ -94,7 +94,7 @@ export function ServiceDetailTemplate({ service }: ServiceDetailTemplateProps) {
                   </Link>
 
                   <Link
-                    href="/kalkulacka"
+                    href="/kalkulacka#kalkulacka"
                     className="w-full sm:w-auto px-6 py-4 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-2xl text-slate-900 font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-sm"
                   >
                     <Calculator className="w-4 h-4 text-red-600" />

@@ -234,12 +234,18 @@ export function Navbar() {
           </div>
 
           <Link
-            href="/kalkulacka"
+            href="/kalkulacka#kalkulacka"
             className={`px-4 py-2.5 text-sm font-semibold rounded-xl transition-all ${
               isActive("/kalkulacka") 
                 ? "text-red-600 bg-red-50 font-bold shadow-xs" 
                 : "text-slate-700 hover:text-red-600 hover:bg-slate-50"
             }`}
+            onClick={() => {
+              if (pathname === "/kalkulacka" || pathname === "/kalkulacka/") {
+                const el = document.getElementById("kalkulacka");
+                if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+            }}
           >
             Kalkulačka
           </Link>
@@ -378,11 +384,17 @@ export function Navbar() {
             </div>
 
             <Link
-              href="/kalkulacka"
+              href="/kalkulacka#kalkulacka"
               className={`px-4 py-2.5 text-base font-semibold rounded-xl mt-2 ${
                 isActive("/kalkulacka") ? "bg-red-50 text-red-600 font-bold" : "text-slate-900 hover:bg-slate-50"
               }`}
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                if (pathname === "/kalkulacka" || pathname === "/kalkulacka/") {
+                  const el = document.getElementById("kalkulacka");
+                  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+              }}
             >
               Kalkulačka rozpočtu
             </Link>

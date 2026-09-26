@@ -8,7 +8,7 @@ import { FAQSection } from "@/components/FAQSection";
 import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/lib/data";
 import { getContentStore } from "@/lib/content-store";
-import { Calculator, ShieldCheck, Clock, CheckCircle2, Phone } from "lucide-react";
+import { Calculator, ShieldCheck, Clock, CheckCircle2, Phone, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Kalkulačka ceny rekonstrukce bytu | HANSBAU Karlovarský kraj",
@@ -81,6 +81,18 @@ export default function KalkulackaPage() {
                 <Clock className="w-4 h-4 text-red-600" />
                 <span>Přesný časový harmonogram prací</span>
               </div>
+            </div>
+
+            {/* Quick jump to calculator */}
+            <div className="pt-4 flex justify-center">
+              <a
+                href="#kalkulacka"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-md shadow-red-600/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+              >
+                <Calculator className="w-4 h-4" />
+                <span>Přejít přímo na doplňovací kalkulačku</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </section>

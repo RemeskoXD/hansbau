@@ -91,7 +91,7 @@ export function Hero() {
               </Link>
 
               <Link
-                href="/kalkulacka"
+                href="#kalkulacka"
                 className="w-full sm:w-auto px-6 py-4 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-2xl text-slate-900 font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-2.5 shadow-sm hover:border-slate-300 transform hover:-translate-y-0.5 active:translate-y-0"
               >
                 <Calculator className="w-4 h-4 text-red-600" />
