@@ -21,7 +21,7 @@ export async function sendLeadEmail(params: SendMailParams): Promise<SendMailRes
   const smtpHost = process.env.SMTP_HOST || "mail.mescon.eu";
   // Default to 587 (Submission / STARTTLS) which is universally compatible with Docker bridge networks
   const primaryPort = parseInt(process.env.SMTP_PORT || "587", 10);
-  const smtpUser = process.env.SMTP_USER || "hansbau@mescon.cz";
+  const smtpUser = process.env.SMTP_USER || "hansbau@mescon.eu";
   const smtpPass = process.env.SMTP_PASS || process.env.SMTP_PASSWORD;
   const contactEmailTo = process.env.CONTACT_EMAIL_TO || "team@hansbau.com";
   const fromName = params.fromName || "HANSBAU";
