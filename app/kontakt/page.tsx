@@ -7,7 +7,7 @@ import { ServiceAreaMap } from "@/components/ServiceAreaMap";
 import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/lib/data";
 import { getContentStore } from "@/lib/content-store";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Kontakt - Stavební firma HANSBAU Cheb",
@@ -45,6 +45,15 @@ export default function KontaktPage() {
             <p className="text-sm sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
               {contact.perex}
             </p>
+            <div className="pt-2 flex justify-center">
+              <a
+                href="#poptavkovy-formular"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-md shadow-red-600/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+              >
+                <span>Přejít přímo na formulář</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </section>
 

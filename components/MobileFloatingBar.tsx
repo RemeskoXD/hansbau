@@ -1,8 +1,22 @@
+"use client";
+
 import Link from "next/link";
-import { Phone, MessageSquare, Calculator } from "lucide-react";
+import { Phone, MessageSquare, Send } from "lucide-react";
 import { siteConfig } from "@/lib/data";
 
 export function MobileFloatingBar() {
+  const handleScrollToForm = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const target = document.getElementById("poptavkovy-formular") || document.getElementById("kontakt");
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      const firstInput = target.querySelector("input:not([type=hidden]), select, textarea") as HTMLElement | null;
+      if (firstInput) {
+        setTimeout(() => firstInput.focus({ preventScroll: true }), 400);
+      }
+    }
+  };
+
   return (
     <div className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-lg border-t border-slate-200 p-2 sm:hidden shadow-2xl">
       <div className="grid grid-cols-3 gap-1.5">
@@ -28,12 +42,13 @@ export function MobileFloatingBar() {
           <span className="text-[11px] font-bold tracking-tight">WhatsApp</span>
         </a>
 
-        {/* Form CTA */}
+        {/* Form CTA - scrolls directly to form on page or navigates to contact */}
         <Link
-          href="/kontakt"
+          href="/kontakt#poptavkovy-formular"
+          onClick={handleScrollToForm}
           className="flex flex-col items-center justify-center py-2 px-1 bg-red-600 rounded-xl text-white font-bold active:bg-red-700 transition-colors shadow-md shadow-red-600/20"
         >
-          <Calculator className="w-4 h-4 mb-0.5" />
+          <Send className="w-4 h-4 mb-0.5" />
           <span className="text-[11px] font-bold tracking-tight">Poptávka</span>
         </Link>
       </div>

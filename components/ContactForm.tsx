@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { 
   Phone, 
   Mail, 
@@ -36,6 +36,68 @@ export function ContactForm({ defaultService = "" }: ContactFormProps) {
 
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [prefilledFromCalc, setPrefilledFromCalc] = useState(false);
+
+  useEffect(() => {
+    const handlePrefill = (e: Event) => {
+      const customEvent = e as CustomEvent<{
+        name?: string;
+        phone?: string;
+        city?: string;
+        service?: string;
+        message?: string;
+      }>;
+      if (customEvent.detail) {
+        setFormData((prev) => ({
+          ...prev,
+          name: customEvent.detail.name || prev.name,
+          phone: customEvent.detail.phone || prev.phone,
+          city: customEvent.detail.city || prev.city,
+          service: customEvent.detail.service || prev.service,
+          message: customEvent.detail.message || prev.message,
+        }));
+        setPrefilledFromCalc(true);
+      }
+    };
+
+    window.addEventListener("hansbau:prefill-contact", handlePrefill);
+
+    try {
+      const saved = sessionStorage.getItem("hansbau_calc_prefill");
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        setFormData((prev) => ({
+          ...prev,
+          name: parsed.name || prev.name,
+          phone: parsed.phone || prev.phone,
+          city: parsed.city || prev.city,
+          service: parsed.service || prev.service,
+          message: parsed.message || prev.message,
+        }));
+        setPrefilledFromCalc(true);
+      } else if (typeof window !== "undefined") {
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get("name");
+        const phone = params.get("phone");
+        const city = params.get("city");
+        const service = params.get("service");
+        if (name || phone || city || service) {
+          setFormData((prev) => ({
+            ...prev,
+            ...(name ? { name } : {}),
+            ...(phone ? { phone } : {}),
+            ...(city ? { city } : {}),
+            ...(service ? { service } : {}),
+          }));
+          setPrefilledFromCalc(true);
+        }
+      }
+    } catch {}
+
+    return () => {
+      window.removeEventListener("hansbau:prefill-contact", handlePrefill);
+    };
+  }, []);
 
   const servicesOptions = [
     "Rekonstrukce bytu (kompletní i částečná)",
@@ -90,7 +152,7 @@ export function ContactForm({ defaultService = "" }: ContactFormProps) {
   };
 
   return (
-    <section className="py-20 bg-white text-slate-900 relative overflow-hidden" id="kontakt">
+    <section className="py-20 bg-white text-slate-900 relative overflow-hidden scroll-mt-24" id="kontakt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14">
           {/* Left Column: Direct Contacts & Information */}
@@ -172,14 +234,21 @@ export function ContactForm({ defaultService = "" }: ContactFormProps) {
           </div>
 
           {/* Right Column: Interactive Quote Request Form */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 scroll-mt-24 sm:scroll-mt-28" id="poptavkovy-formular">
             <div className="p-6 sm:p-10 rounded-3xl bg-slate-50/90 border border-slate-200 shadow-md relative">
               <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-1.5">
                 Nezávazná poptávka rekonstrukce
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 mb-7">
+              <p className="text-xs sm:text-sm text-slate-600 mb-6">
                 Vyplňte základní údaje a Jan Červeňak se vám ozve zpět do 24 hodin s návrhem termínu prohlídky.
               </p>
+
+              {prefilledFromCalc && (
+                <div className="mb-6 p-3.5 bg-red-50 border border-red-200 rounded-2xl flex items-center gap-2.5 text-xs text-red-900 font-semibold animate-in fade-in">
+                  <Sparkles className="w-4 h-4 text-red-600 shrink-0" />
+                  <span>Údaje z vaší kalkulace byly automaticky vloženy do poptávky.</span>
+                </div>
+              )}
 
               {status === "success" ? (
                 <div className="p-8 rounded-2xl bg-green-50 border border-green-200 text-center space-y-4 animate-in fade-in">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { 
   CheckCircle2, 
   ArrowRight, 
@@ -189,12 +189,68 @@ export function PriceCalculator({
     }
   };
 
+  useEffect(() => {
+    if (isUnlocked) {
+      // Smoothly scroll to calculation result so user is anchored directly on the answer on mobile
+      const timer1 = setTimeout(() => {
+        const resultEl = document.getElementById("kalkulace-vysledek");
+        if (resultEl) {
+          resultEl.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 80);
+
+      // Second trigger ensures proper alignment after mobile virtual keyboard dismisses
+      const timer2 = setTimeout(() => {
+        const resultEl = document.getElementById("kalkulace-vysledek");
+        if (resultEl) {
+          resultEl.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 250);
+
+      return () => {
+        clearTimeout(timer1);
+        clearTimeout(timer2);
+      };
+    }
+  }, [isUnlocked]);
+
   const handlePreFill = () => {
-    const el = document.getElementById("kontakt");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
+    const prefillData = {
+      name: clientName,
+      phone: clientPhone,
+      city: selectedCity,
+      service: layout === "koupelna" 
+        ? "Rekonstrukce koupelny" 
+        : layout === "jadro" 
+          ? "Rekonstrukce bytového jádra" 
+          : "Rekonstrukce bytu (kompletní i částečná)",
+      message: `Poptávka z online kalkulačky:\n• Požadavek: ${currentResult.layoutTitle}\n• Zástavba: ${buildingType === "panel" ? "Panelový byt" : "Cihlový byt"}\n• Standard: ${standard === "standard" ? "Standard" : "Komfort"}\n• Město: ${selectedCity}\n• Orientační cena: ${currentResult.priceFormatted}\n• Odhadovaná doba: ${currentResult.timeFormatted}`
+    };
+
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("hansbau:prefill-contact", { detail: prefillData }));
+      try {
+        sessionStorage.setItem("hansbau_calc_prefill", JSON.stringify(prefillData));
+      } catch {}
+    }
+
+    const targetEl = document.getElementById("poptavkovy-formular") || document.getElementById("kontakt");
+    if (targetEl) {
+      targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      setTimeout(() => {
+        const emailInput = targetEl.querySelector("input[type=email]") as HTMLInputElement | null;
+        if (emailInput && !emailInput.value) {
+          emailInput.focus({ preventScroll: true });
+        }
+      }, 500);
     } else {
-      window.location.href = "/kontakt";
+      const query = new URLSearchParams({
+        name: clientName,
+        phone: clientPhone,
+        city: selectedCity,
+        service: prefillData.service,
+      }).toString();
+      window.location.href = `/kontakt?${query}#poptavkovy-formular`;
     }
   };
 
@@ -470,7 +526,10 @@ export function PriceCalculator({
               </div>
             ) : (
               /* Unlocked State: Exact Price, Timeline & Inclusions */
-              <div className="p-6 sm:p-8 rounded-3xl bg-white border-2 border-red-500 shadow-xl space-y-6 relative overflow-hidden animate-in fade-in duration-300">
+              <div 
+                id="kalkulace-vysledek" 
+                className="p-6 sm:p-8 rounded-3xl bg-white border-2 border-red-500 shadow-xl space-y-6 relative overflow-hidden animate-in fade-in duration-300 scroll-mt-24 sm:scroll-mt-28 ring-4 ring-red-500/10"
+              >
                 <div className="absolute top-0 right-0 px-4 py-1.5 bg-red-600 text-white text-[11px] font-black uppercase tracking-wider rounded-bl-2xl">
                   Orientační odhad
                 </div>
