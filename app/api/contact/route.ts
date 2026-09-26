@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import nodemailer from "nodemailer";
 import { saveLead, updateLead } from "@/lib/leads-store";
+import { sendLeadEmail } from "@/lib/mailer";
 
 // In-memory rate limiting store (sliding window per IP)
 const rateLimitMap = new Map<string, { count: number; firstRequest: number }>();
@@ -153,55 +153,21 @@ Odesláno z IP: ${clientIp}
       emailDelivered: false,
     });
 
-    // 6. SMTP Configuration with defaults matching Mescon infrastructure
-    const smtpHost = process.env.SMTP_HOST || "mail.mescon.eu";
-    const smtpPort = parseInt(process.env.SMTP_PORT || "465", 10);
-    const smtpSecure = process.env.SMTP_SECURE === "true" || (process.env.SMTP_SECURE !== "false" && smtpPort === 465);
-    const smtpUser = process.env.SMTP_USER || "hansbau@mescon.cz";
-    const smtpPass = process.env.SMTP_PASS || process.env.SMTP_PASSWORD;
-    const contactEmailTo = process.env.CONTACT_EMAIL_TO || "team@hansbau.com";
-    const smtpFrom = process.env.SMTP_FROM || `"HANSBAU Web" <${smtpUser}>`;
-    const rejectUnauthorized = process.env.SMTP_REJECT_UNAUTHORIZED !== "false";
+    // 6. SMTP Email Dispatch via Resilient Mailer (with auto-fallback 587/465)
+    const mailResult = await sendLeadEmail({
+      subject: `[Nová poptávka] ${validatedData.service || "Rekonstrukce"} - ${validatedData.name} (${validatedData.phone})`,
+      text: emailBodyText,
+      html: emailBodyHtml,
+      replyTo: validatedData.email || undefined,
+      fromName: "HANSBAU Web",
+    });
 
-    if (smtpPass) {
-      try {
-        const transporter = nodemailer.createTransport({
-          host: smtpHost,
-          port: smtpPort,
-          secure: smtpSecure,
-          auth: {
-            user: smtpUser,
-            pass: smtpPass,
-          },
-          tls: {
-            rejectUnauthorized,
-          },
-        });
-
-        await transporter.sendMail({
-          from: smtpFrom,
-          to: contactEmailTo,
-          replyTo: validatedData.email || undefined,
-          subject: `[Nová poptávka] ${validatedData.service || "Rekonstrukce"} - ${validatedData.name} (${validatedData.phone})`,
-          text: emailBodyText,
-          html: emailBodyHtml,
-        });
-
-        updateLead(savedLead.id, { emailDelivered: true });
-      } catch (mailErr: unknown) {
-        console.error("Failed to send contact inquiry email via SMTP:", mailErr);
-        updateLead(savedLead.id, {
-          emailDelivered: false,
-          emailError: mailErr instanceof Error ? mailErr.message : String(mailErr),
-        });
-      }
+    if (mailResult.success) {
+      updateLead(savedLead.id, { emailDelivered: true });
     } else {
-      // Fallback log when password is not yet configured in Coolify
-      console.log("=== NEW CONTACT INQUIRY (SMTP_PASS not set, stored in disk leads store) ===");
-      console.log(emailBodyText);
       updateLead(savedLead.id, {
         emailDelivered: false,
-        emailError: "SMTP_PASS not configured in environment",
+        emailError: mailResult.error || "Failed to dispatch email",
       });
     }
 
