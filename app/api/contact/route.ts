@@ -156,11 +156,12 @@ Odesláno z IP: ${clientIp}
     // 6. SMTP Configuration with defaults matching Mescon infrastructure
     const smtpHost = process.env.SMTP_HOST || "mail.mescon.eu";
     const smtpPort = parseInt(process.env.SMTP_PORT || "465", 10);
-    const smtpSecure = smtpPort === 465;
+    const smtpSecure = process.env.SMTP_SECURE === "true" || (process.env.SMTP_SECURE !== "false" && smtpPort === 465);
     const smtpUser = process.env.SMTP_USER || "hansbau@mescon.cz";
     const smtpPass = process.env.SMTP_PASS || process.env.SMTP_PASSWORD;
     const contactEmailTo = process.env.CONTACT_EMAIL_TO || "team@hansbau.com";
     const smtpFrom = process.env.SMTP_FROM || `"HANSBAU Web" <${smtpUser}>`;
+    const rejectUnauthorized = process.env.SMTP_REJECT_UNAUTHORIZED !== "false";
 
     if (smtpPass) {
       try {
@@ -171,6 +172,9 @@ Odesláno z IP: ${clientIp}
           auth: {
             user: smtpUser,
             pass: smtpPass,
+          },
+          tls: {
+            rejectUnauthorized,
           },
         });
 
