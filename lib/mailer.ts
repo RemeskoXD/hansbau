@@ -83,9 +83,16 @@ export async function sendLeadEmail(params: SendMailParams): Promise<SendMailRes
       const errMsg = err instanceof Error ? err.message : String(err);
       console.warn(`[SMTP Attempt Warning on ${smtpHost}:${port}] ${errMsg}`);
 
-      // If it was an authentication rejection (bad credentials), trying another port won't help
-      if (errMsg.includes("535") || errMsg.toLowerCase().includes("authentication failed") || errMsg.toLowerCase().includes("invalid login")) {
-        console.error(`❌ SMTP Authentication failed for ${smtpUser}. Please verify SMTP_USER and SMTP_PASS.`);
+      // If it was a protocol rejection (bad credentials 535, invalid sender/recipient 550, etc.),
+      // the mail server responded properly, so trying another port is pointless.
+      const isProtocolError = 
+        /5\d{2}/.test(errMsg) || 
+        errMsg.toLowerCase().includes("authentication failed") || 
+        errMsg.toLowerCase().includes("unrouteable address") ||
+        errMsg.toLowerCase().includes("sender verify failed");
+
+      if (isProtocolError) {
+        console.error(`❌ SMTP Server protocol rejection: ${errMsg}`);
         break;
       }
     }
