@@ -16,6 +16,7 @@ import {
   Lock,
   User,
   Phone,
+  Mail,
   Check,
   RotateCcw,
   Loader2
@@ -108,6 +109,7 @@ export function PriceCalculator({
   const [isUnlocked, setIsUnlocked] = useState<boolean>(false);
   const [clientName, setClientName] = useState<string>("");
   const [clientPhone, setClientPhone] = useState<string>("");
+  const [clientEmail, setClientEmail] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
@@ -140,6 +142,7 @@ export function PriceCalculator({
 
     const trimmedName = clientName.trim();
     const trimmedPhone = clientPhone.trim();
+    const trimmedEmail = clientEmail.trim();
 
     if (trimmedName.length < 2) {
       setSubmitError("Zadejte prosím vaše platné jméno a příjmení.");
@@ -149,6 +152,11 @@ export function PriceCalculator({
     const phoneDigits = trimmedPhone.replace(/\D/g, "");
     if (phoneDigits.length < 6) {
       setSubmitError("Zadejte prosím platné telefonní číslo (alespoň 6 číslic).");
+      return;
+    }
+
+    if (!trimmedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
+      setSubmitError("Zadejte prosím platnou e-mailovou adresu pro zaslání kalkulace.");
       return;
     }
 
@@ -164,6 +172,7 @@ export function PriceCalculator({
         body: JSON.stringify({
           name: trimmedName,
           phone: trimmedPhone,
+          email: trimmedEmail,
           city: selectedCity,
           buildingType: buildingType === "panel" ? "Panelový byt" : "Cihlový byt",
           layout: currentResult.layoutTitle,
@@ -233,6 +242,7 @@ export function PriceCalculator({
     const prefillData = {
       name: clientName,
       phone: clientPhone,
+      email: clientEmail,
       city: selectedCity,
       service: layout === "koupelna" 
         ? "Rekonstrukce koupelny" 
@@ -515,6 +525,21 @@ export function PriceCalculator({
                     />
                   </div>
 
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
+                      <Mail className="w-3.5 h-3.5 text-slate-500" />
+                      <span>E-mailová adresa *</span>
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      value={clientEmail}
+                      onChange={(e) => setClientEmail(e.target.value)}
+                      placeholder="např. jan.novak@email.cz"
+                      className="w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-slate-900 text-sm font-medium focus:border-red-600 focus:ring-2 focus:ring-red-600/20 focus:outline-none transition-all shadow-sm"
+                    />
+                  </div>
+
                   <button
                     type="submit"
                     disabled={isSubmitting}
@@ -553,7 +578,7 @@ export function PriceCalculator({
                 <div className="p-3.5 rounded-2xl bg-green-50 border border-green-200 flex items-center gap-2.5 text-xs text-green-900 font-semibold">
                   <Check className="w-4 h-4 text-green-600 shrink-0" />
                   <span>
-                    Děkujeme, <strong>{clientName}</strong>! Vaše kalkulace byla úspěšně vygenerována a odeslána technikovi.
+                    Děkujeme, <strong>{clientName}</strong>! Vaše kalkulace byla úspěšně vygenerována a odeslána našemu technikovi. Kopii jsme zaznamenali pro e-mail <strong>{clientEmail}</strong>.
                   </span>
                 </div>
 

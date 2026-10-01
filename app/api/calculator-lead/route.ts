@@ -6,7 +6,7 @@ import { sendLeadEmail } from "@/lib/mailer";
 // In-memory rate limiting store (sliding window per IP)
 const rateLimitMap = new Map<string, { count: number; firstRequest: number }>();
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
-const MAX_REQUESTS_PER_WINDOW = 5; // Max 5 submissions per minute per IP
+const MAX_REQUESTS_PER_WINDOW = 15; // Max 15 submissions per minute per IP
 
 const calculatorLeadSchema = z.object({
   name: z.string().trim().min(2, "Jméno musí mít alespoň 2 znaky").max(100, "Jméno je příliš dlouhé"),
@@ -168,8 +168,10 @@ Odesláno z IP: ${clientIp}
     });
 
     // 6. SMTP Email Dispatch via Resilient Mailer (with auto-fallback 587/465)
+    const emailSubject = `[Kalkulačka Lead] ${validatedData.name}${validatedData.email ? ` <${validatedData.email}>` : ""} (${validatedData.phone}) - ${validatedData.layout} - Odhad: ${validatedData.priceRange}`;
+    
     const mailResult = await sendLeadEmail({
-      subject: `[Kalkulačka Lead] ${validatedData.name} (${validatedData.phone}) - ${validatedData.layout} - Odhad: ${validatedData.priceRange}`,
+      subject: emailSubject,
       text: emailBodyText,
       html: emailBodyHtml,
       replyTo: validatedData.email || undefined,
@@ -178,11 +180,13 @@ Odesláno z IP: ${clientIp}
 
     if (mailResult.success) {
       updateLead(savedLead.id, { emailDelivered: true });
+      console.log(`✅ [Calculator Lead] Email successfully dispatched for ${validatedData.name} (${validatedData.email || "bez emailu"}) to team@hansbau.com`);
     } else {
       updateLead(savedLead.id, {
         emailDelivered: false,
         emailError: mailResult.error || "Failed to dispatch email",
       });
+      console.error(`❌ [Calculator Lead] Email failed for ${validatedData.name}:`, mailResult.error);
     }
 
     return NextResponse.json({ success: true, message: "Kalkulace byla úspěšně odeslána." });

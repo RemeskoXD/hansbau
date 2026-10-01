@@ -43,6 +43,7 @@ export function ContactForm({ defaultService = "" }: ContactFormProps) {
       const customEvent = e as CustomEvent<{
         name?: string;
         phone?: string;
+        email?: string;
         city?: string;
         service?: string;
         message?: string;
@@ -52,6 +53,7 @@ export function ContactForm({ defaultService = "" }: ContactFormProps) {
           ...prev,
           name: customEvent.detail.name || prev.name,
           phone: customEvent.detail.phone || prev.phone,
+          email: customEvent.detail.email || prev.email,
           city: customEvent.detail.city || prev.city,
           service: customEvent.detail.service || prev.service,
           message: customEvent.detail.message || prev.message,
@@ -70,6 +72,7 @@ export function ContactForm({ defaultService = "" }: ContactFormProps) {
           ...prev,
           name: parsed.name || prev.name,
           phone: parsed.phone || prev.phone,
+          email: parsed.email || prev.email,
           city: parsed.city || prev.city,
           service: parsed.service || prev.service,
           message: parsed.message || prev.message,
@@ -79,13 +82,15 @@ export function ContactForm({ defaultService = "" }: ContactFormProps) {
         const params = new URLSearchParams(window.location.search);
         const name = params.get("name");
         const phone = params.get("phone");
+        const email = params.get("email");
         const city = params.get("city");
         const service = params.get("service");
-        if (name || phone || city || service) {
+        if (name || phone || email || city || service) {
           setFormData((prev) => ({
             ...prev,
             ...(name ? { name } : {}),
             ...(phone ? { phone } : {}),
+            ...(email ? { email } : {}),
             ...(city ? { city } : {}),
             ...(service ? { service } : {}),
           }));
